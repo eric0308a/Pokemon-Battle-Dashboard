@@ -1,5 +1,14 @@
 # Pokemon-Battle-Dashboard
 
+## 快速啟動與部署
+
+- 開發：`npm install` 後執行 `npm run dev`
+- 建置：`npm run build`
+- 手動部署到 GitHub Pages（gh-pages 分支）：`npm run deploy`
+- 自動部署：已提供 `.github/workflows/deploy.yml`，推送到 `main` 會自動部署到 GitHub Pages
+
+> Vite `base` 會依 `GITHUB_REPOSITORY` 自動設定，部署到任何 repo 名稱都可正確產生路徑。
+
 ## 📋 專案開發計畫書：寶可夢對戰即時輔助工具
 
 ### 一、 核心目標 (Project Goals)
