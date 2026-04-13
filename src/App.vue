@@ -1,37 +1,37 @@
 <script setup>
-import { computed, shallowRef } from 'vue'
+import { computed, onMounted, shallowRef } from 'vue'
+import * as PokeApiWrapper from 'pokeapi-js-wrapper'
+import allowedPokemonIds from './assets/allowedPokemonIds.json'
 
 const stats = [
-  { key: 'hp', label: 'HP' },
-  { key: 'atk', label: '攻擊' },
-  { key: 'spa', label: '特攻' },
-  { key: 'def', label: '防禦' },
-  { key: 'spd', label: '特防' },
-  { key: 'spe', label: '速度' }
+  { key: 'hp', label: 'HP', api: 'hp' },
+  { key: 'atk', label: '攻擊', api: 'attack' },
+  { key: 'spa', label: '特攻', api: 'special-attack' },
+  { key: 'def', label: '防禦', api: 'defense' },
+  { key: 'spd', label: '特防', api: 'special-defense' },
+  { key: 'spe', label: '速度', api: 'speed' }
 ]
 
-const pokemonPool = [
-  { id: '001', nameZh: '妙蛙種子' },
-  { id: '004', nameZh: '小火龍' },
-  { id: '007', nameZh: '傑尼龜' },
-  { id: '025', nameZh: '皮卡丘' },
-  { id: '133', nameZh: '伊布' },
-  { id: '143', nameZh: '卡比獸' },
-  { id: '149', nameZh: '快龍' },
-  { id: '196', nameZh: '太陽伊布' },
-  { id: '248', nameZh: '班基拉斯' },
-  { id: '445', nameZh: '烈咬陸鯊' },
-  { id: '448', nameZh: '路卡利歐' },
-  { id: '700', nameZh: '仙子伊布' }
-]
+const pokedex = new PokeApiWrapper.Pokedex({ cache: true, timeout: 20_000 })
 
 const allySearch = shallowRef('')
 const enemySearch = shallowRef('')
 const allyTeam = shallowRef([])
 const enemyTeam = shallowRef([])
+const pokemonPool = shallowRef([])
+const isLoadingPool = shallowRef(true)
+const loadingError = shallowRef('')
 
-function createStatBlock() {
-  return {
+function chunkArray(list, size) {
+  const chunks = []
+  for (let index = 0; index < list.length; index += size) {
+    chunks.push(list.slice(index, index + size))
+  }
+  return chunks
+}
+
+function toStatBlock(baseStats) {
+  const block = {
     hp: { base: 0, ev: 0 },
     atk: { base: 0, ev: 0 },
     spa: { base: 0, ev: 0 },
@@ -39,22 +39,90 @@ function createStatBlock() {
     spd: { base: 0, ev: 0 },
     spe: { base: 0, ev: 0 }
   }
+
+  stats.forEach((item) => {
+    block[item.key].base = baseStats[item.key] ?? 0
+  })
+  return block
+}
+
+function normalizePokemon(pokemonData, speciesData) {
+  const chineseName = speciesData.names.find((entry) => entry.language.name === 'zh-Hant')?.name
+    ?? speciesData.names.find((entry) => entry.language.name === 'zh-Hans')?.name
+    ?? speciesData.names.find((entry) => entry.language.name === 'ja-Hrkt')?.name
+    ?? pokemonData.name
+
+  const baseStats = pokemonData.stats.reduce((accumulator, item) => {
+    const statName = item.stat.name
+    const target = stats.find((definition) => definition.api === statName)
+    if (!target) {
+      return accumulator
+    }
+    accumulator[target.key] = item.base_stat
+    return accumulator
+  }, {})
+
+  return {
+    id: pokemonData.id,
+    nameEn: pokemonData.name,
+    nameZh: chineseName,
+    types: pokemonData.types
+      .sort((a, b) => a.slot - b.slot)
+      .map((item) => item.type.name),
+    moves: pokemonData.moves.slice(0, 12).map((moveItem) => moveItem.move.name),
+    baseStats
+  }
+}
+
+async function fetchAllowedPokemonPool() {
+  isLoadingPool.value = true
+  loadingError.value = ''
+
+  try {
+    const chunks = chunkArray(allowedPokemonIds, 12)
+    const allEntries = []
+
+    for (const chunk of chunks) {
+      const chunkResults = await Promise.all(
+        chunk.map(async (id) => {
+          const pokemonData = await pokedex.getPokemonByName(id)
+          const speciesData = await pokedex.getPokemonSpeciesByName(id)
+          return normalizePokemon(pokemonData, speciesData)
+        })
+      )
+      allEntries.push(...chunkResults)
+    }
+
+    pokemonPool.value = allEntries.sort((a, b) => a.id - b.id)
+  } catch (error) {
+    loadingError.value = `資料載入失敗：${error?.message ?? '未知錯誤'}`
+  } finally {
+    isLoadingPool.value = false
+  }
 }
 
 const filteredAllyPool = computed(() => {
-  const keyword = allySearch.value.trim()
+  const keyword = allySearch.value.trim().toLowerCase()
   if (!keyword) {
-    return pokemonPool
+    return pokemonPool.value
   }
-  return pokemonPool.filter((pokemon) => pokemon.nameZh.includes(keyword))
+  return pokemonPool.value.filter((pokemon) => {
+    return pokemon.nameZh.includes(keyword)
+      || pokemon.nameEn.includes(keyword)
+      || String(pokemon.id).includes(keyword)
+  })
 })
 
 const filteredEnemyPool = computed(() => {
-  const keyword = enemySearch.value.trim()
+  const keyword = enemySearch.value.trim().toLowerCase()
   if (!keyword) {
-    return pokemonPool
+    return pokemonPool.value
   }
-  return pokemonPool.filter((pokemon) => pokemon.nameZh.includes(keyword))
+  return pokemonPool.value.filter((pokemon) => {
+    return pokemon.nameZh.includes(keyword)
+      || pokemon.nameEn.includes(keyword)
+      || String(pokemon.id).includes(keyword)
+  })
 })
 
 function addToTeam(side, pokemon) {
@@ -62,7 +130,10 @@ function addToTeam(side, pokemon) {
     uid: `${pokemon.id}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     id: pokemon.id,
     nameZh: pokemon.nameZh,
-    stats: createStatBlock()
+    nameEn: pokemon.nameEn,
+    types: pokemon.types,
+    moves: pokemon.moves,
+    stats: toStatBlock(pokemon.baseStats)
   }
 
   if (side === 'ally') {
@@ -90,6 +161,10 @@ function getTotalStat(member, statKey) {
   const stat = member.stats[statKey]
   return stat.base + stat.ev
 }
+
+onMounted(() => {
+  fetchAllowedPokemonPool()
+})
 </script>
 
 <template>
@@ -106,8 +181,11 @@ function getTotalStat(member, statKey) {
           v-model="allySearch"
           class="search-input"
           type="text"
-          placeholder="輸入中文名稱搜尋（例如：皮卡丘）"
+          placeholder="輸入中文/英文/編號搜尋（例如：皮卡丘、pikachu、25）"
         />
+
+        <p v-if="isLoadingPool" class="status-text">正在從 API 載入允許名單...</p>
+        <p v-if="loadingError" class="status-text error">{{ loadingError }}</p>
 
         <div class="search-results">
           <button
@@ -117,13 +195,16 @@ function getTotalStat(member, statKey) {
             type="button"
             @click="addToTeam('ally', pokemon)"
           >
-            加入 {{ pokemon.nameZh }}
+            #{{ pokemon.id }} {{ pokemon.nameZh }}
           </button>
         </div>
 
         <div class="team-list">
           <section v-for="member in allyTeam" :key="member.uid" class="member-card">
             <h3 class="member-name">{{ member.nameZh }}</h3>
+            <p class="meta-text">EN：{{ member.nameEn }}</p>
+            <p class="meta-text">屬性：{{ member.types.join(' / ') }}</p>
+            <p class="meta-text">招式：{{ member.moves.join('、') }}</p>
             <div class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
                 <span class="stat-label">{{ stat.label }}</span>
@@ -151,8 +232,11 @@ function getTotalStat(member, statKey) {
           v-model="enemySearch"
           class="search-input"
           type="text"
-          placeholder="輸入中文名稱搜尋（例如：烈咬陸鯊）"
+          placeholder="輸入中文/英文/編號搜尋（例如：烈咬陸鯊、garchomp、445）"
         />
+
+        <p v-if="isLoadingPool" class="status-text">正在從 API 載入允許名單...</p>
+        <p v-if="loadingError" class="status-text error">{{ loadingError }}</p>
 
         <div class="search-results">
           <button
@@ -162,13 +246,16 @@ function getTotalStat(member, statKey) {
             type="button"
             @click="addToTeam('enemy', pokemon)"
           >
-            加入 {{ pokemon.nameZh }}
+            #{{ pokemon.id }} {{ pokemon.nameZh }}
           </button>
         </div>
 
         <div class="team-list">
           <section v-for="member in enemyTeam" :key="member.uid" class="member-card">
             <h3 class="member-name">{{ member.nameZh }}</h3>
+            <p class="meta-text">EN：{{ member.nameEn }}</p>
+            <p class="meta-text">屬性：{{ member.types.join(' / ') }}</p>
+            <p class="meta-text">招式：{{ member.moves.join('、') }}</p>
             <div class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
                 <span class="stat-label">{{ stat.label }}</span>

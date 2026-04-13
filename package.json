@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "pokeapi-js-wrapper": "^1.2.8",
     "vue": "^3.5.32"
   },
   "devDependencies": {
