@@ -146,6 +146,33 @@ body {
   font-size: 1.02rem;
 }
 
+.member-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.member-head .member-name {
+  margin: 0;
+}
+
+.remove-btn {
+  border: 1px solid #efc5c3;
+  background: #fff6f5;
+  color: #b42318;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  border-color: #d4483b;
+  background: #ffe8e5;
+}
+
 .meta-text {
   margin: 0 0 6px;
   color: var(--text-subtle);

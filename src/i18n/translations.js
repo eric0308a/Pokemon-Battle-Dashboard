@@ -25,6 +25,7 @@ const localeMessages = {
 		moveOptionsLabel: '可選招式',
 		moveSelectLabel: '已選招式',
 		moveSlotLabel: '招式',
+		removeMemberLabel: '刪除',
 		baseStatLabel: '種族值',
 		evLabel: '努力值',
 		totalLabel: '總值'
@@ -45,6 +46,7 @@ const localeMessages = {
 		moveOptionsLabel: 'Available Moves',
 		moveSelectLabel: 'Selected Moves',
 		moveSlotLabel: 'Move',
+		removeMemberLabel: 'Remove',
 		baseStatLabel: 'Base',
 		evLabel: 'EV',
 		totalLabel: 'Total'

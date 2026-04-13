@@ -210,6 +210,14 @@ async function addToTeam(side, pokemon) {
   enemyTeam.value = [...enemyTeam.value, member]
 }
 
+function removeFromTeam(side, memberUid) {
+  if (side === 'ally') {
+    allyTeam.value = allyTeam.value.filter((member) => member.uid !== memberUid)
+    return
+  }
+  enemyTeam.value = enemyTeam.value.filter((member) => member.uid !== memberUid)
+}
+
 function updateSelectedMove(side, memberUid, slotIndex, value) {
   const team = side === 'ally' ? allyTeam.value : enemyTeam.value
   const target = team.find((member) => member.uid === memberUid)
@@ -316,7 +324,16 @@ onMounted(() => {
 
         <div class="team-list">
           <section v-for="member in allyTeam" :key="member.uid" class="member-card">
-            <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+            <div class="member-head">
+              <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+              <button
+                class="remove-btn"
+                type="button"
+                @click="removeFromTeam('ally', member.uid)"
+              >
+                {{ t('removeMemberLabel') }}
+              </button>
+            </div>
             <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
             <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
@@ -392,7 +409,16 @@ onMounted(() => {
 
         <div class="team-list">
           <section v-for="member in enemyTeam" :key="member.uid" class="member-card">
-            <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+            <div class="member-head">
+              <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+              <button
+                class="remove-btn"
+                type="button"
+                @click="removeFromTeam('enemy', member.uid)"
+              >
+                {{ t('removeMemberLabel') }}
+              </button>
+            </div>
             <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
             <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
