@@ -196,6 +196,15 @@ body {
   color: var(--text-subtle);
 }
 
+.nature-select-item {
+  margin-bottom: 8px;
+}
+
+.nature-hint {
+  margin-bottom: 8px;
+  color: #35526d;
+}
+
 .move-select {
   width: 100%;
   border: 1px solid var(--card-border);
