@@ -15,6 +15,10 @@ import {
   registerPokemonNameTranslation,
   resolveLocale
 } from './i18n/translations'
+import {
+  getAttackRelations,
+  getDefenseRelations
+} from './i18n/typeEffectiveness'
 
 const stats = [
   { key: 'hp', api: 'hp' },
@@ -141,10 +145,11 @@ async function resolveMoveTranslation(moveName) {
 
   const fallbackMove = getMoveLocalizedNames(moveName, {
     nameEn: moveName,
-    nameZh: moveName
+    nameZh: moveName,
+    typeKey: ''
   })
 
-  if (fallbackMove.nameZh !== moveName || fallbackMove.nameEn !== moveName) {
+  if (fallbackMove.typeKey) {
     moveTranslationCache.set(moveName, fallbackMove)
     return fallbackMove
   }
@@ -153,7 +158,8 @@ async function resolveMoveTranslation(moveName) {
     const moveData = await pokedex.getMoveByName(moveName)
     const translated = {
       nameEn: pickLocalizedName(moveData.names, 'en-US', moveName),
-      nameZh: pickLocalizedName(moveData.names, 'zh-TW', moveName)
+      nameZh: pickLocalizedName(moveData.names, 'zh-TW', moveName),
+      typeKey: moveData.type?.name ?? ''
     }
     moveTranslationCache.set(moveName, translated)
     return translated
@@ -381,6 +387,45 @@ function getNatureHintText(natureKey) {
   return `${statLabel(nature.up)} x1.1 / ${statLabel(nature.down)} x0.9`
 }
 
+function getSelectedMove(member, moveName) {
+  return member.availableMoves.find((move) => move.nameEn === moveName) ?? null
+}
+
+function formatTypeList(typeKeys) {
+  const labels = typeKeys.map((typeKey) => displayType(typeKey))
+  return labels.length > 0 ? labels.join('、') : t('typeNoneLabel')
+}
+
+function formatDefenseSummary(typeKeys) {
+  const buckets = getDefenseRelations(typeKeys)
+  const parts = [
+    `${t('typeDoubleWeakLabel')}：${formatTypeList(buckets[4])}`,
+    `${t('typeWeaknessLabel')}：${formatTypeList(buckets[2])}`,
+    `${t('typeResistanceLabel')}：${formatTypeList(buckets[0.5])}`,
+    `${t('typeDoubleResistLabel')}：${formatTypeList(buckets[0.25])}`,
+    `${t('typeImmunityLabel')}：${formatTypeList(buckets[0])}`
+  ]
+  return parts.join('；')
+}
+
+function formatAttackSummary(typeKey) {
+  if (!typeKey) {
+    return t('typeNoneLabel')
+  }
+
+  const relations = getAttackRelations(typeKey)
+  const parts = [
+    `${t('typeStrongLabel')}：${formatTypeList(relations.strongAgainst)}`,
+    `${t('typeWeakLabel')}：${formatTypeList(relations.weakAgainst)}`,
+    `${t('typeNoEffectLabel')}：${formatTypeList(relations.noEffectAgainst)}`
+  ]
+  return parts.join('；')
+}
+
+function moveTypeLabel(move) {
+  return move?.typeKey ? displayType(move.typeKey) : t('typeNoneLabel')
+}
+
 onMounted(() => {
   locale.value = resolveLocale(detectBrowserLocale())
   document.documentElement.lang = locale.value
@@ -451,6 +496,7 @@ onMounted(() => {
             </label>
             <p class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
+            <p class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
             <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
             <div class="move-select-area">
               <p class="meta-text">{{ t('moveSelectLabel') }}</p>
@@ -474,6 +520,8 @@ onMounted(() => {
                       {{ displayMove(move) }}
                     </option>
                   </select>
+                  <span class="matchup-help">{{ t('typeLabel') }}: {{ moveTypeLabel(getSelectedMove(member, selectedMove)) }}</span>
+                  <span class="matchup-help">{{ t('typeAttackLabel') }}: {{ formatAttackSummary(getSelectedMove(member, selectedMove)?.typeKey ?? '') }}</span>
                 </label>
               </div>
             </div>
@@ -554,6 +602,7 @@ onMounted(() => {
             </label>
             <p class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
+            <p class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
             <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
             <div class="move-select-area">
               <p class="meta-text">{{ t('moveSelectLabel') }}</p>
@@ -577,6 +626,8 @@ onMounted(() => {
                       {{ displayMove(move) }}
                     </option>
                   </select>
+                  <span class="matchup-help">{{ t('typeLabel') }}: {{ moveTypeLabel(getSelectedMove(member, selectedMove)) }}</span>
+                  <span class="matchup-help">{{ t('typeAttackLabel') }}: {{ formatAttackSummary(getSelectedMove(member, selectedMove)?.typeKey ?? '') }}</span>
                 </label>
               </div>
             </div>

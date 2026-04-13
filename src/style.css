@@ -179,6 +179,17 @@ body {
   font-size: 0.85rem;
 }
 
+.matchup-line,
+.matchup-help {
+  color: #35526d;
+}
+
+.matchup-help {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.76rem;
+}
+
 .move-select-area {
   margin: 8px 0 10px;
 }

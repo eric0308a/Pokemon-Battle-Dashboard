@@ -23,6 +23,17 @@ const localeMessages = {
 		natureLabel: '性格',
 		natureEffectLabel: '性格效果',
 		natureNeutralHint: '無增減',
+		typeDefenseLabel: '防守克制',
+		typeAttackLabel: '攻擊克制',
+		typeStrongLabel: '效果絕佳',
+		typeWeakLabel: '效果不理想',
+		typeNoEffectLabel: '無效',
+		typeDoubleWeakLabel: '4 倍弱點',
+		typeDoubleResistLabel: '4 倍抵抗',
+		typeWeaknessLabel: '弱點',
+		typeResistanceLabel: '抵抗',
+		typeImmunityLabel: '免疫',
+		typeNoneLabel: '無',
 		typeLabel: '屬性',
 		moveLabel: '招式',
 		moveOptionsLabel: '可選招式',
@@ -47,6 +58,17 @@ const localeMessages = {
 		natureLabel: 'Nature',
 		natureEffectLabel: 'Nature Effect',
 		natureNeutralHint: 'No stat change',
+		typeDefenseLabel: 'Defense Matchups',
+		typeAttackLabel: 'Attack Matchups',
+		typeStrongLabel: 'Super Effective',
+		typeWeakLabel: 'Not Very Effective',
+		typeNoEffectLabel: 'No Effect',
+		typeDoubleWeakLabel: '4x Weakness',
+		typeDoubleResistLabel: '4x Resistance',
+		typeWeaknessLabel: 'Weakness',
+		typeResistanceLabel: 'Resistance',
+		typeImmunityLabel: 'Immunity',
+		typeNoneLabel: 'None',
 		typeLabel: 'Type',
 		moveLabel: 'Moves',
 		moveOptionsLabel: 'Available Moves',
@@ -197,7 +219,8 @@ export function getMoveLocalizedNames(moveKey, fallbackNames = {}) {
 
 	return {
 		nameZh: translated.nameZh || fallbackNames.nameZh || fallbackNames.nameEn || moveKey,
-		nameEn: translated.nameEn || fallbackNames.nameEn || fallbackNames.nameZh || moveKey
+		nameEn: translated.nameEn || fallbackNames.nameEn || fallbackNames.nameZh || moveKey,
+		typeKey: translated.typeKey || fallbackNames.typeKey || ''
 	}
 }
 

@@ -1,3610 +1,4512 @@
 {
   "pound": {
     "nameZh": "拍擊",
-    "nameEn": "Pound"
+    "nameEn": "Pound",
+    "typeKey": "normal"
   },
   "karate-chop": {
     "nameZh": "空手劈",
-    "nameEn": "Karate Chop"
+    "nameEn": "Karate Chop",
+    "typeKey": "fighting"
   },
   "double-slap": {
     "nameZh": "連環巴掌",
-    "nameEn": "Double Slap"
+    "nameEn": "Double Slap",
+    "typeKey": "normal"
   },
   "comet-punch": {
     "nameZh": "連續拳",
-    "nameEn": "Comet Punch"
+    "nameEn": "Comet Punch",
+    "typeKey": "normal"
   },
   "mega-punch": {
     "nameZh": "百萬噸重拳",
-    "nameEn": "Mega Punch"
+    "nameEn": "Mega Punch",
+    "typeKey": "normal"
   },
   "pay-day": {
     "nameZh": "聚寶功",
-    "nameEn": "Pay Day"
+    "nameEn": "Pay Day",
+    "typeKey": "normal"
   },
   "fire-punch": {
     "nameZh": "火焰拳",
-    "nameEn": "Fire Punch"
+    "nameEn": "Fire Punch",
+    "typeKey": "fire"
   },
   "ice-punch": {
     "nameZh": "冰凍拳",
-    "nameEn": "Ice Punch"
+    "nameEn": "Ice Punch",
+    "typeKey": "ice"
   },
   "thunder-punch": {
     "nameZh": "雷電拳",
-    "nameEn": "Thunder Punch"
+    "nameEn": "Thunder Punch",
+    "typeKey": "electric"
   },
   "scratch": {
     "nameZh": "抓",
-    "nameEn": "Scratch"
+    "nameEn": "Scratch",
+    "typeKey": "normal"
   },
   "vise-grip": {
     "nameZh": "夾住",
-    "nameEn": "Vise Grip"
+    "nameEn": "Vise Grip",
+    "typeKey": "normal"
   },
   "guillotine": {
     "nameZh": "斷頭鉗",
-    "nameEn": "Guillotine"
+    "nameEn": "Guillotine",
+    "typeKey": "normal"
   },
   "razor-wind": {
     "nameZh": "旋風刀",
-    "nameEn": "Razor Wind"
+    "nameEn": "Razor Wind",
+    "typeKey": "normal"
   },
   "swords-dance": {
     "nameZh": "劍舞",
-    "nameEn": "Swords Dance"
+    "nameEn": "Swords Dance",
+    "typeKey": "normal"
   },
   "cut": {
     "nameZh": "居合斬",
-    "nameEn": "Cut"
+    "nameEn": "Cut",
+    "typeKey": "normal"
   },
   "gust": {
     "nameZh": "起風",
-    "nameEn": "Gust"
+    "nameEn": "Gust",
+    "typeKey": "flying"
   },
   "wing-attack": {
     "nameZh": "翅膀攻擊",
-    "nameEn": "Wing Attack"
+    "nameEn": "Wing Attack",
+    "typeKey": "flying"
   },
   "whirlwind": {
     "nameZh": "吹飛",
-    "nameEn": "Whirlwind"
+    "nameEn": "Whirlwind",
+    "typeKey": "normal"
   },
   "fly": {
     "nameZh": "飛翔",
-    "nameEn": "Fly"
+    "nameEn": "Fly",
+    "typeKey": "flying"
   },
   "bind": {
     "nameZh": "綁緊",
-    "nameEn": "Bind"
+    "nameEn": "Bind",
+    "typeKey": "normal"
   },
   "slam": {
     "nameZh": "摔打",
-    "nameEn": "Slam"
+    "nameEn": "Slam",
+    "typeKey": "normal"
   },
   "vine-whip": {
     "nameZh": "藤鞭",
-    "nameEn": "Vine Whip"
+    "nameEn": "Vine Whip",
+    "typeKey": "grass"
   },
   "stomp": {
     "nameZh": "踩踏",
-    "nameEn": "Stomp"
+    "nameEn": "Stomp",
+    "typeKey": "normal"
   },
   "double-kick": {
     "nameZh": "二連踢",
-    "nameEn": "Double Kick"
+    "nameEn": "Double Kick",
+    "typeKey": "fighting"
   },
   "mega-kick": {
     "nameZh": "百萬噸重踢",
-    "nameEn": "Mega Kick"
+    "nameEn": "Mega Kick",
+    "typeKey": "normal"
   },
   "jump-kick": {
     "nameZh": "飛踢",
-    "nameEn": "Jump Kick"
+    "nameEn": "Jump Kick",
+    "typeKey": "fighting"
   },
   "rolling-kick": {
     "nameZh": "迴旋踢",
-    "nameEn": "Rolling Kick"
+    "nameEn": "Rolling Kick",
+    "typeKey": "fighting"
   },
   "sand-attack": {
     "nameZh": "潑沙",
-    "nameEn": "Sand Attack"
+    "nameEn": "Sand Attack",
+    "typeKey": "ground"
   },
   "headbutt": {
     "nameZh": "頭錘",
-    "nameEn": "Headbutt"
+    "nameEn": "Headbutt",
+    "typeKey": "normal"
   },
   "horn-attack": {
     "nameZh": "角撞",
-    "nameEn": "Horn Attack"
+    "nameEn": "Horn Attack",
+    "typeKey": "normal"
   },
   "fury-attack": {
     "nameZh": "亂擊",
-    "nameEn": "Fury Attack"
+    "nameEn": "Fury Attack",
+    "typeKey": "normal"
   },
   "horn-drill": {
     "nameZh": "角鑽",
-    "nameEn": "Horn Drill"
+    "nameEn": "Horn Drill",
+    "typeKey": "normal"
   },
   "tackle": {
     "nameZh": "撞擊",
-    "nameEn": "Tackle"
+    "nameEn": "Tackle",
+    "typeKey": "normal"
   },
   "body-slam": {
     "nameZh": "泰山壓頂",
-    "nameEn": "Body Slam"
+    "nameEn": "Body Slam",
+    "typeKey": "normal"
   },
   "wrap": {
     "nameZh": "緊束",
-    "nameEn": "Wrap"
+    "nameEn": "Wrap",
+    "typeKey": "normal"
   },
   "take-down": {
     "nameZh": "猛撞",
-    "nameEn": "Take Down"
+    "nameEn": "Take Down",
+    "typeKey": "normal"
   },
   "thrash": {
     "nameZh": "大鬧一番",
-    "nameEn": "Thrash"
+    "nameEn": "Thrash",
+    "typeKey": "normal"
   },
   "double-edge": {
     "nameZh": "捨身衝撞",
-    "nameEn": "Double-Edge"
+    "nameEn": "Double-Edge",
+    "typeKey": "normal"
   },
   "tail-whip": {
     "nameZh": "搖尾巴",
-    "nameEn": "Tail Whip"
+    "nameEn": "Tail Whip",
+    "typeKey": "normal"
   },
   "poison-sting": {
     "nameZh": "毒針",
-    "nameEn": "Poison Sting"
+    "nameEn": "Poison Sting",
+    "typeKey": "poison"
   },
   "twineedle": {
     "nameZh": "雙針",
-    "nameEn": "Twineedle"
+    "nameEn": "Twineedle",
+    "typeKey": "bug"
   },
   "pin-missile": {
     "nameZh": "飛彈針",
-    "nameEn": "Pin Missile"
+    "nameEn": "Pin Missile",
+    "typeKey": "bug"
   },
   "leer": {
     "nameZh": "瞪眼",
-    "nameEn": "Leer"
+    "nameEn": "Leer",
+    "typeKey": "normal"
   },
   "bite": {
     "nameZh": "咬住",
-    "nameEn": "Bite"
+    "nameEn": "Bite",
+    "typeKey": "dark"
   },
   "growl": {
     "nameZh": "叫聲",
-    "nameEn": "Growl"
+    "nameEn": "Growl",
+    "typeKey": "normal"
   },
   "roar": {
     "nameZh": "吼叫",
-    "nameEn": "Roar"
+    "nameEn": "Roar",
+    "typeKey": "normal"
   },
   "sing": {
     "nameZh": "唱歌",
-    "nameEn": "Sing"
+    "nameEn": "Sing",
+    "typeKey": "normal"
   },
   "supersonic": {
     "nameZh": "超音波",
-    "nameEn": "Supersonic"
+    "nameEn": "Supersonic",
+    "typeKey": "normal"
   },
   "sonic-boom": {
     "nameZh": "音爆",
-    "nameEn": "Sonic Boom"
+    "nameEn": "Sonic Boom",
+    "typeKey": "normal"
   },
   "disable": {
     "nameZh": "定身法",
-    "nameEn": "Disable"
+    "nameEn": "Disable",
+    "typeKey": "normal"
   },
   "acid": {
     "nameZh": "溶解液",
-    "nameEn": "Acid"
+    "nameEn": "Acid",
+    "typeKey": "poison"
   },
   "ember": {
     "nameZh": "火花",
-    "nameEn": "Ember"
+    "nameEn": "Ember",
+    "typeKey": "fire"
   },
   "flamethrower": {
     "nameZh": "噴射火焰",
-    "nameEn": "Flamethrower"
+    "nameEn": "Flamethrower",
+    "typeKey": "fire"
   },
   "mist": {
     "nameZh": "白霧",
-    "nameEn": "Mist"
+    "nameEn": "Mist",
+    "typeKey": "ice"
   },
   "water-gun": {
     "nameZh": "水槍",
-    "nameEn": "Water Gun"
+    "nameEn": "Water Gun",
+    "typeKey": "water"
   },
   "hydro-pump": {
     "nameZh": "水炮",
-    "nameEn": "Hydro Pump"
+    "nameEn": "Hydro Pump",
+    "typeKey": "water"
   },
   "surf": {
     "nameZh": "衝浪",
-    "nameEn": "Surf"
+    "nameEn": "Surf",
+    "typeKey": "water"
   },
   "ice-beam": {
     "nameZh": "冰凍光束",
-    "nameEn": "Ice Beam"
+    "nameEn": "Ice Beam",
+    "typeKey": "ice"
   },
   "blizzard": {
     "nameZh": "暴風雪",
-    "nameEn": "Blizzard"
+    "nameEn": "Blizzard",
+    "typeKey": "ice"
   },
   "psybeam": {
     "nameZh": "幻象光線",
-    "nameEn": "Psybeam"
+    "nameEn": "Psybeam",
+    "typeKey": "psychic"
   },
   "bubble-beam": {
     "nameZh": "泡沫光線",
-    "nameEn": "Bubble Beam"
+    "nameEn": "Bubble Beam",
+    "typeKey": "water"
   },
   "aurora-beam": {
     "nameZh": "極光束",
-    "nameEn": "Aurora Beam"
+    "nameEn": "Aurora Beam",
+    "typeKey": "ice"
   },
   "hyper-beam": {
     "nameZh": "破壞光線",
-    "nameEn": "Hyper Beam"
+    "nameEn": "Hyper Beam",
+    "typeKey": "normal"
   },
   "peck": {
     "nameZh": "啄",
-    "nameEn": "Peck"
+    "nameEn": "Peck",
+    "typeKey": "flying"
   },
   "drill-peck": {
     "nameZh": "啄鑽",
-    "nameEn": "Drill Peck"
+    "nameEn": "Drill Peck",
+    "typeKey": "flying"
   },
   "submission": {
     "nameZh": "地獄翻滾",
-    "nameEn": "Submission"
+    "nameEn": "Submission",
+    "typeKey": "fighting"
   },
   "low-kick": {
     "nameZh": "踢倒",
-    "nameEn": "Low Kick"
+    "nameEn": "Low Kick",
+    "typeKey": "fighting"
   },
   "counter": {
     "nameZh": "雙倍奉還",
-    "nameEn": "Counter"
+    "nameEn": "Counter",
+    "typeKey": "fighting"
   },
   "seismic-toss": {
     "nameZh": "地球上投",
-    "nameEn": "Seismic Toss"
+    "nameEn": "Seismic Toss",
+    "typeKey": "fighting"
   },
   "strength": {
     "nameZh": "怪力",
-    "nameEn": "Strength"
+    "nameEn": "Strength",
+    "typeKey": "normal"
   },
   "absorb": {
     "nameZh": "吸取",
-    "nameEn": "Absorb"
+    "nameEn": "Absorb",
+    "typeKey": "grass"
   },
   "mega-drain": {
     "nameZh": "超級吸取",
-    "nameEn": "Mega Drain"
+    "nameEn": "Mega Drain",
+    "typeKey": "grass"
   },
   "leech-seed": {
     "nameZh": "寄生種子",
-    "nameEn": "Leech Seed"
+    "nameEn": "Leech Seed",
+    "typeKey": "grass"
   },
   "growth": {
     "nameZh": "生長",
-    "nameEn": "Growth"
+    "nameEn": "Growth",
+    "typeKey": "normal"
   },
   "razor-leaf": {
     "nameZh": "飛葉快刀",
-    "nameEn": "Razor Leaf"
+    "nameEn": "Razor Leaf",
+    "typeKey": "grass"
   },
   "solar-beam": {
     "nameZh": "日光束",
-    "nameEn": "Solar Beam"
+    "nameEn": "Solar Beam",
+    "typeKey": "grass"
   },
   "poison-powder": {
     "nameZh": "毒粉",
-    "nameEn": "Poison Powder"
+    "nameEn": "Poison Powder",
+    "typeKey": "poison"
   },
   "stun-spore": {
     "nameZh": "麻痺粉",
-    "nameEn": "Stun Spore"
+    "nameEn": "Stun Spore",
+    "typeKey": "grass"
   },
   "sleep-powder": {
     "nameZh": "催眠粉",
-    "nameEn": "Sleep Powder"
+    "nameEn": "Sleep Powder",
+    "typeKey": "grass"
   },
   "petal-dance": {
     "nameZh": "花瓣舞",
-    "nameEn": "Petal Dance"
+    "nameEn": "Petal Dance",
+    "typeKey": "grass"
   },
   "string-shot": {
     "nameZh": "吐絲",
-    "nameEn": "String Shot"
+    "nameEn": "String Shot",
+    "typeKey": "bug"
   },
   "dragon-rage": {
     "nameZh": "龍之怒",
-    "nameEn": "Dragon Rage"
+    "nameEn": "Dragon Rage",
+    "typeKey": "dragon"
   },
   "fire-spin": {
     "nameZh": "火焰旋渦",
-    "nameEn": "Fire Spin"
+    "nameEn": "Fire Spin",
+    "typeKey": "fire"
   },
   "thunder-shock": {
     "nameZh": "電擊",
-    "nameEn": "Thunder Shock"
+    "nameEn": "Thunder Shock",
+    "typeKey": "electric"
   },
   "thunderbolt": {
     "nameZh": "十萬伏特",
-    "nameEn": "Thunderbolt"
+    "nameEn": "Thunderbolt",
+    "typeKey": "electric"
   },
   "thunder-wave": {
     "nameZh": "電磁波",
-    "nameEn": "Thunder Wave"
+    "nameEn": "Thunder Wave",
+    "typeKey": "electric"
   },
   "thunder": {
     "nameZh": "打雷",
-    "nameEn": "Thunder"
+    "nameEn": "Thunder",
+    "typeKey": "electric"
   },
   "rock-throw": {
     "nameZh": "落石",
-    "nameEn": "Rock Throw"
+    "nameEn": "Rock Throw",
+    "typeKey": "rock"
   },
   "earthquake": {
     "nameZh": "地震",
-    "nameEn": "Earthquake"
+    "nameEn": "Earthquake",
+    "typeKey": "ground"
   },
   "fissure": {
     "nameZh": "地裂",
-    "nameEn": "Fissure"
+    "nameEn": "Fissure",
+    "typeKey": "ground"
   },
   "dig": {
     "nameZh": "挖洞",
-    "nameEn": "Dig"
+    "nameEn": "Dig",
+    "typeKey": "ground"
   },
   "toxic": {
     "nameZh": "劇毒",
-    "nameEn": "Toxic"
+    "nameEn": "Toxic",
+    "typeKey": "poison"
   },
   "confusion": {
     "nameZh": "念力",
-    "nameEn": "Confusion"
+    "nameEn": "Confusion",
+    "typeKey": "psychic"
   },
   "psychic": {
     "nameZh": "精神強念",
-    "nameEn": "Psychic"
+    "nameEn": "Psychic",
+    "typeKey": "psychic"
   },
   "hypnosis": {
     "nameZh": "催眠術",
-    "nameEn": "Hypnosis"
+    "nameEn": "Hypnosis",
+    "typeKey": "psychic"
   },
   "meditate": {
     "nameZh": "瑜伽姿勢",
-    "nameEn": "Meditate"
+    "nameEn": "Meditate",
+    "typeKey": "psychic"
   },
   "agility": {
     "nameZh": "高速移動",
-    "nameEn": "Agility"
+    "nameEn": "Agility",
+    "typeKey": "psychic"
   },
   "quick-attack": {
     "nameZh": "電光一閃",
-    "nameEn": "Quick Attack"
+    "nameEn": "Quick Attack",
+    "typeKey": "normal"
   },
   "rage": {
     "nameZh": "憤怒",
-    "nameEn": "Rage"
+    "nameEn": "Rage",
+    "typeKey": "normal"
   },
   "teleport": {
     "nameZh": "瞬間移動",
-    "nameEn": "Teleport"
+    "nameEn": "Teleport",
+    "typeKey": "psychic"
   },
   "night-shade": {
     "nameZh": "黑夜魔影",
-    "nameEn": "Night Shade"
+    "nameEn": "Night Shade",
+    "typeKey": "ghost"
   },
   "mimic": {
     "nameZh": "模仿",
-    "nameEn": "Mimic"
+    "nameEn": "Mimic",
+    "typeKey": "normal"
   },
   "screech": {
     "nameZh": "刺耳聲",
-    "nameEn": "Screech"
+    "nameEn": "Screech",
+    "typeKey": "normal"
   },
   "double-team": {
     "nameZh": "影子分身",
-    "nameEn": "Double Team"
+    "nameEn": "Double Team",
+    "typeKey": "normal"
   },
   "recover": {
     "nameZh": "自我再生",
-    "nameEn": "Recover"
+    "nameEn": "Recover",
+    "typeKey": "normal"
   },
   "harden": {
     "nameZh": "變硬",
-    "nameEn": "Harden"
+    "nameEn": "Harden",
+    "typeKey": "normal"
   },
   "minimize": {
     "nameZh": "變小",
-    "nameEn": "Minimize"
+    "nameEn": "Minimize",
+    "typeKey": "normal"
   },
   "smokescreen": {
     "nameZh": "煙幕",
-    "nameEn": "Smokescreen"
+    "nameEn": "Smokescreen",
+    "typeKey": "normal"
   },
   "confuse-ray": {
     "nameZh": "奇異之光",
-    "nameEn": "Confuse Ray"
+    "nameEn": "Confuse Ray",
+    "typeKey": "ghost"
   },
   "withdraw": {
     "nameZh": "縮入殼中",
-    "nameEn": "Withdraw"
+    "nameEn": "Withdraw",
+    "typeKey": "water"
   },
   "defense-curl": {
     "nameZh": "變圓",
-    "nameEn": "Defense Curl"
+    "nameEn": "Defense Curl",
+    "typeKey": "normal"
   },
   "barrier": {
     "nameZh": "屏障",
-    "nameEn": "Barrier"
+    "nameEn": "Barrier",
+    "typeKey": "psychic"
   },
   "light-screen": {
     "nameZh": "光牆",
-    "nameEn": "Light Screen"
+    "nameEn": "Light Screen",
+    "typeKey": "psychic"
   },
   "haze": {
     "nameZh": "黑霧",
-    "nameEn": "Haze"
+    "nameEn": "Haze",
+    "typeKey": "ice"
   },
   "reflect": {
     "nameZh": "反射壁",
-    "nameEn": "Reflect"
+    "nameEn": "Reflect",
+    "typeKey": "psychic"
   },
   "focus-energy": {
     "nameZh": "聚氣",
-    "nameEn": "Focus Energy"
+    "nameEn": "Focus Energy",
+    "typeKey": "normal"
   },
   "bide": {
     "nameZh": "忍耐",
-    "nameEn": "Bide"
+    "nameEn": "Bide",
+    "typeKey": "normal"
   },
   "metronome": {
     "nameZh": "揮指",
-    "nameEn": "Metronome"
+    "nameEn": "Metronome",
+    "typeKey": "normal"
   },
   "mirror-move": {
     "nameZh": "鸚鵡學舌",
-    "nameEn": "Mirror Move"
+    "nameEn": "Mirror Move",
+    "typeKey": "flying"
   },
   "self-destruct": {
     "nameZh": "自爆",
-    "nameEn": "Self-Destruct"
+    "nameEn": "Self-Destruct",
+    "typeKey": "normal"
   },
   "egg-bomb": {
     "nameZh": "炸蛋",
-    "nameEn": "Egg Bomb"
+    "nameEn": "Egg Bomb",
+    "typeKey": "normal"
   },
   "lick": {
     "nameZh": "舌舔",
-    "nameEn": "Lick"
+    "nameEn": "Lick",
+    "typeKey": "ghost"
   },
   "smog": {
     "nameZh": "濁霧",
-    "nameEn": "Smog"
+    "nameEn": "Smog",
+    "typeKey": "poison"
   },
   "sludge": {
     "nameZh": "污泥攻擊",
-    "nameEn": "Sludge"
+    "nameEn": "Sludge",
+    "typeKey": "poison"
   },
   "bone-club": {
     "nameZh": "骨棒",
-    "nameEn": "Bone Club"
+    "nameEn": "Bone Club",
+    "typeKey": "ground"
   },
   "fire-blast": {
     "nameZh": "大字爆炎",
-    "nameEn": "Fire Blast"
+    "nameEn": "Fire Blast",
+    "typeKey": "fire"
   },
   "waterfall": {
     "nameZh": "攀瀑",
-    "nameEn": "Waterfall"
+    "nameEn": "Waterfall",
+    "typeKey": "water"
   },
   "clamp": {
     "nameZh": "貝殼夾擊",
-    "nameEn": "Clamp"
+    "nameEn": "Clamp",
+    "typeKey": "water"
   },
   "swift": {
     "nameZh": "高速星星",
-    "nameEn": "Swift"
+    "nameEn": "Swift",
+    "typeKey": "normal"
   },
   "skull-bash": {
     "nameZh": "火箭頭錘",
-    "nameEn": "Skull Bash"
+    "nameEn": "Skull Bash",
+    "typeKey": "normal"
   },
   "spike-cannon": {
     "nameZh": "尖刺加農炮",
-    "nameEn": "Spike Cannon"
+    "nameEn": "Spike Cannon",
+    "typeKey": "normal"
   },
   "constrict": {
     "nameZh": "纏繞",
-    "nameEn": "Constrict"
+    "nameEn": "Constrict",
+    "typeKey": "normal"
   },
   "amnesia": {
     "nameZh": "瞬間失憶",
-    "nameEn": "Amnesia"
+    "nameEn": "Amnesia",
+    "typeKey": "psychic"
   },
   "kinesis": {
     "nameZh": "折彎湯匙",
-    "nameEn": "Kinesis"
+    "nameEn": "Kinesis",
+    "typeKey": "psychic"
   },
   "soft-boiled": {
     "nameZh": "生蛋",
-    "nameEn": "Soft-Boiled"
+    "nameEn": "Soft-Boiled",
+    "typeKey": "normal"
   },
   "high-jump-kick": {
     "nameZh": "飛膝踢",
-    "nameEn": "High Jump Kick"
+    "nameEn": "High Jump Kick",
+    "typeKey": "fighting"
   },
   "glare": {
     "nameZh": "大蛇瞪眼",
-    "nameEn": "Glare"
+    "nameEn": "Glare",
+    "typeKey": "normal"
   },
   "dream-eater": {
     "nameZh": "食夢",
-    "nameEn": "Dream Eater"
+    "nameEn": "Dream Eater",
+    "typeKey": "psychic"
   },
   "poison-gas": {
     "nameZh": "毒瓦斯",
-    "nameEn": "Poison Gas"
+    "nameEn": "Poison Gas",
+    "typeKey": "poison"
   },
   "barrage": {
     "nameZh": "投球",
-    "nameEn": "Barrage"
+    "nameEn": "Barrage",
+    "typeKey": "normal"
   },
   "leech-life": {
     "nameZh": "吸血",
-    "nameEn": "Leech Life"
+    "nameEn": "Leech Life",
+    "typeKey": "bug"
   },
   "lovely-kiss": {
     "nameZh": "惡魔之吻",
-    "nameEn": "Lovely Kiss"
+    "nameEn": "Lovely Kiss",
+    "typeKey": "normal"
   },
   "sky-attack": {
     "nameZh": "神鳥猛擊",
-    "nameEn": "Sky Attack"
+    "nameEn": "Sky Attack",
+    "typeKey": "flying"
   },
   "transform": {
     "nameZh": "變身",
-    "nameEn": "Transform"
+    "nameEn": "Transform",
+    "typeKey": "normal"
   },
   "bubble": {
     "nameZh": "泡沫",
-    "nameEn": "Bubble"
+    "nameEn": "Bubble",
+    "typeKey": "water"
   },
   "dizzy-punch": {
     "nameZh": "迷昏拳",
-    "nameEn": "Dizzy Punch"
+    "nameEn": "Dizzy Punch",
+    "typeKey": "normal"
   },
   "spore": {
     "nameZh": "蘑菇孢子",
-    "nameEn": "Spore"
+    "nameEn": "Spore",
+    "typeKey": "grass"
   },
   "flash": {
     "nameZh": "閃光",
-    "nameEn": "Flash"
+    "nameEn": "Flash",
+    "typeKey": "normal"
   },
   "psywave": {
     "nameZh": "精神波",
-    "nameEn": "Psywave"
+    "nameEn": "Psywave",
+    "typeKey": "psychic"
   },
   "splash": {
     "nameZh": "躍起",
-    "nameEn": "Splash"
+    "nameEn": "Splash",
+    "typeKey": "normal"
   },
   "acid-armor": {
     "nameZh": "溶化",
-    "nameEn": "Acid Armor"
+    "nameEn": "Acid Armor",
+    "typeKey": "poison"
   },
   "crabhammer": {
     "nameZh": "蟹鉗錘",
-    "nameEn": "Crabhammer"
+    "nameEn": "Crabhammer",
+    "typeKey": "water"
   },
   "explosion": {
     "nameZh": "大爆炸",
-    "nameEn": "Explosion"
+    "nameEn": "Explosion",
+    "typeKey": "normal"
   },
   "fury-swipes": {
     "nameZh": "亂抓",
-    "nameEn": "Fury Swipes"
+    "nameEn": "Fury Swipes",
+    "typeKey": "normal"
   },
   "bonemerang": {
     "nameZh": "骨頭回力鏢",
-    "nameEn": "Bonemerang"
+    "nameEn": "Bonemerang",
+    "typeKey": "ground"
   },
   "rest": {
     "nameZh": "睡覺",
-    "nameEn": "Rest"
+    "nameEn": "Rest",
+    "typeKey": "psychic"
   },
   "rock-slide": {
     "nameZh": "岩崩",
-    "nameEn": "Rock Slide"
+    "nameEn": "Rock Slide",
+    "typeKey": "rock"
   },
   "hyper-fang": {
     "nameZh": "必殺門牙",
-    "nameEn": "Hyper Fang"
+    "nameEn": "Hyper Fang",
+    "typeKey": "normal"
   },
   "sharpen": {
     "nameZh": "稜角化",
-    "nameEn": "Sharpen"
+    "nameEn": "Sharpen",
+    "typeKey": "normal"
   },
   "conversion": {
     "nameZh": "紋理",
-    "nameEn": "Conversion"
+    "nameEn": "Conversion",
+    "typeKey": "normal"
   },
   "tri-attack": {
     "nameZh": "三重攻擊",
-    "nameEn": "Tri Attack"
+    "nameEn": "Tri Attack",
+    "typeKey": "normal"
   },
   "super-fang": {
     "nameZh": "憤怒門牙",
-    "nameEn": "Super Fang"
+    "nameEn": "Super Fang",
+    "typeKey": "normal"
   },
   "slash": {
     "nameZh": "劈開",
-    "nameEn": "Slash"
+    "nameEn": "Slash",
+    "typeKey": "normal"
   },
   "substitute": {
     "nameZh": "替身",
-    "nameEn": "Substitute"
+    "nameEn": "Substitute",
+    "typeKey": "normal"
   },
   "struggle": {
     "nameZh": "掙扎",
-    "nameEn": "Struggle"
+    "nameEn": "Struggle",
+    "typeKey": "normal"
   },
   "sketch": {
     "nameZh": "寫生",
-    "nameEn": "Sketch"
+    "nameEn": "Sketch",
+    "typeKey": "normal"
   },
   "triple-kick": {
     "nameZh": "三連踢",
-    "nameEn": "Triple Kick"
+    "nameEn": "Triple Kick",
+    "typeKey": "fighting"
   },
   "thief": {
     "nameZh": "小偷",
-    "nameEn": "Thief"
+    "nameEn": "Thief",
+    "typeKey": "dark"
   },
   "spider-web": {
     "nameZh": "蛛網",
-    "nameEn": "Spider Web"
+    "nameEn": "Spider Web",
+    "typeKey": "bug"
   },
   "mind-reader": {
     "nameZh": "心之眼",
-    "nameEn": "Mind Reader"
+    "nameEn": "Mind Reader",
+    "typeKey": "normal"
   },
   "nightmare": {
     "nameZh": "惡夢",
-    "nameEn": "Nightmare"
+    "nameEn": "Nightmare",
+    "typeKey": "ghost"
   },
   "flame-wheel": {
     "nameZh": "火焰輪",
-    "nameEn": "Flame Wheel"
+    "nameEn": "Flame Wheel",
+    "typeKey": "fire"
   },
   "snore": {
     "nameZh": "打鼾",
-    "nameEn": "Snore"
+    "nameEn": "Snore",
+    "typeKey": "normal"
   },
   "curse": {
     "nameZh": "詛咒",
-    "nameEn": "Curse"
+    "nameEn": "Curse",
+    "typeKey": "ghost"
   },
   "flail": {
     "nameZh": "抓狂",
-    "nameEn": "Flail"
+    "nameEn": "Flail",
+    "typeKey": "normal"
   },
   "conversion-2": {
     "nameZh": "紋理２",
-    "nameEn": "Conversion 2"
+    "nameEn": "Conversion 2",
+    "typeKey": "normal"
   },
   "aeroblast": {
     "nameZh": "氣旋攻擊",
-    "nameEn": "Aeroblast"
+    "nameEn": "Aeroblast",
+    "typeKey": "flying"
   },
   "cotton-spore": {
     "nameZh": "棉孢子",
-    "nameEn": "Cotton Spore"
+    "nameEn": "Cotton Spore",
+    "typeKey": "grass"
   },
   "reversal": {
     "nameZh": "起死回生",
-    "nameEn": "Reversal"
+    "nameEn": "Reversal",
+    "typeKey": "fighting"
   },
   "spite": {
     "nameZh": "怨恨",
-    "nameEn": "Spite"
+    "nameEn": "Spite",
+    "typeKey": "ghost"
   },
   "powder-snow": {
     "nameZh": "細雪",
-    "nameEn": "Powder Snow"
+    "nameEn": "Powder Snow",
+    "typeKey": "ice"
   },
   "protect": {
     "nameZh": "守住",
-    "nameEn": "Protect"
+    "nameEn": "Protect",
+    "typeKey": "normal"
   },
   "mach-punch": {
     "nameZh": "音速拳",
-    "nameEn": "Mach Punch"
+    "nameEn": "Mach Punch",
+    "typeKey": "fighting"
   },
   "scary-face": {
     "nameZh": "鬼面",
-    "nameEn": "Scary Face"
+    "nameEn": "Scary Face",
+    "typeKey": "normal"
   },
   "feint-attack": {
     "nameZh": "出奇一擊",
-    "nameEn": "Feint Attack"
+    "nameEn": "Feint Attack",
+    "typeKey": "dark"
   },
   "sweet-kiss": {
     "nameZh": "天使之吻",
-    "nameEn": "Sweet Kiss"
+    "nameEn": "Sweet Kiss",
+    "typeKey": "fairy"
   },
   "belly-drum": {
     "nameZh": "腹鼓",
-    "nameEn": "Belly Drum"
+    "nameEn": "Belly Drum",
+    "typeKey": "normal"
   },
   "sludge-bomb": {
     "nameZh": "污泥炸彈",
-    "nameEn": "Sludge Bomb"
+    "nameEn": "Sludge Bomb",
+    "typeKey": "poison"
   },
   "mud-slap": {
     "nameZh": "擲泥",
-    "nameEn": "Mud-Slap"
+    "nameEn": "Mud-Slap",
+    "typeKey": "ground"
   },
   "octazooka": {
     "nameZh": "章魚桶炮",
-    "nameEn": "Octazooka"
+    "nameEn": "Octazooka",
+    "typeKey": "water"
   },
   "spikes": {
     "nameZh": "撒菱",
-    "nameEn": "Spikes"
+    "nameEn": "Spikes",
+    "typeKey": "ground"
   },
   "zap-cannon": {
     "nameZh": "電磁炮",
-    "nameEn": "Zap Cannon"
+    "nameEn": "Zap Cannon",
+    "typeKey": "electric"
   },
   "foresight": {
     "nameZh": "識破",
-    "nameEn": "Foresight"
+    "nameEn": "Foresight",
+    "typeKey": "normal"
   },
   "destiny-bond": {
     "nameZh": "同命",
-    "nameEn": "Destiny Bond"
+    "nameEn": "Destiny Bond",
+    "typeKey": "ghost"
   },
   "perish-song": {
     "nameZh": "滅亡之歌",
-    "nameEn": "Perish Song"
+    "nameEn": "Perish Song",
+    "typeKey": "normal"
   },
   "icy-wind": {
     "nameZh": "冰凍之風",
-    "nameEn": "Icy Wind"
+    "nameEn": "Icy Wind",
+    "typeKey": "ice"
   },
   "detect": {
     "nameZh": "看穿",
-    "nameEn": "Detect"
+    "nameEn": "Detect",
+    "typeKey": "fighting"
   },
   "bone-rush": {
     "nameZh": "骨棒亂打",
-    "nameEn": "Bone Rush"
+    "nameEn": "Bone Rush",
+    "typeKey": "ground"
   },
   "lock-on": {
     "nameZh": "鎖定",
-    "nameEn": "Lock-On"
+    "nameEn": "Lock-On",
+    "typeKey": "normal"
   },
   "outrage": {
     "nameZh": "逆鱗",
-    "nameEn": "Outrage"
+    "nameEn": "Outrage",
+    "typeKey": "dragon"
   },
   "sandstorm": {
     "nameZh": "沙暴",
-    "nameEn": "Sandstorm"
+    "nameEn": "Sandstorm",
+    "typeKey": "rock"
   },
   "giga-drain": {
     "nameZh": "終極吸取",
-    "nameEn": "Giga Drain"
+    "nameEn": "Giga Drain",
+    "typeKey": "grass"
   },
   "endure": {
     "nameZh": "挺住",
-    "nameEn": "Endure"
+    "nameEn": "Endure",
+    "typeKey": "normal"
   },
   "charm": {
     "nameZh": "撒嬌",
-    "nameEn": "Charm"
+    "nameEn": "Charm",
+    "typeKey": "fairy"
   },
   "rollout": {
     "nameZh": "滾動",
-    "nameEn": "Rollout"
+    "nameEn": "Rollout",
+    "typeKey": "rock"
   },
   "false-swipe": {
     "nameZh": "點到為止",
-    "nameEn": "False Swipe"
+    "nameEn": "False Swipe",
+    "typeKey": "normal"
   },
   "swagger": {
     "nameZh": "虛張聲勢",
-    "nameEn": "Swagger"
+    "nameEn": "Swagger",
+    "typeKey": "normal"
   },
   "milk-drink": {
     "nameZh": "喝牛奶",
-    "nameEn": "Milk Drink"
+    "nameEn": "Milk Drink",
+    "typeKey": "normal"
   },
   "spark": {
     "nameZh": "電光",
-    "nameEn": "Spark"
+    "nameEn": "Spark",
+    "typeKey": "electric"
   },
   "fury-cutter": {
     "nameZh": "連斬",
-    "nameEn": "Fury Cutter"
+    "nameEn": "Fury Cutter",
+    "typeKey": "bug"
   },
   "steel-wing": {
     "nameZh": "鋼翼",
-    "nameEn": "Steel Wing"
+    "nameEn": "Steel Wing",
+    "typeKey": "steel"
   },
   "mean-look": {
     "nameZh": "黑色目光",
-    "nameEn": "Mean Look"
+    "nameEn": "Mean Look",
+    "typeKey": "normal"
   },
   "attract": {
     "nameZh": "迷人",
-    "nameEn": "Attract"
+    "nameEn": "Attract",
+    "typeKey": "normal"
   },
   "sleep-talk": {
     "nameZh": "夢話",
-    "nameEn": "Sleep Talk"
+    "nameEn": "Sleep Talk",
+    "typeKey": "normal"
   },
   "heal-bell": {
     "nameZh": "治癒鈴聲",
-    "nameEn": "Heal Bell"
+    "nameEn": "Heal Bell",
+    "typeKey": "normal"
   },
   "return": {
     "nameZh": "報恩",
-    "nameEn": "Return"
+    "nameEn": "Return",
+    "typeKey": "normal"
   },
   "present": {
     "nameZh": "禮物",
-    "nameEn": "Present"
+    "nameEn": "Present",
+    "typeKey": "normal"
   },
   "frustration": {
     "nameZh": "遷怒",
-    "nameEn": "Frustration"
+    "nameEn": "Frustration",
+    "typeKey": "normal"
   },
   "safeguard": {
     "nameZh": "神秘守護",
-    "nameEn": "Safeguard"
+    "nameEn": "Safeguard",
+    "typeKey": "normal"
   },
   "pain-split": {
     "nameZh": "分擔痛楚",
-    "nameEn": "Pain Split"
+    "nameEn": "Pain Split",
+    "typeKey": "normal"
   },
   "sacred-fire": {
     "nameZh": "神聖之火",
-    "nameEn": "Sacred Fire"
+    "nameEn": "Sacred Fire",
+    "typeKey": "fire"
   },
   "magnitude": {
     "nameZh": "震級",
-    "nameEn": "Magnitude"
+    "nameEn": "Magnitude",
+    "typeKey": "ground"
   },
   "dynamic-punch": {
     "nameZh": "爆裂拳",
-    "nameEn": "Dynamic Punch"
+    "nameEn": "Dynamic Punch",
+    "typeKey": "fighting"
   },
   "megahorn": {
     "nameZh": "超級角擊",
-    "nameEn": "Megahorn"
+    "nameEn": "Megahorn",
+    "typeKey": "bug"
   },
   "dragon-breath": {
     "nameZh": "龍息",
-    "nameEn": "Dragon Breath"
+    "nameEn": "Dragon Breath",
+    "typeKey": "dragon"
   },
   "baton-pass": {
     "nameZh": "接棒",
-    "nameEn": "Baton Pass"
+    "nameEn": "Baton Pass",
+    "typeKey": "normal"
   },
   "encore": {
     "nameZh": "再來一次",
-    "nameEn": "Encore"
+    "nameEn": "Encore",
+    "typeKey": "normal"
   },
   "pursuit": {
     "nameZh": "追打",
-    "nameEn": "Pursuit"
+    "nameEn": "Pursuit",
+    "typeKey": "dark"
   },
   "rapid-spin": {
     "nameZh": "高速旋轉",
-    "nameEn": "Rapid Spin"
+    "nameEn": "Rapid Spin",
+    "typeKey": "normal"
   },
   "sweet-scent": {
     "nameZh": "甜甜香氣",
-    "nameEn": "Sweet Scent"
+    "nameEn": "Sweet Scent",
+    "typeKey": "normal"
   },
   "iron-tail": {
     "nameZh": "鐵尾",
-    "nameEn": "Iron Tail"
+    "nameEn": "Iron Tail",
+    "typeKey": "steel"
   },
   "metal-claw": {
     "nameZh": "金屬爪",
-    "nameEn": "Metal Claw"
+    "nameEn": "Metal Claw",
+    "typeKey": "steel"
   },
   "vital-throw": {
     "nameZh": "借力摔",
-    "nameEn": "Vital Throw"
+    "nameEn": "Vital Throw",
+    "typeKey": "fighting"
   },
   "morning-sun": {
     "nameZh": "晨光",
-    "nameEn": "Morning Sun"
+    "nameEn": "Morning Sun",
+    "typeKey": "normal"
   },
   "synthesis": {
     "nameZh": "光合作用",
-    "nameEn": "Synthesis"
+    "nameEn": "Synthesis",
+    "typeKey": "grass"
   },
   "moonlight": {
     "nameZh": "月光",
-    "nameEn": "Moonlight"
+    "nameEn": "Moonlight",
+    "typeKey": "fairy"
   },
   "hidden-power": {
     "nameZh": "覺醒力量",
-    "nameEn": "Hidden Power"
+    "nameEn": "Hidden Power",
+    "typeKey": "normal"
   },
   "cross-chop": {
     "nameZh": "十字劈",
-    "nameEn": "Cross Chop"
+    "nameEn": "Cross Chop",
+    "typeKey": "fighting"
   },
   "twister": {
     "nameZh": "龍捲風",
-    "nameEn": "Twister"
+    "nameEn": "Twister",
+    "typeKey": "dragon"
   },
   "rain-dance": {
     "nameZh": "求雨",
-    "nameEn": "Rain Dance"
+    "nameEn": "Rain Dance",
+    "typeKey": "water"
   },
   "sunny-day": {
     "nameZh": "大晴天",
-    "nameEn": "Sunny Day"
+    "nameEn": "Sunny Day",
+    "typeKey": "fire"
   },
   "crunch": {
     "nameZh": "咬碎",
-    "nameEn": "Crunch"
+    "nameEn": "Crunch",
+    "typeKey": "dark"
   },
   "mirror-coat": {
     "nameZh": "鏡面反射",
-    "nameEn": "Mirror Coat"
+    "nameEn": "Mirror Coat",
+    "typeKey": "psychic"
   },
   "psych-up": {
     "nameZh": "自我暗示",
-    "nameEn": "Psych Up"
+    "nameEn": "Psych Up",
+    "typeKey": "normal"
   },
   "extreme-speed": {
     "nameZh": "神速",
-    "nameEn": "Extreme Speed"
+    "nameEn": "Extreme Speed",
+    "typeKey": "normal"
   },
   "ancient-power": {
     "nameZh": "原始之力",
-    "nameEn": "Ancient Power"
+    "nameEn": "Ancient Power",
+    "typeKey": "rock"
   },
   "shadow-ball": {
     "nameZh": "暗影球",
-    "nameEn": "Shadow Ball"
+    "nameEn": "Shadow Ball",
+    "typeKey": "ghost"
   },
   "future-sight": {
     "nameZh": "預知未來",
-    "nameEn": "Future Sight"
+    "nameEn": "Future Sight",
+    "typeKey": "psychic"
   },
   "rock-smash": {
     "nameZh": "碎岩",
-    "nameEn": "Rock Smash"
+    "nameEn": "Rock Smash",
+    "typeKey": "fighting"
   },
   "whirlpool": {
     "nameZh": "潮旋",
-    "nameEn": "Whirlpool"
+    "nameEn": "Whirlpool",
+    "typeKey": "water"
   },
   "beat-up": {
     "nameZh": "圍攻",
-    "nameEn": "Beat Up"
+    "nameEn": "Beat Up",
+    "typeKey": "dark"
   },
   "fake-out": {
     "nameZh": "擊掌奇襲",
-    "nameEn": "Fake Out"
+    "nameEn": "Fake Out",
+    "typeKey": "normal"
   },
   "uproar": {
     "nameZh": "吵鬧",
-    "nameEn": "Uproar"
+    "nameEn": "Uproar",
+    "typeKey": "normal"
   },
   "stockpile": {
     "nameZh": "蓄力",
-    "nameEn": "Stockpile"
+    "nameEn": "Stockpile",
+    "typeKey": "normal"
   },
   "spit-up": {
     "nameZh": "噴出",
-    "nameEn": "Spit Up"
+    "nameEn": "Spit Up",
+    "typeKey": "normal"
   },
   "swallow": {
     "nameZh": "吞下",
-    "nameEn": "Swallow"
+    "nameEn": "Swallow",
+    "typeKey": "normal"
   },
   "heat-wave": {
     "nameZh": "熱風",
-    "nameEn": "Heat Wave"
+    "nameEn": "Heat Wave",
+    "typeKey": "fire"
   },
   "hail": {
     "nameZh": "冰雹",
-    "nameEn": "Hail"
+    "nameEn": "Hail",
+    "typeKey": "ice"
   },
   "torment": {
     "nameZh": "無理取鬧",
-    "nameEn": "Torment"
+    "nameEn": "Torment",
+    "typeKey": "dark"
   },
   "flatter": {
     "nameZh": "吹捧",
-    "nameEn": "Flatter"
+    "nameEn": "Flatter",
+    "typeKey": "dark"
   },
   "will-o-wisp": {
     "nameZh": "鬼火",
-    "nameEn": "Will-O-Wisp"
+    "nameEn": "Will-O-Wisp",
+    "typeKey": "fire"
   },
   "memento": {
     "nameZh": "臨別禮物",
-    "nameEn": "Memento"
+    "nameEn": "Memento",
+    "typeKey": "dark"
   },
   "facade": {
     "nameZh": "硬撐",
-    "nameEn": "Facade"
+    "nameEn": "Facade",
+    "typeKey": "normal"
   },
   "focus-punch": {
     "nameZh": "真氣拳",
-    "nameEn": "Focus Punch"
+    "nameEn": "Focus Punch",
+    "typeKey": "fighting"
   },
   "smelling-salts": {
     "nameZh": "清醒",
-    "nameEn": "Smelling Salts"
+    "nameEn": "Smelling Salts",
+    "typeKey": "normal"
   },
   "follow-me": {
     "nameZh": "看我嘛",
-    "nameEn": "Follow Me"
+    "nameEn": "Follow Me",
+    "typeKey": "normal"
   },
   "nature-power": {
     "nameZh": "自然之力",
-    "nameEn": "Nature Power"
+    "nameEn": "Nature Power",
+    "typeKey": "normal"
   },
   "charge": {
     "nameZh": "充電",
-    "nameEn": "Charge"
+    "nameEn": "Charge",
+    "typeKey": "electric"
   },
   "taunt": {
     "nameZh": "挑釁",
-    "nameEn": "Taunt"
+    "nameEn": "Taunt",
+    "typeKey": "dark"
   },
   "helping-hand": {
     "nameZh": "幫助",
-    "nameEn": "Helping Hand"
+    "nameEn": "Helping Hand",
+    "typeKey": "normal"
   },
   "trick": {
     "nameZh": "戲法",
-    "nameEn": "Trick"
+    "nameEn": "Trick",
+    "typeKey": "psychic"
   },
   "role-play": {
     "nameZh": "扮演",
-    "nameEn": "Role Play"
+    "nameEn": "Role Play",
+    "typeKey": "psychic"
   },
   "wish": {
     "nameZh": "祈願",
-    "nameEn": "Wish"
+    "nameEn": "Wish",
+    "typeKey": "normal"
   },
   "assist": {
     "nameZh": "藉助",
-    "nameEn": "Assist"
+    "nameEn": "Assist",
+    "typeKey": "normal"
   },
   "ingrain": {
     "nameZh": "扎根",
-    "nameEn": "Ingrain"
+    "nameEn": "Ingrain",
+    "typeKey": "grass"
   },
   "superpower": {
     "nameZh": "蠻力",
-    "nameEn": "Superpower"
+    "nameEn": "Superpower",
+    "typeKey": "fighting"
   },
   "magic-coat": {
     "nameZh": "魔法反射",
-    "nameEn": "Magic Coat"
+    "nameEn": "Magic Coat",
+    "typeKey": "psychic"
   },
   "recycle": {
     "nameZh": "回收利用",
-    "nameEn": "Recycle"
+    "nameEn": "Recycle",
+    "typeKey": "normal"
   },
   "revenge": {
     "nameZh": "報復",
-    "nameEn": "Revenge"
+    "nameEn": "Revenge",
+    "typeKey": "fighting"
   },
   "brick-break": {
     "nameZh": "劈瓦",
-    "nameEn": "Brick Break"
+    "nameEn": "Brick Break",
+    "typeKey": "fighting"
   },
   "yawn": {
     "nameZh": "哈欠",
-    "nameEn": "Yawn"
+    "nameEn": "Yawn",
+    "typeKey": "normal"
   },
   "knock-off": {
     "nameZh": "拍落",
-    "nameEn": "Knock Off"
+    "nameEn": "Knock Off",
+    "typeKey": "dark"
   },
   "endeavor": {
     "nameZh": "蠻幹",
-    "nameEn": "Endeavor"
+    "nameEn": "Endeavor",
+    "typeKey": "normal"
   },
   "eruption": {
     "nameZh": "噴火",
-    "nameEn": "Eruption"
+    "nameEn": "Eruption",
+    "typeKey": "fire"
   },
   "skill-swap": {
     "nameZh": "特性互換",
-    "nameEn": "Skill Swap"
+    "nameEn": "Skill Swap",
+    "typeKey": "psychic"
   },
   "imprison": {
     "nameZh": "封印",
-    "nameEn": "Imprison"
+    "nameEn": "Imprison",
+    "typeKey": "psychic"
   },
   "refresh": {
     "nameZh": "煥然一新",
-    "nameEn": "Refresh"
+    "nameEn": "Refresh",
+    "typeKey": "normal"
   },
   "grudge": {
     "nameZh": "怨念",
-    "nameEn": "Grudge"
+    "nameEn": "Grudge",
+    "typeKey": "ghost"
   },
   "snatch": {
     "nameZh": "搶奪",
-    "nameEn": "Snatch"
+    "nameEn": "Snatch",
+    "typeKey": "dark"
   },
   "secret-power": {
     "nameZh": "秘密之力",
-    "nameEn": "Secret Power"
+    "nameEn": "Secret Power",
+    "typeKey": "normal"
   },
   "dive": {
     "nameZh": "潛水",
-    "nameEn": "Dive"
+    "nameEn": "Dive",
+    "typeKey": "water"
   },
   "arm-thrust": {
     "nameZh": "猛推",
-    "nameEn": "Arm Thrust"
+    "nameEn": "Arm Thrust",
+    "typeKey": "fighting"
   },
   "camouflage": {
     "nameZh": "保護色",
-    "nameEn": "Camouflage"
+    "nameEn": "Camouflage",
+    "typeKey": "normal"
   },
   "tail-glow": {
     "nameZh": "螢火",
-    "nameEn": "Tail Glow"
+    "nameEn": "Tail Glow",
+    "typeKey": "bug"
   },
   "luster-purge": {
     "nameZh": "潔淨光芒",
-    "nameEn": "Luster Purge"
+    "nameEn": "Luster Purge",
+    "typeKey": "psychic"
   },
   "mist-ball": {
     "nameZh": "薄霧球",
-    "nameEn": "Mist Ball"
+    "nameEn": "Mist Ball",
+    "typeKey": "psychic"
   },
   "feather-dance": {
     "nameZh": "羽毛舞",
-    "nameEn": "Feather Dance"
+    "nameEn": "Feather Dance",
+    "typeKey": "flying"
   },
   "teeter-dance": {
     "nameZh": "搖晃舞",
-    "nameEn": "Teeter Dance"
+    "nameEn": "Teeter Dance",
+    "typeKey": "normal"
   },
   "blaze-kick": {
     "nameZh": "火焰踢",
-    "nameEn": "Blaze Kick"
+    "nameEn": "Blaze Kick",
+    "typeKey": "fire"
   },
   "mud-sport": {
     "nameZh": "玩泥巴",
-    "nameEn": "Mud Sport"
+    "nameEn": "Mud Sport",
+    "typeKey": "ground"
   },
   "ice-ball": {
     "nameZh": "冰球",
-    "nameEn": "Ice Ball"
+    "nameEn": "Ice Ball",
+    "typeKey": "ice"
   },
   "needle-arm": {
     "nameZh": "尖刺臂",
-    "nameEn": "Needle Arm"
+    "nameEn": "Needle Arm",
+    "typeKey": "grass"
   },
   "slack-off": {
     "nameZh": "偷懶",
-    "nameEn": "Slack Off"
+    "nameEn": "Slack Off",
+    "typeKey": "normal"
   },
   "hyper-voice": {
     "nameZh": "巨聲",
-    "nameEn": "Hyper Voice"
+    "nameEn": "Hyper Voice",
+    "typeKey": "normal"
   },
   "poison-fang": {
     "nameZh": "劇毒牙",
-    "nameEn": "Poison Fang"
+    "nameEn": "Poison Fang",
+    "typeKey": "poison"
   },
   "crush-claw": {
     "nameZh": "撕裂爪",
-    "nameEn": "Crush Claw"
+    "nameEn": "Crush Claw",
+    "typeKey": "normal"
   },
   "blast-burn": {
     "nameZh": "爆炸烈焰",
-    "nameEn": "Blast Burn"
+    "nameEn": "Blast Burn",
+    "typeKey": "fire"
   },
   "hydro-cannon": {
     "nameZh": "加農水炮",
-    "nameEn": "Hydro Cannon"
+    "nameEn": "Hydro Cannon",
+    "typeKey": "water"
   },
   "meteor-mash": {
     "nameZh": "彗星拳",
-    "nameEn": "Meteor Mash"
+    "nameEn": "Meteor Mash",
+    "typeKey": "steel"
   },
   "astonish": {
     "nameZh": "驚嚇",
-    "nameEn": "Astonish"
+    "nameEn": "Astonish",
+    "typeKey": "ghost"
   },
   "weather-ball": {
     "nameZh": "氣象球",
-    "nameEn": "Weather Ball"
+    "nameEn": "Weather Ball",
+    "typeKey": "normal"
   },
   "aromatherapy": {
     "nameZh": "芳香治療",
-    "nameEn": "Aromatherapy"
+    "nameEn": "Aromatherapy",
+    "typeKey": "grass"
   },
   "fake-tears": {
     "nameZh": "假哭",
-    "nameEn": "Fake Tears"
+    "nameEn": "Fake Tears",
+    "typeKey": "dark"
   },
   "air-cutter": {
     "nameZh": "空氣利刃",
-    "nameEn": "Air Cutter"
+    "nameEn": "Air Cutter",
+    "typeKey": "flying"
   },
   "overheat": {
     "nameZh": "過熱",
-    "nameEn": "Overheat"
+    "nameEn": "Overheat",
+    "typeKey": "fire"
   },
   "odor-sleuth": {
     "nameZh": "氣味偵測",
-    "nameEn": "Odor Sleuth"
+    "nameEn": "Odor Sleuth",
+    "typeKey": "normal"
   },
   "rock-tomb": {
     "nameZh": "岩石封鎖",
-    "nameEn": "Rock Tomb"
+    "nameEn": "Rock Tomb",
+    "typeKey": "rock"
   },
   "silver-wind": {
     "nameZh": "銀色旋風",
-    "nameEn": "Silver Wind"
+    "nameEn": "Silver Wind",
+    "typeKey": "bug"
   },
   "metal-sound": {
     "nameZh": "金屬音",
-    "nameEn": "Metal Sound"
+    "nameEn": "Metal Sound",
+    "typeKey": "steel"
   },
   "grass-whistle": {
     "nameZh": "草笛",
-    "nameEn": "Grass Whistle"
+    "nameEn": "Grass Whistle",
+    "typeKey": "grass"
   },
   "tickle": {
     "nameZh": "搔癢",
-    "nameEn": "Tickle"
+    "nameEn": "Tickle",
+    "typeKey": "normal"
   },
   "cosmic-power": {
     "nameZh": "宇宙力量",
-    "nameEn": "Cosmic Power"
+    "nameEn": "Cosmic Power",
+    "typeKey": "psychic"
   },
   "water-spout": {
     "nameZh": "噴水",
-    "nameEn": "Water Spout"
+    "nameEn": "Water Spout",
+    "typeKey": "water"
   },
   "signal-beam": {
     "nameZh": "信號光束",
-    "nameEn": "Signal Beam"
+    "nameEn": "Signal Beam",
+    "typeKey": "bug"
   },
   "shadow-punch": {
     "nameZh": "暗影拳",
-    "nameEn": "Shadow Punch"
+    "nameEn": "Shadow Punch",
+    "typeKey": "ghost"
   },
   "extrasensory": {
     "nameZh": "神通力",
-    "nameEn": "Extrasensory"
+    "nameEn": "Extrasensory",
+    "typeKey": "psychic"
   },
   "sky-uppercut": {
     "nameZh": "衝天拳",
-    "nameEn": "Sky Uppercut"
+    "nameEn": "Sky Uppercut",
+    "typeKey": "fighting"
   },
   "sand-tomb": {
     "nameZh": "流沙地獄",
-    "nameEn": "Sand Tomb"
+    "nameEn": "Sand Tomb",
+    "typeKey": "ground"
   },
   "sheer-cold": {
     "nameZh": "絕對零度",
-    "nameEn": "Sheer Cold"
+    "nameEn": "Sheer Cold",
+    "typeKey": "ice"
   },
   "muddy-water": {
     "nameZh": "濁流",
-    "nameEn": "Muddy Water"
+    "nameEn": "Muddy Water",
+    "typeKey": "water"
   },
   "bullet-seed": {
     "nameZh": "種子機關槍",
-    "nameEn": "Bullet Seed"
+    "nameEn": "Bullet Seed",
+    "typeKey": "grass"
   },
   "aerial-ace": {
     "nameZh": "燕返",
-    "nameEn": "Aerial Ace"
+    "nameEn": "Aerial Ace",
+    "typeKey": "flying"
   },
   "icicle-spear": {
     "nameZh": "冰錐",
-    "nameEn": "Icicle Spear"
+    "nameEn": "Icicle Spear",
+    "typeKey": "ice"
   },
   "iron-defense": {
     "nameZh": "鐵壁",
-    "nameEn": "Iron Defense"
+    "nameEn": "Iron Defense",
+    "typeKey": "steel"
   },
   "block": {
     "nameZh": "擋路",
-    "nameEn": "Block"
+    "nameEn": "Block",
+    "typeKey": "normal"
   },
   "howl": {
     "nameZh": "長嚎",
-    "nameEn": "Howl"
+    "nameEn": "Howl",
+    "typeKey": "normal"
   },
   "dragon-claw": {
     "nameZh": "龍爪",
-    "nameEn": "Dragon Claw"
+    "nameEn": "Dragon Claw",
+    "typeKey": "dragon"
   },
   "frenzy-plant": {
     "nameZh": "瘋狂植物",
-    "nameEn": "Frenzy Plant"
+    "nameEn": "Frenzy Plant",
+    "typeKey": "grass"
   },
   "bulk-up": {
     "nameZh": "健美",
-    "nameEn": "Bulk Up"
+    "nameEn": "Bulk Up",
+    "typeKey": "fighting"
   },
   "bounce": {
     "nameZh": "彈跳",
-    "nameEn": "Bounce"
+    "nameEn": "Bounce",
+    "typeKey": "flying"
   },
   "mud-shot": {
     "nameZh": "泥巴射擊",
-    "nameEn": "Mud Shot"
+    "nameEn": "Mud Shot",
+    "typeKey": "ground"
   },
   "poison-tail": {
     "nameZh": "毒尾",
-    "nameEn": "Poison Tail"
+    "nameEn": "Poison Tail",
+    "typeKey": "poison"
   },
   "covet": {
     "nameZh": "渴望",
-    "nameEn": "Covet"
+    "nameEn": "Covet",
+    "typeKey": "normal"
   },
   "volt-tackle": {
     "nameZh": "伏特攻擊",
-    "nameEn": "Volt Tackle"
+    "nameEn": "Volt Tackle",
+    "typeKey": "electric"
   },
   "magical-leaf": {
     "nameZh": "魔法葉",
-    "nameEn": "Magical Leaf"
+    "nameEn": "Magical Leaf",
+    "typeKey": "grass"
   },
   "water-sport": {
     "nameZh": "玩水",
-    "nameEn": "Water Sport"
+    "nameEn": "Water Sport",
+    "typeKey": "water"
   },
   "calm-mind": {
     "nameZh": "冥想",
-    "nameEn": "Calm Mind"
+    "nameEn": "Calm Mind",
+    "typeKey": "psychic"
   },
   "leaf-blade": {
     "nameZh": "葉刃",
-    "nameEn": "Leaf Blade"
+    "nameEn": "Leaf Blade",
+    "typeKey": "grass"
   },
   "dragon-dance": {
     "nameZh": "龍之舞",
-    "nameEn": "Dragon Dance"
+    "nameEn": "Dragon Dance",
+    "typeKey": "dragon"
   },
   "rock-blast": {
     "nameZh": "岩石爆擊",
-    "nameEn": "Rock Blast"
+    "nameEn": "Rock Blast",
+    "typeKey": "rock"
   },
   "shock-wave": {
     "nameZh": "電擊波",
-    "nameEn": "Shock Wave"
+    "nameEn": "Shock Wave",
+    "typeKey": "electric"
   },
   "water-pulse": {
     "nameZh": "水之波動",
-    "nameEn": "Water Pulse"
+    "nameEn": "Water Pulse",
+    "typeKey": "water"
   },
   "doom-desire": {
     "nameZh": "破滅之願",
-    "nameEn": "Doom Desire"
+    "nameEn": "Doom Desire",
+    "typeKey": "steel"
   },
   "psycho-boost": {
     "nameZh": "精神突進",
-    "nameEn": "Psycho Boost"
+    "nameEn": "Psycho Boost",
+    "typeKey": "psychic"
   },
   "roost": {
     "nameZh": "羽棲",
-    "nameEn": "Roost"
+    "nameEn": "Roost",
+    "typeKey": "flying"
   },
   "gravity": {
     "nameZh": "重力",
-    "nameEn": "Gravity"
+    "nameEn": "Gravity",
+    "typeKey": "psychic"
   },
   "miracle-eye": {
     "nameZh": "奇跡之眼",
-    "nameEn": "Miracle Eye"
+    "nameEn": "Miracle Eye",
+    "typeKey": "psychic"
   },
   "wake-up-slap": {
     "nameZh": "喚醒巴掌",
-    "nameEn": "Wake-Up Slap"
+    "nameEn": "Wake-Up Slap",
+    "typeKey": "fighting"
   },
   "hammer-arm": {
     "nameZh": "臂錘",
-    "nameEn": "Hammer Arm"
+    "nameEn": "Hammer Arm",
+    "typeKey": "fighting"
   },
   "gyro-ball": {
     "nameZh": "陀螺球",
-    "nameEn": "Gyro Ball"
+    "nameEn": "Gyro Ball",
+    "typeKey": "steel"
   },
   "healing-wish": {
     "nameZh": "治癒之願",
-    "nameEn": "Healing Wish"
+    "nameEn": "Healing Wish",
+    "typeKey": "psychic"
   },
   "brine": {
     "nameZh": "鹽水",
-    "nameEn": "Brine"
+    "nameEn": "Brine",
+    "typeKey": "water"
   },
   "natural-gift": {
     "nameZh": "自然之恩",
-    "nameEn": "Natural Gift"
+    "nameEn": "Natural Gift",
+    "typeKey": "normal"
   },
   "feint": {
     "nameZh": "佯攻",
-    "nameEn": "Feint"
+    "nameEn": "Feint",
+    "typeKey": "normal"
   },
   "pluck": {
     "nameZh": "啄食",
-    "nameEn": "Pluck"
+    "nameEn": "Pluck",
+    "typeKey": "flying"
   },
   "tailwind": {
     "nameZh": "順風",
-    "nameEn": "Tailwind"
+    "nameEn": "Tailwind",
+    "typeKey": "flying"
   },
   "acupressure": {
     "nameZh": "點穴",
-    "nameEn": "Acupressure"
+    "nameEn": "Acupressure",
+    "typeKey": "normal"
   },
   "metal-burst": {
     "nameZh": "金屬爆炸",
-    "nameEn": "Metal Burst"
+    "nameEn": "Metal Burst",
+    "typeKey": "steel"
   },
   "u-turn": {
     "nameZh": "急速折返",
-    "nameEn": "U-turn"
+    "nameEn": "U-turn",
+    "typeKey": "bug"
   },
   "close-combat": {
     "nameZh": "近身戰",
-    "nameEn": "Close Combat"
+    "nameEn": "Close Combat",
+    "typeKey": "fighting"
   },
   "payback": {
     "nameZh": "以牙還牙",
-    "nameEn": "Payback"
+    "nameEn": "Payback",
+    "typeKey": "dark"
   },
   "assurance": {
     "nameZh": "惡意追擊",
-    "nameEn": "Assurance"
+    "nameEn": "Assurance",
+    "typeKey": "dark"
   },
   "embargo": {
     "nameZh": "查封",
-    "nameEn": "Embargo"
+    "nameEn": "Embargo",
+    "typeKey": "dark"
   },
   "fling": {
     "nameZh": "投擲",
-    "nameEn": "Fling"
+    "nameEn": "Fling",
+    "typeKey": "dark"
   },
   "psycho-shift": {
     "nameZh": "精神轉移",
-    "nameEn": "Psycho Shift"
+    "nameEn": "Psycho Shift",
+    "typeKey": "psychic"
   },
   "trump-card": {
     "nameZh": "王牌",
-    "nameEn": "Trump Card"
+    "nameEn": "Trump Card",
+    "typeKey": "normal"
   },
   "heal-block": {
     "nameZh": "回復封鎖",
-    "nameEn": "Heal Block"
+    "nameEn": "Heal Block",
+    "typeKey": "psychic"
   },
   "wring-out": {
     "nameZh": "絞緊",
-    "nameEn": "Wring Out"
+    "nameEn": "Wring Out",
+    "typeKey": "normal"
   },
   "power-trick": {
     "nameZh": "力量戲法",
-    "nameEn": "Power Trick"
+    "nameEn": "Power Trick",
+    "typeKey": "psychic"
   },
   "gastro-acid": {
     "nameZh": "胃液",
-    "nameEn": "Gastro Acid"
+    "nameEn": "Gastro Acid",
+    "typeKey": "poison"
   },
   "lucky-chant": {
     "nameZh": "幸運咒語",
-    "nameEn": "Lucky Chant"
+    "nameEn": "Lucky Chant",
+    "typeKey": "normal"
   },
   "me-first": {
     "nameZh": "搶先一步",
-    "nameEn": "Me First"
+    "nameEn": "Me First",
+    "typeKey": "normal"
   },
   "copycat": {
     "nameZh": "仿效",
-    "nameEn": "Copycat"
+    "nameEn": "Copycat",
+    "typeKey": "normal"
   },
   "power-swap": {
     "nameZh": "力量互換",
-    "nameEn": "Power Swap"
+    "nameEn": "Power Swap",
+    "typeKey": "psychic"
   },
   "guard-swap": {
     "nameZh": "防守互換",
-    "nameEn": "Guard Swap"
+    "nameEn": "Guard Swap",
+    "typeKey": "psychic"
   },
   "punishment": {
     "nameZh": "懲罰",
-    "nameEn": "Punishment"
+    "nameEn": "Punishment",
+    "typeKey": "dark"
   },
   "last-resort": {
     "nameZh": "珍藏",
-    "nameEn": "Last Resort"
+    "nameEn": "Last Resort",
+    "typeKey": "normal"
   },
   "worry-seed": {
     "nameZh": "煩惱種子",
-    "nameEn": "Worry Seed"
+    "nameEn": "Worry Seed",
+    "typeKey": "grass"
   },
   "sucker-punch": {
     "nameZh": "突襲",
-    "nameEn": "Sucker Punch"
+    "nameEn": "Sucker Punch",
+    "typeKey": "dark"
   },
   "toxic-spikes": {
     "nameZh": "毒菱",
-    "nameEn": "Toxic Spikes"
+    "nameEn": "Toxic Spikes",
+    "typeKey": "poison"
   },
   "heart-swap": {
     "nameZh": "心靈互換",
-    "nameEn": "Heart Swap"
+    "nameEn": "Heart Swap",
+    "typeKey": "psychic"
   },
   "aqua-ring": {
     "nameZh": "水流環",
-    "nameEn": "Aqua Ring"
+    "nameEn": "Aqua Ring",
+    "typeKey": "water"
   },
   "magnet-rise": {
     "nameZh": "電磁飄浮",
-    "nameEn": "Magnet Rise"
+    "nameEn": "Magnet Rise",
+    "typeKey": "electric"
   },
   "flare-blitz": {
     "nameZh": "閃焰衝鋒",
-    "nameEn": "Flare Blitz"
+    "nameEn": "Flare Blitz",
+    "typeKey": "fire"
   },
   "force-palm": {
     "nameZh": "發勁",
-    "nameEn": "Force Palm"
+    "nameEn": "Force Palm",
+    "typeKey": "fighting"
   },
   "aura-sphere": {
     "nameZh": "波導彈",
-    "nameEn": "Aura Sphere"
+    "nameEn": "Aura Sphere",
+    "typeKey": "fighting"
   },
   "rock-polish": {
     "nameZh": "岩石打磨",
-    "nameEn": "Rock Polish"
+    "nameEn": "Rock Polish",
+    "typeKey": "rock"
   },
   "poison-jab": {
     "nameZh": "毒擊",
-    "nameEn": "Poison Jab"
+    "nameEn": "Poison Jab",
+    "typeKey": "poison"
   },
   "dark-pulse": {
     "nameZh": "惡之波動",
-    "nameEn": "Dark Pulse"
+    "nameEn": "Dark Pulse",
+    "typeKey": "dark"
   },
   "night-slash": {
     "nameZh": "暗襲要害",
-    "nameEn": "Night Slash"
+    "nameEn": "Night Slash",
+    "typeKey": "dark"
   },
   "aqua-tail": {
     "nameZh": "水流尾",
-    "nameEn": "Aqua Tail"
+    "nameEn": "Aqua Tail",
+    "typeKey": "water"
   },
   "seed-bomb": {
     "nameZh": "種子炸彈",
-    "nameEn": "Seed Bomb"
+    "nameEn": "Seed Bomb",
+    "typeKey": "grass"
   },
   "air-slash": {
     "nameZh": "空氣斬",
-    "nameEn": "Air Slash"
+    "nameEn": "Air Slash",
+    "typeKey": "flying"
   },
   "x-scissor": {
     "nameZh": "十字剪",
-    "nameEn": "X-Scissor"
+    "nameEn": "X-Scissor",
+    "typeKey": "bug"
   },
   "bug-buzz": {
     "nameZh": "蟲鳴",
-    "nameEn": "Bug Buzz"
+    "nameEn": "Bug Buzz",
+    "typeKey": "bug"
   },
   "dragon-pulse": {
     "nameZh": "龍之波動",
-    "nameEn": "Dragon Pulse"
+    "nameEn": "Dragon Pulse",
+    "typeKey": "dragon"
   },
   "dragon-rush": {
     "nameZh": "龍之俯衝",
-    "nameEn": "Dragon Rush"
+    "nameEn": "Dragon Rush",
+    "typeKey": "dragon"
   },
   "power-gem": {
     "nameZh": "力量寶石",
-    "nameEn": "Power Gem"
+    "nameEn": "Power Gem",
+    "typeKey": "rock"
   },
   "drain-punch": {
     "nameZh": "吸取拳",
-    "nameEn": "Drain Punch"
+    "nameEn": "Drain Punch",
+    "typeKey": "fighting"
   },
   "vacuum-wave": {
     "nameZh": "真空波",
-    "nameEn": "Vacuum Wave"
+    "nameEn": "Vacuum Wave",
+    "typeKey": "fighting"
   },
   "focus-blast": {
     "nameZh": "真氣彈",
-    "nameEn": "Focus Blast"
+    "nameEn": "Focus Blast",
+    "typeKey": "fighting"
   },
   "energy-ball": {
     "nameZh": "能量球",
-    "nameEn": "Energy Ball"
+    "nameEn": "Energy Ball",
+    "typeKey": "grass"
   },
   "brave-bird": {
     "nameZh": "勇鳥猛攻",
-    "nameEn": "Brave Bird"
+    "nameEn": "Brave Bird",
+    "typeKey": "flying"
   },
   "earth-power": {
     "nameZh": "大地之力",
-    "nameEn": "Earth Power"
+    "nameEn": "Earth Power",
+    "typeKey": "ground"
   },
   "switcheroo": {
     "nameZh": "掉包",
-    "nameEn": "Switcheroo"
+    "nameEn": "Switcheroo",
+    "typeKey": "dark"
   },
   "giga-impact": {
     "nameZh": "終極衝擊",
-    "nameEn": "Giga Impact"
+    "nameEn": "Giga Impact",
+    "typeKey": "normal"
   },
   "nasty-plot": {
     "nameZh": "詭計",
-    "nameEn": "Nasty Plot"
+    "nameEn": "Nasty Plot",
+    "typeKey": "dark"
   },
   "bullet-punch": {
     "nameZh": "子彈拳",
-    "nameEn": "Bullet Punch"
+    "nameEn": "Bullet Punch",
+    "typeKey": "steel"
   },
   "avalanche": {
     "nameZh": "雪崩",
-    "nameEn": "Avalanche"
+    "nameEn": "Avalanche",
+    "typeKey": "ice"
   },
   "ice-shard": {
     "nameZh": "冰礫",
-    "nameEn": "Ice Shard"
+    "nameEn": "Ice Shard",
+    "typeKey": "ice"
   },
   "shadow-claw": {
     "nameZh": "暗影爪",
-    "nameEn": "Shadow Claw"
+    "nameEn": "Shadow Claw",
+    "typeKey": "ghost"
   },
   "thunder-fang": {
     "nameZh": "雷電牙",
-    "nameEn": "Thunder Fang"
+    "nameEn": "Thunder Fang",
+    "typeKey": "electric"
   },
   "ice-fang": {
     "nameZh": "冰凍牙",
-    "nameEn": "Ice Fang"
+    "nameEn": "Ice Fang",
+    "typeKey": "ice"
   },
   "fire-fang": {
     "nameZh": "火焰牙",
-    "nameEn": "Fire Fang"
+    "nameEn": "Fire Fang",
+    "typeKey": "fire"
   },
   "shadow-sneak": {
     "nameZh": "影子偷襲",
-    "nameEn": "Shadow Sneak"
+    "nameEn": "Shadow Sneak",
+    "typeKey": "ghost"
   },
   "mud-bomb": {
     "nameZh": "泥巴炸彈",
-    "nameEn": "Mud Bomb"
+    "nameEn": "Mud Bomb",
+    "typeKey": "ground"
   },
   "psycho-cut": {
     "nameZh": "精神利刃",
-    "nameEn": "Psycho Cut"
+    "nameEn": "Psycho Cut",
+    "typeKey": "psychic"
   },
   "zen-headbutt": {
     "nameZh": "意念頭錘",
-    "nameEn": "Zen Headbutt"
+    "nameEn": "Zen Headbutt",
+    "typeKey": "psychic"
   },
   "mirror-shot": {
     "nameZh": "鏡光射擊",
-    "nameEn": "Mirror Shot"
+    "nameEn": "Mirror Shot",
+    "typeKey": "steel"
   },
   "flash-cannon": {
     "nameZh": "加農光炮",
-    "nameEn": "Flash Cannon"
+    "nameEn": "Flash Cannon",
+    "typeKey": "steel"
   },
   "rock-climb": {
     "nameZh": "攀岩",
-    "nameEn": "Rock Climb"
+    "nameEn": "Rock Climb",
+    "typeKey": "normal"
   },
   "defog": {
     "nameZh": "清除濃霧",
-    "nameEn": "Defog"
+    "nameEn": "Defog",
+    "typeKey": "flying"
   },
   "trick-room": {
     "nameZh": "戲法空間",
-    "nameEn": "Trick Room"
+    "nameEn": "Trick Room",
+    "typeKey": "psychic"
   },
   "draco-meteor": {
     "nameZh": "流星群",
-    "nameEn": "Draco Meteor"
+    "nameEn": "Draco Meteor",
+    "typeKey": "dragon"
   },
   "discharge": {
     "nameZh": "放電",
-    "nameEn": "Discharge"
+    "nameEn": "Discharge",
+    "typeKey": "electric"
   },
   "lava-plume": {
     "nameZh": "噴煙",
-    "nameEn": "Lava Plume"
+    "nameEn": "Lava Plume",
+    "typeKey": "fire"
   },
   "leaf-storm": {
     "nameZh": "飛葉風暴",
-    "nameEn": "Leaf Storm"
+    "nameEn": "Leaf Storm",
+    "typeKey": "grass"
   },
   "power-whip": {
     "nameZh": "強力鞭打",
-    "nameEn": "Power Whip"
+    "nameEn": "Power Whip",
+    "typeKey": "grass"
   },
   "rock-wrecker": {
     "nameZh": "岩石炮",
-    "nameEn": "Rock Wrecker"
+    "nameEn": "Rock Wrecker",
+    "typeKey": "rock"
   },
   "cross-poison": {
     "nameZh": "十字毒刃",
-    "nameEn": "Cross Poison"
+    "nameEn": "Cross Poison",
+    "typeKey": "poison"
   },
   "gunk-shot": {
     "nameZh": "垃圾射擊",
-    "nameEn": "Gunk Shot"
+    "nameEn": "Gunk Shot",
+    "typeKey": "poison"
   },
   "iron-head": {
     "nameZh": "鐵頭",
-    "nameEn": "Iron Head"
+    "nameEn": "Iron Head",
+    "typeKey": "steel"
   },
   "magnet-bomb": {
     "nameZh": "磁鐵炸彈",
-    "nameEn": "Magnet Bomb"
+    "nameEn": "Magnet Bomb",
+    "typeKey": "steel"
   },
   "stone-edge": {
     "nameZh": "尖石攻擊",
-    "nameEn": "Stone Edge"
+    "nameEn": "Stone Edge",
+    "typeKey": "rock"
   },
   "captivate": {
     "nameZh": "誘惑",
-    "nameEn": "Captivate"
+    "nameEn": "Captivate",
+    "typeKey": "normal"
   },
   "stealth-rock": {
     "nameZh": "隱形岩",
-    "nameEn": "Stealth Rock"
+    "nameEn": "Stealth Rock",
+    "typeKey": "rock"
   },
   "grass-knot": {
     "nameZh": "打草結",
-    "nameEn": "Grass Knot"
+    "nameEn": "Grass Knot",
+    "typeKey": "grass"
   },
   "chatter": {
     "nameZh": "喋喋不休",
-    "nameEn": "Chatter"
+    "nameEn": "Chatter",
+    "typeKey": "flying"
   },
   "judgment": {
     "nameZh": "制裁光礫",
-    "nameEn": "Judgment"
+    "nameEn": "Judgment",
+    "typeKey": "normal"
   },
   "bug-bite": {
     "nameZh": "蟲咬",
-    "nameEn": "Bug Bite"
+    "nameEn": "Bug Bite",
+    "typeKey": "bug"
   },
   "charge-beam": {
     "nameZh": "充電光束",
-    "nameEn": "Charge Beam"
+    "nameEn": "Charge Beam",
+    "typeKey": "electric"
   },
   "wood-hammer": {
     "nameZh": "木槌",
-    "nameEn": "Wood Hammer"
+    "nameEn": "Wood Hammer",
+    "typeKey": "grass"
   },
   "aqua-jet": {
     "nameZh": "水流噴射",
-    "nameEn": "Aqua Jet"
+    "nameEn": "Aqua Jet",
+    "typeKey": "water"
   },
   "attack-order": {
     "nameZh": "攻擊指令",
-    "nameEn": "Attack Order"
+    "nameEn": "Attack Order",
+    "typeKey": "bug"
   },
   "defend-order": {
     "nameZh": "防禦指令",
-    "nameEn": "Defend Order"
+    "nameEn": "Defend Order",
+    "typeKey": "bug"
   },
   "heal-order": {
     "nameZh": "回復指令",
-    "nameEn": "Heal Order"
+    "nameEn": "Heal Order",
+    "typeKey": "bug"
   },
   "head-smash": {
     "nameZh": "雙刃頭錘",
-    "nameEn": "Head Smash"
+    "nameEn": "Head Smash",
+    "typeKey": "rock"
   },
   "double-hit": {
     "nameZh": "二連擊",
-    "nameEn": "Double Hit"
+    "nameEn": "Double Hit",
+    "typeKey": "normal"
   },
   "roar-of-time": {
     "nameZh": "時光咆哮",
-    "nameEn": "Roar of Time"
+    "nameEn": "Roar of Time",
+    "typeKey": "dragon"
   },
   "spacial-rend": {
     "nameZh": "亞空裂斬",
-    "nameEn": "Spacial Rend"
+    "nameEn": "Spacial Rend",
+    "typeKey": "dragon"
   },
   "lunar-dance": {
     "nameZh": "新月舞",
-    "nameEn": "Lunar Dance"
+    "nameEn": "Lunar Dance",
+    "typeKey": "psychic"
   },
   "crush-grip": {
     "nameZh": "捏碎",
-    "nameEn": "Crush Grip"
+    "nameEn": "Crush Grip",
+    "typeKey": "normal"
   },
   "magma-storm": {
     "nameZh": "熔岩風暴",
-    "nameEn": "Magma Storm"
+    "nameEn": "Magma Storm",
+    "typeKey": "fire"
   },
   "dark-void": {
     "nameZh": "暗黑洞",
-    "nameEn": "Dark Void"
+    "nameEn": "Dark Void",
+    "typeKey": "dark"
   },
   "seed-flare": {
     "nameZh": "種子閃光",
-    "nameEn": "Seed Flare"
+    "nameEn": "Seed Flare",
+    "typeKey": "grass"
   },
   "ominous-wind": {
     "nameZh": "奇異之風",
-    "nameEn": "Ominous Wind"
+    "nameEn": "Ominous Wind",
+    "typeKey": "ghost"
   },
   "shadow-force": {
     "nameZh": "暗影潛襲",
-    "nameEn": "Shadow Force"
+    "nameEn": "Shadow Force",
+    "typeKey": "ghost"
   },
   "hone-claws": {
     "nameZh": "磨爪",
-    "nameEn": "Hone Claws"
+    "nameEn": "Hone Claws",
+    "typeKey": "dark"
   },
   "wide-guard": {
     "nameZh": "廣域防守",
-    "nameEn": "Wide Guard"
+    "nameEn": "Wide Guard",
+    "typeKey": "rock"
   },
   "guard-split": {
     "nameZh": "防守平分",
-    "nameEn": "Guard Split"
+    "nameEn": "Guard Split",
+    "typeKey": "psychic"
   },
   "power-split": {
     "nameZh": "力量平分",
-    "nameEn": "Power Split"
+    "nameEn": "Power Split",
+    "typeKey": "psychic"
   },
   "wonder-room": {
     "nameZh": "奇妙空間",
-    "nameEn": "Wonder Room"
+    "nameEn": "Wonder Room",
+    "typeKey": "psychic"
   },
   "psyshock": {
     "nameZh": "精神衝擊",
-    "nameEn": "Psyshock"
+    "nameEn": "Psyshock",
+    "typeKey": "psychic"
   },
   "venoshock": {
     "nameZh": "毒液衝擊",
-    "nameEn": "Venoshock"
+    "nameEn": "Venoshock",
+    "typeKey": "poison"
   },
   "autotomize": {
     "nameZh": "身體輕量化",
-    "nameEn": "Autotomize"
+    "nameEn": "Autotomize",
+    "typeKey": "steel"
   },
   "rage-powder": {
     "nameZh": "憤怒粉",
-    "nameEn": "Rage Powder"
+    "nameEn": "Rage Powder",
+    "typeKey": "bug"
   },
   "telekinesis": {
     "nameZh": "意念移物",
-    "nameEn": "Telekinesis"
+    "nameEn": "Telekinesis",
+    "typeKey": "psychic"
   },
   "magic-room": {
     "nameZh": "魔法空間",
-    "nameEn": "Magic Room"
+    "nameEn": "Magic Room",
+    "typeKey": "psychic"
   },
   "smack-down": {
     "nameZh": "擊落",
-    "nameEn": "Smack Down"
+    "nameEn": "Smack Down",
+    "typeKey": "rock"
   },
   "storm-throw": {
     "nameZh": "山嵐摔",
-    "nameEn": "Storm Throw"
+    "nameEn": "Storm Throw",
+    "typeKey": "fighting"
   },
   "flame-burst": {
     "nameZh": "烈焰濺射",
-    "nameEn": "Flame Burst"
+    "nameEn": "Flame Burst",
+    "typeKey": "fire"
   },
   "sludge-wave": {
     "nameZh": "污泥波",
-    "nameEn": "Sludge Wave"
+    "nameEn": "Sludge Wave",
+    "typeKey": "poison"
   },
   "quiver-dance": {
     "nameZh": "蝶舞",
-    "nameEn": "Quiver Dance"
+    "nameEn": "Quiver Dance",
+    "typeKey": "bug"
   },
   "heavy-slam": {
     "nameZh": "重磅衝撞",
-    "nameEn": "Heavy Slam"
+    "nameEn": "Heavy Slam",
+    "typeKey": "steel"
   },
   "synchronoise": {
     "nameZh": "同步干擾",
-    "nameEn": "Synchronoise"
+    "nameEn": "Synchronoise",
+    "typeKey": "psychic"
   },
   "electro-ball": {
     "nameZh": "電球",
-    "nameEn": "Electro Ball"
+    "nameEn": "Electro Ball",
+    "typeKey": "electric"
   },
   "soak": {
     "nameZh": "浸水",
-    "nameEn": "Soak"
+    "nameEn": "Soak",
+    "typeKey": "water"
   },
   "flame-charge": {
     "nameZh": "蓄能焰襲",
-    "nameEn": "Flame Charge"
+    "nameEn": "Flame Charge",
+    "typeKey": "fire"
   },
   "coil": {
     "nameZh": "盤蜷",
-    "nameEn": "Coil"
+    "nameEn": "Coil",
+    "typeKey": "poison"
   },
   "low-sweep": {
     "nameZh": "下盤踢",
-    "nameEn": "Low Sweep"
+    "nameEn": "Low Sweep",
+    "typeKey": "fighting"
   },
   "acid-spray": {
     "nameZh": "酸液炸彈",
-    "nameEn": "Acid Spray"
+    "nameEn": "Acid Spray",
+    "typeKey": "poison"
   },
   "foul-play": {
     "nameZh": "欺詐",
-    "nameEn": "Foul Play"
+    "nameEn": "Foul Play",
+    "typeKey": "dark"
   },
   "simple-beam": {
     "nameZh": "單純光束",
-    "nameEn": "Simple Beam"
+    "nameEn": "Simple Beam",
+    "typeKey": "normal"
   },
   "entrainment": {
     "nameZh": "找夥伴",
-    "nameEn": "Entrainment"
+    "nameEn": "Entrainment",
+    "typeKey": "normal"
   },
   "after-you": {
     "nameZh": "您先請",
-    "nameEn": "After You"
+    "nameEn": "After You",
+    "typeKey": "normal"
   },
   "round": {
     "nameZh": "輪唱",
-    "nameEn": "Round"
+    "nameEn": "Round",
+    "typeKey": "normal"
   },
   "echoed-voice": {
     "nameZh": "迴聲",
-    "nameEn": "Echoed Voice"
+    "nameEn": "Echoed Voice",
+    "typeKey": "normal"
   },
   "chip-away": {
     "nameZh": "逐步擊破",
-    "nameEn": "Chip Away"
+    "nameEn": "Chip Away",
+    "typeKey": "normal"
   },
   "clear-smog": {
     "nameZh": "清除之煙",
-    "nameEn": "Clear Smog"
+    "nameEn": "Clear Smog",
+    "typeKey": "poison"
   },
   "stored-power": {
     "nameZh": "輔助力量",
-    "nameEn": "Stored Power"
+    "nameEn": "Stored Power",
+    "typeKey": "psychic"
   },
   "quick-guard": {
     "nameZh": "快速防守",
-    "nameEn": "Quick Guard"
+    "nameEn": "Quick Guard",
+    "typeKey": "fighting"
   },
   "ally-switch": {
     "nameZh": "交換場地",
-    "nameEn": "Ally Switch"
+    "nameEn": "Ally Switch",
+    "typeKey": "psychic"
   },
   "scald": {
     "nameZh": "熱水",
-    "nameEn": "Scald"
+    "nameEn": "Scald",
+    "typeKey": "water"
   },
   "shell-smash": {
     "nameZh": "破殼",
-    "nameEn": "Shell Smash"
+    "nameEn": "Shell Smash",
+    "typeKey": "normal"
   },
   "heal-pulse": {
     "nameZh": "治癒波動",
-    "nameEn": "Heal Pulse"
+    "nameEn": "Heal Pulse",
+    "typeKey": "psychic"
   },
   "hex": {
     "nameZh": "禍不單行",
-    "nameEn": "Hex"
+    "nameEn": "Hex",
+    "typeKey": "ghost"
   },
   "sky-drop": {
     "nameZh": "自由落體",
-    "nameEn": "Sky Drop"
+    "nameEn": "Sky Drop",
+    "typeKey": "flying"
   },
   "shift-gear": {
     "nameZh": "換檔",
-    "nameEn": "Shift Gear"
+    "nameEn": "Shift Gear",
+    "typeKey": "steel"
   },
   "circle-throw": {
     "nameZh": "巴投",
-    "nameEn": "Circle Throw"
+    "nameEn": "Circle Throw",
+    "typeKey": "fighting"
   },
   "incinerate": {
     "nameZh": "燒盡",
-    "nameEn": "Incinerate"
+    "nameEn": "Incinerate",
+    "typeKey": "fire"
   },
   "quash": {
     "nameZh": "延後",
-    "nameEn": "Quash"
+    "nameEn": "Quash",
+    "typeKey": "dark"
   },
   "acrobatics": {
     "nameZh": "雜技",
-    "nameEn": "Acrobatics"
+    "nameEn": "Acrobatics",
+    "typeKey": "flying"
   },
   "reflect-type": {
     "nameZh": "鏡面屬性",
-    "nameEn": "Reflect Type"
+    "nameEn": "Reflect Type",
+    "typeKey": "normal"
   },
   "retaliate": {
     "nameZh": "報仇",
-    "nameEn": "Retaliate"
+    "nameEn": "Retaliate",
+    "typeKey": "normal"
   },
   "final-gambit": {
     "nameZh": "搏命",
-    "nameEn": "Final Gambit"
+    "nameEn": "Final Gambit",
+    "typeKey": "fighting"
   },
   "bestow": {
     "nameZh": "傳遞禮物",
-    "nameEn": "Bestow"
+    "nameEn": "Bestow",
+    "typeKey": "normal"
   },
   "inferno": {
     "nameZh": "煉獄",
-    "nameEn": "Inferno"
+    "nameEn": "Inferno",
+    "typeKey": "fire"
   },
   "water-pledge": {
     "nameZh": "水之誓約",
-    "nameEn": "Water Pledge"
+    "nameEn": "Water Pledge",
+    "typeKey": "water"
   },
   "fire-pledge": {
     "nameZh": "火之誓約",
-    "nameEn": "Fire Pledge"
+    "nameEn": "Fire Pledge",
+    "typeKey": "fire"
   },
   "grass-pledge": {
     "nameZh": "草之誓約",
-    "nameEn": "Grass Pledge"
+    "nameEn": "Grass Pledge",
+    "typeKey": "grass"
   },
   "volt-switch": {
     "nameZh": "伏特替換",
-    "nameEn": "Volt Switch"
+    "nameEn": "Volt Switch",
+    "typeKey": "electric"
   },
   "struggle-bug": {
     "nameZh": "蟲之抵抗",
-    "nameEn": "Struggle Bug"
+    "nameEn": "Struggle Bug",
+    "typeKey": "bug"
   },
   "bulldoze": {
     "nameZh": "重踏",
-    "nameEn": "Bulldoze"
+    "nameEn": "Bulldoze",
+    "typeKey": "ground"
   },
   "frost-breath": {
     "nameZh": "冰息",
-    "nameEn": "Frost Breath"
+    "nameEn": "Frost Breath",
+    "typeKey": "ice"
   },
   "dragon-tail": {
     "nameZh": "龍尾",
-    "nameEn": "Dragon Tail"
+    "nameEn": "Dragon Tail",
+    "typeKey": "dragon"
   },
   "work-up": {
     "nameZh": "自我激勵",
-    "nameEn": "Work Up"
+    "nameEn": "Work Up",
+    "typeKey": "normal"
   },
   "electroweb": {
     "nameZh": "電網",
-    "nameEn": "Electroweb"
+    "nameEn": "Electroweb",
+    "typeKey": "electric"
   },
   "wild-charge": {
     "nameZh": "瘋狂伏特",
-    "nameEn": "Wild Charge"
+    "nameEn": "Wild Charge",
+    "typeKey": "electric"
   },
   "drill-run": {
     "nameZh": "直衝鑽",
-    "nameEn": "Drill Run"
+    "nameEn": "Drill Run",
+    "typeKey": "ground"
   },
   "dual-chop": {
     "nameZh": "二連劈",
-    "nameEn": "Dual Chop"
+    "nameEn": "Dual Chop",
+    "typeKey": "dragon"
   },
   "heart-stamp": {
     "nameZh": "愛心印章",
-    "nameEn": "Heart Stamp"
+    "nameEn": "Heart Stamp",
+    "typeKey": "psychic"
   },
   "horn-leech": {
     "nameZh": "木角",
-    "nameEn": "Horn Leech"
+    "nameEn": "Horn Leech",
+    "typeKey": "grass"
   },
   "sacred-sword": {
     "nameZh": "聖劍",
-    "nameEn": "Sacred Sword"
+    "nameEn": "Sacred Sword",
+    "typeKey": "fighting"
   },
   "razor-shell": {
     "nameZh": "貝殼刃",
-    "nameEn": "Razor Shell"
+    "nameEn": "Razor Shell",
+    "typeKey": "water"
   },
   "heat-crash": {
     "nameZh": "高溫重壓",
-    "nameEn": "Heat Crash"
+    "nameEn": "Heat Crash",
+    "typeKey": "fire"
   },
   "leaf-tornado": {
     "nameZh": "青草攪拌器",
-    "nameEn": "Leaf Tornado"
+    "nameEn": "Leaf Tornado",
+    "typeKey": "grass"
   },
   "steamroller": {
     "nameZh": "瘋狂滾壓",
-    "nameEn": "Steamroller"
+    "nameEn": "Steamroller",
+    "typeKey": "bug"
   },
   "cotton-guard": {
     "nameZh": "棉花防守",
-    "nameEn": "Cotton Guard"
+    "nameEn": "Cotton Guard",
+    "typeKey": "grass"
   },
   "night-daze": {
     "nameZh": "暗黑爆破",
-    "nameEn": "Night Daze"
+    "nameEn": "Night Daze",
+    "typeKey": "dark"
   },
   "psystrike": {
     "nameZh": "精神擊破",
-    "nameEn": "Psystrike"
+    "nameEn": "Psystrike",
+    "typeKey": "psychic"
   },
   "tail-slap": {
     "nameZh": "掃尾拍打",
-    "nameEn": "Tail Slap"
+    "nameEn": "Tail Slap",
+    "typeKey": "normal"
   },
   "hurricane": {
     "nameZh": "暴風",
-    "nameEn": "Hurricane"
+    "nameEn": "Hurricane",
+    "typeKey": "flying"
   },
   "head-charge": {
     "nameZh": "爆炸頭突擊",
-    "nameEn": "Head Charge"
+    "nameEn": "Head Charge",
+    "typeKey": "normal"
   },
   "gear-grind": {
     "nameZh": "齒輪飛盤",
-    "nameEn": "Gear Grind"
+    "nameEn": "Gear Grind",
+    "typeKey": "steel"
   },
   "searing-shot": {
     "nameZh": "火焰彈",
-    "nameEn": "Searing Shot"
+    "nameEn": "Searing Shot",
+    "typeKey": "fire"
   },
   "techno-blast": {
     "nameZh": "高科技光炮",
-    "nameEn": "Techno Blast"
+    "nameEn": "Techno Blast",
+    "typeKey": "normal"
   },
   "relic-song": {
     "nameZh": "古老之歌",
-    "nameEn": "Relic Song"
+    "nameEn": "Relic Song",
+    "typeKey": "normal"
   },
   "secret-sword": {
     "nameZh": "神秘之劍",
-    "nameEn": "Secret Sword"
+    "nameEn": "Secret Sword",
+    "typeKey": "fighting"
   },
   "glaciate": {
     "nameZh": "冰封世界",
-    "nameEn": "Glaciate"
+    "nameEn": "Glaciate",
+    "typeKey": "ice"
   },
   "bolt-strike": {
     "nameZh": "雷擊",
-    "nameEn": "Bolt Strike"
+    "nameEn": "Bolt Strike",
+    "typeKey": "electric"
   },
   "blue-flare": {
     "nameZh": "青焰",
-    "nameEn": "Blue Flare"
+    "nameEn": "Blue Flare",
+    "typeKey": "fire"
   },
   "fiery-dance": {
     "nameZh": "火之舞",
-    "nameEn": "Fiery Dance"
+    "nameEn": "Fiery Dance",
+    "typeKey": "fire"
   },
   "freeze-shock": {
     "nameZh": "冰凍伏特",
-    "nameEn": "Freeze Shock"
+    "nameEn": "Freeze Shock",
+    "typeKey": "ice"
   },
   "ice-burn": {
     "nameZh": "極寒冷焰",
-    "nameEn": "Ice Burn"
+    "nameEn": "Ice Burn",
+    "typeKey": "ice"
   },
   "snarl": {
     "nameZh": "大聲咆哮",
-    "nameEn": "Snarl"
+    "nameEn": "Snarl",
+    "typeKey": "dark"
   },
   "icicle-crash": {
     "nameZh": "冰柱墜擊",
-    "nameEn": "Icicle Crash"
+    "nameEn": "Icicle Crash",
+    "typeKey": "ice"
   },
   "v-create": {
     "nameZh": "Ｖ熱焰",
-    "nameEn": "V-create"
+    "nameEn": "V-create",
+    "typeKey": "fire"
   },
   "fusion-flare": {
     "nameZh": "交錯火焰",
-    "nameEn": "Fusion Flare"
+    "nameEn": "Fusion Flare",
+    "typeKey": "fire"
   },
   "fusion-bolt": {
     "nameZh": "交錯閃電",
-    "nameEn": "Fusion Bolt"
+    "nameEn": "Fusion Bolt",
+    "typeKey": "electric"
   },
   "flying-press": {
     "nameZh": "飛身重壓",
-    "nameEn": "Flying Press"
+    "nameEn": "Flying Press",
+    "typeKey": "fighting"
   },
   "mat-block": {
     "nameZh": "掀榻榻米",
-    "nameEn": "Mat Block"
+    "nameEn": "Mat Block",
+    "typeKey": "fighting"
   },
   "belch": {
     "nameZh": "打嗝",
-    "nameEn": "Belch"
+    "nameEn": "Belch",
+    "typeKey": "poison"
   },
   "rototiller": {
     "nameZh": "耕地",
-    "nameEn": "Rototiller"
+    "nameEn": "Rototiller",
+    "typeKey": "ground"
   },
   "sticky-web": {
     "nameZh": "黏黏網",
-    "nameEn": "Sticky Web"
+    "nameEn": "Sticky Web",
+    "typeKey": "bug"
   },
   "fell-stinger": {
     "nameZh": "致命針刺",
-    "nameEn": "Fell Stinger"
+    "nameEn": "Fell Stinger",
+    "typeKey": "bug"
   },
   "phantom-force": {
     "nameZh": "潛靈奇襲",
-    "nameEn": "Phantom Force"
+    "nameEn": "Phantom Force",
+    "typeKey": "ghost"
   },
   "trick-or-treat": {
     "nameZh": "萬聖夜",
-    "nameEn": "Trick-or-Treat"
+    "nameEn": "Trick-or-Treat",
+    "typeKey": "ghost"
   },
   "noble-roar": {
     "nameZh": "戰吼",
-    "nameEn": "Noble Roar"
+    "nameEn": "Noble Roar",
+    "typeKey": "normal"
   },
   "ion-deluge": {
     "nameZh": "等離子浴",
-    "nameEn": "Ion Deluge"
+    "nameEn": "Ion Deluge",
+    "typeKey": "electric"
   },
   "parabolic-charge": {
     "nameZh": "拋物面充電",
-    "nameEn": "Parabolic Charge"
+    "nameEn": "Parabolic Charge",
+    "typeKey": "electric"
   },
   "forests-curse": {
     "nameZh": "森林詛咒",
-    "nameEn": "Forest's Curse"
+    "nameEn": "Forest's Curse",
+    "typeKey": "grass"
   },
   "petal-blizzard": {
     "nameZh": "落英繽紛",
-    "nameEn": "Petal Blizzard"
+    "nameEn": "Petal Blizzard",
+    "typeKey": "grass"
   },
   "freeze-dry": {
     "nameZh": "冷凍乾燥",
-    "nameEn": "Freeze-Dry"
+    "nameEn": "Freeze-Dry",
+    "typeKey": "ice"
   },
   "disarming-voice": {
     "nameZh": "魅惑之聲",
-    "nameEn": "Disarming Voice"
+    "nameEn": "Disarming Voice",
+    "typeKey": "fairy"
   },
   "parting-shot": {
     "nameZh": "拋下狠話",
-    "nameEn": "Parting Shot"
+    "nameEn": "Parting Shot",
+    "typeKey": "dark"
   },
   "topsy-turvy": {
     "nameZh": "顛倒",
-    "nameEn": "Topsy-Turvy"
+    "nameEn": "Topsy-Turvy",
+    "typeKey": "dark"
   },
   "draining-kiss": {
     "nameZh": "吸取之吻",
-    "nameEn": "Draining Kiss"
+    "nameEn": "Draining Kiss",
+    "typeKey": "fairy"
   },
   "crafty-shield": {
     "nameZh": "戲法防守",
-    "nameEn": "Crafty Shield"
+    "nameEn": "Crafty Shield",
+    "typeKey": "fairy"
   },
   "flower-shield": {
     "nameZh": "鮮花防守",
-    "nameEn": "Flower Shield"
+    "nameEn": "Flower Shield",
+    "typeKey": "fairy"
   },
   "grassy-terrain": {
     "nameZh": "青草場地",
-    "nameEn": "Grassy Terrain"
+    "nameEn": "Grassy Terrain",
+    "typeKey": "grass"
   },
   "misty-terrain": {
     "nameZh": "薄霧場地",
-    "nameEn": "Misty Terrain"
+    "nameEn": "Misty Terrain",
+    "typeKey": "fairy"
   },
   "electrify": {
     "nameZh": "輸電",
-    "nameEn": "Electrify"
+    "nameEn": "Electrify",
+    "typeKey": "electric"
   },
   "play-rough": {
     "nameZh": "嬉鬧",
-    "nameEn": "Play Rough"
+    "nameEn": "Play Rough",
+    "typeKey": "fairy"
   },
   "fairy-wind": {
     "nameZh": "妖精之風",
-    "nameEn": "Fairy Wind"
+    "nameEn": "Fairy Wind",
+    "typeKey": "fairy"
   },
   "moonblast": {
     "nameZh": "月亮之力",
-    "nameEn": "Moonblast"
+    "nameEn": "Moonblast",
+    "typeKey": "fairy"
   },
   "boomburst": {
     "nameZh": "爆音波",
-    "nameEn": "Boomburst"
+    "nameEn": "Boomburst",
+    "typeKey": "normal"
   },
   "fairy-lock": {
     "nameZh": "妖精之鎖",
-    "nameEn": "Fairy Lock"
+    "nameEn": "Fairy Lock",
+    "typeKey": "fairy"
   },
   "kings-shield": {
     "nameZh": "王者盾牌",
-    "nameEn": "King's Shield"
+    "nameEn": "King's Shield",
+    "typeKey": "steel"
   },
   "play-nice": {
     "nameZh": "和睦相處",
-    "nameEn": "Play Nice"
+    "nameEn": "Play Nice",
+    "typeKey": "normal"
   },
   "confide": {
     "nameZh": "密語",
-    "nameEn": "Confide"
+    "nameEn": "Confide",
+    "typeKey": "normal"
   },
   "diamond-storm": {
     "nameZh": "鑽石風暴",
-    "nameEn": "Diamond Storm"
+    "nameEn": "Diamond Storm",
+    "typeKey": "rock"
   },
   "steam-eruption": {
     "nameZh": "蒸汽爆炸",
-    "nameEn": "Steam Eruption"
+    "nameEn": "Steam Eruption",
+    "typeKey": "water"
   },
   "hyperspace-hole": {
     "nameZh": "異次元洞",
-    "nameEn": "Hyperspace Hole"
+    "nameEn": "Hyperspace Hole",
+    "typeKey": "psychic"
   },
   "water-shuriken": {
     "nameZh": "飛水手裡劍",
-    "nameEn": "Water Shuriken"
+    "nameEn": "Water Shuriken",
+    "typeKey": "water"
   },
   "mystical-fire": {
     "nameZh": "魔法火焰",
-    "nameEn": "Mystical Fire"
+    "nameEn": "Mystical Fire",
+    "typeKey": "fire"
   },
   "spiky-shield": {
     "nameZh": "尖刺防守",
-    "nameEn": "Spiky Shield"
+    "nameEn": "Spiky Shield",
+    "typeKey": "grass"
   },
   "aromatic-mist": {
     "nameZh": "芳香薄霧",
-    "nameEn": "Aromatic Mist"
+    "nameEn": "Aromatic Mist",
+    "typeKey": "fairy"
   },
   "eerie-impulse": {
     "nameZh": "怪異電波",
-    "nameEn": "Eerie Impulse"
+    "nameEn": "Eerie Impulse",
+    "typeKey": "electric"
   },
   "venom-drench": {
     "nameZh": "毒液陷阱",
-    "nameEn": "Venom Drench"
+    "nameEn": "Venom Drench",
+    "typeKey": "poison"
   },
   "powder": {
     "nameZh": "粉塵",
-    "nameEn": "Powder"
+    "nameEn": "Powder",
+    "typeKey": "bug"
   },
   "geomancy": {
     "nameZh": "大地掌控",
-    "nameEn": "Geomancy"
+    "nameEn": "Geomancy",
+    "typeKey": "fairy"
   },
   "magnetic-flux": {
     "nameZh": "磁場操控",
-    "nameEn": "Magnetic Flux"
+    "nameEn": "Magnetic Flux",
+    "typeKey": "electric"
   },
   "happy-hour": {
     "nameZh": "歡樂時光",
-    "nameEn": "Happy Hour"
+    "nameEn": "Happy Hour",
+    "typeKey": "normal"
   },
   "electric-terrain": {
     "nameZh": "電氣場地",
-    "nameEn": "Electric Terrain"
+    "nameEn": "Electric Terrain",
+    "typeKey": "electric"
   },
   "dazzling-gleam": {
     "nameZh": "魔法閃耀",
-    "nameEn": "Dazzling Gleam"
+    "nameEn": "Dazzling Gleam",
+    "typeKey": "fairy"
   },
   "celebrate": {
     "nameZh": "慶祝",
-    "nameEn": "Celebrate"
+    "nameEn": "Celebrate",
+    "typeKey": "normal"
   },
   "hold-hands": {
     "nameZh": "牽手",
-    "nameEn": "Hold Hands"
+    "nameEn": "Hold Hands",
+    "typeKey": "normal"
   },
   "baby-doll-eyes": {
     "nameZh": "圓瞳",
-    "nameEn": "Baby-Doll Eyes"
+    "nameEn": "Baby-Doll Eyes",
+    "typeKey": "fairy"
   },
   "nuzzle": {
     "nameZh": "蹭蹭臉頰",
-    "nameEn": "Nuzzle"
+    "nameEn": "Nuzzle",
+    "typeKey": "electric"
   },
   "hold-back": {
     "nameZh": "手下留情",
-    "nameEn": "Hold Back"
+    "nameEn": "Hold Back",
+    "typeKey": "normal"
   },
   "infestation": {
     "nameZh": "死纏爛打",
-    "nameEn": "Infestation"
+    "nameEn": "Infestation",
+    "typeKey": "bug"
   },
   "power-up-punch": {
     "nameZh": "增強拳",
-    "nameEn": "Power-Up Punch"
+    "nameEn": "Power-Up Punch",
+    "typeKey": "fighting"
   },
   "oblivion-wing": {
     "nameZh": "死亡之翼",
-    "nameEn": "Oblivion Wing"
+    "nameEn": "Oblivion Wing",
+    "typeKey": "flying"
   },
   "thousand-arrows": {
     "nameZh": "千箭齊發",
-    "nameEn": "Thousand Arrows"
+    "nameEn": "Thousand Arrows",
+    "typeKey": "ground"
   },
   "thousand-waves": {
     "nameZh": "千波激盪",
-    "nameEn": "Thousand Waves"
+    "nameEn": "Thousand Waves",
+    "typeKey": "ground"
   },
   "lands-wrath": {
     "nameZh": "大地神力",
-    "nameEn": "Land's Wrath"
+    "nameEn": "Land's Wrath",
+    "typeKey": "ground"
   },
   "light-of-ruin": {
     "nameZh": "破滅之光",
-    "nameEn": "Light of Ruin"
+    "nameEn": "Light of Ruin",
+    "typeKey": "fairy"
   },
   "origin-pulse": {
     "nameZh": "根源波動",
-    "nameEn": "Origin Pulse"
+    "nameEn": "Origin Pulse",
+    "typeKey": "water"
   },
   "precipice-blades": {
     "nameZh": "斷崖之劍",
-    "nameEn": "Precipice Blades"
+    "nameEn": "Precipice Blades",
+    "typeKey": "ground"
   },
   "dragon-ascent": {
     "nameZh": "畫龍點睛",
-    "nameEn": "Dragon Ascent"
+    "nameEn": "Dragon Ascent",
+    "typeKey": "flying"
   },
   "hyperspace-fury": {
     "nameZh": "異次元猛攻",
-    "nameEn": "Hyperspace Fury"
+    "nameEn": "Hyperspace Fury",
+    "typeKey": "dark"
   },
   "breakneck-blitz": {
     "nameZh": "一般Ｚ究極無敵大衝撞",
-    "nameEn": "Breakneck Blitz"
+    "nameEn": "Breakneck Blitz",
+    "typeKey": "normal"
   },
   "all-out-pummeling": {
     "nameZh": "格鬥Ｚ全力無雙激烈拳",
-    "nameEn": "All-Out Pummeling"
+    "nameEn": "All-Out Pummeling",
+    "typeKey": "fighting"
   },
   "supersonic-skystrike": {
     "nameZh": "飛行Ｚ極速俯衝轟烈撞",
-    "nameEn": "Supersonic Skystrike"
+    "nameEn": "Supersonic Skystrike",
+    "typeKey": "flying"
   },
   "acid-downpour": {
     "nameZh": "毒Ｚ強酸劇毒滅絕雨",
-    "nameEn": "Acid Downpour"
+    "nameEn": "Acid Downpour",
+    "typeKey": "poison"
   },
   "tectonic-rage": {
     "nameZh": "地面Ｚ地隆嘯天大終結",
-    "nameEn": "Tectonic Rage"
+    "nameEn": "Tectonic Rage",
+    "typeKey": "ground"
   },
   "continental-crush": {
     "nameZh": "岩石Ｚ毀天滅地巨岩墜",
-    "nameEn": "Continental Crush"
+    "nameEn": "Continental Crush",
+    "typeKey": "rock"
   },
   "savage-spin-out": {
     "nameZh": "蟲Ｚ絕對捕食迴旋斬",
-    "nameEn": "Savage Spin-Out"
+    "nameEn": "Savage Spin-Out",
+    "typeKey": "bug"
   },
   "never-ending-nightmare": {
     "nameZh": "幽靈Ｚ無盡暗夜之誘惑",
-    "nameEn": "Never-Ending Nightmare"
+    "nameEn": "Never-Ending Nightmare",
+    "typeKey": "ghost"
   },
   "corkscrew-crash": {
     "nameZh": "鋼Ｚ超絕螺旋連擊",
-    "nameEn": "Corkscrew Crash"
+    "nameEn": "Corkscrew Crash",
+    "typeKey": "steel"
   },
   "inferno-overdrive": {
     "nameZh": "火Ｚ超強極限爆焰彈",
-    "nameEn": "Inferno Overdrive"
+    "nameEn": "Inferno Overdrive",
+    "typeKey": "fire"
   },
   "hydro-vortex": {
     "nameZh": "水Ｚ超級水流大漩渦",
-    "nameEn": "Hydro Vortex"
+    "nameEn": "Hydro Vortex",
+    "typeKey": "water"
   },
   "bloom-doom": {
     "nameZh": "草Ｚ絢爛繽紛花怒放",
-    "nameEn": "Bloom Doom"
+    "nameEn": "Bloom Doom",
+    "typeKey": "grass"
   },
   "gigavolt-havoc": {
     "nameZh": "電Ｚ終極伏特狂雷閃",
-    "nameEn": "Gigavolt Havoc"
+    "nameEn": "Gigavolt Havoc",
+    "typeKey": "electric"
   },
   "shattered-psyche": {
     "nameZh": "超能力Ｚ至高精神破壞波",
-    "nameEn": "Shattered Psyche"
+    "nameEn": "Shattered Psyche",
+    "typeKey": "psychic"
   },
   "subzero-slammer": {
     "nameZh": "冰Ｚ激狂大地萬里冰",
-    "nameEn": "Subzero Slammer"
+    "nameEn": "Subzero Slammer",
+    "typeKey": "ice"
   },
   "devastating-drake": {
     "nameZh": "龍Ｚ究極巨龍震天地",
-    "nameEn": "Devastating Drake"
+    "nameEn": "Devastating Drake",
+    "typeKey": "dragon"
   },
   "black-hole-eclipse": {
     "nameZh": "惡Ｚ黑洞吞噬萬物滅",
-    "nameEn": "Black Hole Eclipse"
+    "nameEn": "Black Hole Eclipse",
+    "typeKey": "dark"
   },
   "twinkle-tackle": {
     "nameZh": "妖精Ｚ可愛星星飛天撞",
-    "nameEn": "Twinkle Tackle"
+    "nameEn": "Twinkle Tackle",
+    "typeKey": "fairy"
   },
   "catastropika": {
     "nameZh": "皮卡丘Ｚ皮卡皮卡必殺擊",
-    "nameEn": "Catastropika"
+    "nameEn": "Catastropika",
+    "typeKey": "electric"
   },
   "shore-up": {
     "nameZh": "集沙",
-    "nameEn": "Shore Up"
+    "nameEn": "Shore Up",
+    "typeKey": "ground"
   },
   "first-impression": {
     "nameZh": "迎頭一擊",
-    "nameEn": "First Impression"
+    "nameEn": "First Impression",
+    "typeKey": "bug"
   },
   "baneful-bunker": {
     "nameZh": "碉堡",
-    "nameEn": "Baneful Bunker"
+    "nameEn": "Baneful Bunker",
+    "typeKey": "poison"
   },
   "spirit-shackle": {
     "nameZh": "縫影",
-    "nameEn": "Spirit Shackle"
+    "nameEn": "Spirit Shackle",
+    "typeKey": "ghost"
   },
   "darkest-lariat": {
     "nameZh": "ＤＤ金勾臂",
-    "nameEn": "Darkest Lariat"
+    "nameEn": "Darkest Lariat",
+    "typeKey": "dark"
   },
   "sparkling-aria": {
     "nameZh": "泡影的詠歎調",
-    "nameEn": "Sparkling Aria"
+    "nameEn": "Sparkling Aria",
+    "typeKey": "water"
   },
   "ice-hammer": {
     "nameZh": "冰錘",
-    "nameEn": "Ice Hammer"
+    "nameEn": "Ice Hammer",
+    "typeKey": "ice"
   },
   "floral-healing": {
     "nameZh": "花療",
-    "nameEn": "Floral Healing"
+    "nameEn": "Floral Healing",
+    "typeKey": "fairy"
   },
   "high-horsepower": {
     "nameZh": "十萬馬力",
-    "nameEn": "High Horsepower"
+    "nameEn": "High Horsepower",
+    "typeKey": "ground"
   },
   "strength-sap": {
     "nameZh": "吸取力量",
-    "nameEn": "Strength Sap"
+    "nameEn": "Strength Sap",
+    "typeKey": "grass"
   },
   "solar-blade": {
     "nameZh": "日光刃",
-    "nameEn": "Solar Blade"
+    "nameEn": "Solar Blade",
+    "typeKey": "grass"
   },
   "leafage": {
     "nameZh": "樹葉",
-    "nameEn": "Leafage"
+    "nameEn": "Leafage",
+    "typeKey": "grass"
   },
   "spotlight": {
     "nameZh": "聚光燈",
-    "nameEn": "Spotlight"
+    "nameEn": "Spotlight",
+    "typeKey": "normal"
   },
   "toxic-thread": {
     "nameZh": "毒絲",
-    "nameEn": "Toxic Thread"
+    "nameEn": "Toxic Thread",
+    "typeKey": "poison"
   },
   "laser-focus": {
     "nameZh": "磨礪",
-    "nameEn": "Laser Focus"
+    "nameEn": "Laser Focus",
+    "typeKey": "normal"
   },
   "gear-up": {
     "nameZh": "輔助齒輪",
-    "nameEn": "Gear Up"
+    "nameEn": "Gear Up",
+    "typeKey": "steel"
   },
   "throat-chop": {
     "nameZh": "地獄突刺",
-    "nameEn": "Throat Chop"
+    "nameEn": "Throat Chop",
+    "typeKey": "dark"
   },
   "pollen-puff": {
     "nameZh": "花粉團",
-    "nameEn": "Pollen Puff"
+    "nameEn": "Pollen Puff",
+    "typeKey": "bug"
   },
   "anchor-shot": {
     "nameZh": "擲錨",
-    "nameEn": "Anchor Shot"
+    "nameEn": "Anchor Shot",
+    "typeKey": "steel"
   },
   "psychic-terrain": {
     "nameZh": "精神場地",
-    "nameEn": "Psychic Terrain"
+    "nameEn": "Psychic Terrain",
+    "typeKey": "psychic"
   },
   "lunge": {
     "nameZh": "猛撲",
-    "nameEn": "Lunge"
+    "nameEn": "Lunge",
+    "typeKey": "bug"
   },
   "fire-lash": {
     "nameZh": "火焰鞭",
-    "nameEn": "Fire Lash"
+    "nameEn": "Fire Lash",
+    "typeKey": "fire"
   },
   "power-trip": {
     "nameZh": "囂張",
-    "nameEn": "Power Trip"
+    "nameEn": "Power Trip",
+    "typeKey": "dark"
   },
   "burn-up": {
     "nameZh": "燃盡",
-    "nameEn": "Burn Up"
+    "nameEn": "Burn Up",
+    "typeKey": "fire"
   },
   "speed-swap": {
     "nameZh": "速度互換",
-    "nameEn": "Speed Swap"
+    "nameEn": "Speed Swap",
+    "typeKey": "psychic"
   },
   "smart-strike": {
     "nameZh": "修長之角",
-    "nameEn": "Smart Strike"
+    "nameEn": "Smart Strike",
+    "typeKey": "steel"
   },
   "purify": {
     "nameZh": "淨化",
-    "nameEn": "Purify"
+    "nameEn": "Purify",
+    "typeKey": "poison"
   },
   "revelation-dance": {
     "nameZh": "覺醒之舞",
-    "nameEn": "Revelation Dance"
+    "nameEn": "Revelation Dance",
+    "typeKey": "normal"
   },
   "core-enforcer": {
     "nameZh": "核心懲罰者",
-    "nameEn": "Core Enforcer"
+    "nameEn": "Core Enforcer",
+    "typeKey": "dragon"
   },
   "trop-kick": {
     "nameZh": "熱帶踢",
-    "nameEn": "Trop Kick"
+    "nameEn": "Trop Kick",
+    "typeKey": "grass"
   },
   "instruct": {
     "nameZh": "號令",
-    "nameEn": "Instruct"
+    "nameEn": "Instruct",
+    "typeKey": "psychic"
   },
   "beak-blast": {
     "nameZh": "鳥嘴加農炮",
-    "nameEn": "Beak Blast"
+    "nameEn": "Beak Blast",
+    "typeKey": "flying"
   },
   "clanging-scales": {
     "nameZh": "鱗片噪音",
-    "nameEn": "Clanging Scales"
+    "nameEn": "Clanging Scales",
+    "typeKey": "dragon"
   },
   "dragon-hammer": {
     "nameZh": "龍錘",
-    "nameEn": "Dragon Hammer"
+    "nameEn": "Dragon Hammer",
+    "typeKey": "dragon"
   },
   "brutal-swing": {
     "nameZh": "狂舞揮打",
-    "nameEn": "Brutal Swing"
+    "nameEn": "Brutal Swing",
+    "typeKey": "dark"
   },
   "aurora-veil": {
     "nameZh": "極光幕",
-    "nameEn": "Aurora Veil"
+    "nameEn": "Aurora Veil",
+    "typeKey": "ice"
   },
   "sinister-arrow-raid": {
     "nameZh": "狙射樹梟Ｚ遮天蔽日暗影箭",
-    "nameEn": "Sinister Arrow Raid"
+    "nameEn": "Sinister Arrow Raid",
+    "typeKey": "ghost"
   },
   "malicious-moonsault": {
     "nameZh": "熾焰咆哮虎Ｚ極惡飛躍粉碎擊",
-    "nameEn": "Malicious Moonsault"
+    "nameEn": "Malicious Moonsault",
+    "typeKey": "dark"
   },
   "oceanic-operetta": {
     "nameZh": "西獅海壬Ｚ海神莊嚴交響樂",
-    "nameEn": "Oceanic Operetta"
+    "nameEn": "Oceanic Operetta",
+    "typeKey": "water"
   },
   "guardian-of-alola": {
     "nameZh": "卡璞Ｚ巨人衛士・阿羅拉",
-    "nameEn": "Guardian of Alola"
+    "nameEn": "Guardian of Alola",
+    "typeKey": "fairy"
   },
   "soul-stealing-7-star-strike": {
     "nameZh": "瑪夏多Ｚ七星奪魂腿",
-    "nameEn": "Soul-Stealing 7-Star Strike"
+    "nameEn": "Soul-Stealing 7-Star Strike",
+    "typeKey": "ghost"
   },
   "stoked-sparksurfer": {
     "nameZh": "阿羅雷Ｚ駕雷馭電戲衝浪",
-    "nameEn": "Stoked Sparksurfer"
+    "nameEn": "Stoked Sparksurfer",
+    "typeKey": "electric"
   },
   "pulverizing-pancake": {
     "nameZh": "卡比獸Ｚ認真起來大爆擊",
-    "nameEn": "Pulverizing Pancake"
+    "nameEn": "Pulverizing Pancake",
+    "typeKey": "normal"
   },
   "extreme-evoboost": {
     "nameZh": "伊布Ｚ九彩昇華齊聚頂",
-    "nameEn": "Extreme Evoboost"
+    "nameEn": "Extreme Evoboost",
+    "typeKey": "normal"
   },
   "genesis-supernova": {
     "nameZh": "夢幻Ｚ起源超新星大爆炸",
-    "nameEn": "Genesis Supernova"
+    "nameEn": "Genesis Supernova",
+    "typeKey": "psychic"
   },
   "shell-trap": {
     "nameZh": "陷阱甲殼",
-    "nameEn": "Shell Trap"
+    "nameEn": "Shell Trap",
+    "typeKey": "fire"
   },
   "fleur-cannon": {
     "nameZh": "花朵加農炮",
-    "nameEn": "Fleur Cannon"
+    "nameEn": "Fleur Cannon",
+    "typeKey": "fairy"
   },
   "psychic-fangs": {
     "nameZh": "精神之牙",
-    "nameEn": "Psychic Fangs"
+    "nameEn": "Psychic Fangs",
+    "typeKey": "psychic"
   },
   "stomping-tantrum": {
     "nameZh": "跺腳",
-    "nameEn": "Stomping Tantrum"
+    "nameEn": "Stomping Tantrum",
+    "typeKey": "ground"
   },
   "shadow-bone": {
     "nameZh": "暗影之骨",
-    "nameEn": "Shadow Bone"
+    "nameEn": "Shadow Bone",
+    "typeKey": "ghost"
   },
   "accelerock": {
     "nameZh": "衝岩",
-    "nameEn": "Accelerock"
+    "nameEn": "Accelerock",
+    "typeKey": "rock"
   },
   "liquidation": {
     "nameZh": "水流裂破",
-    "nameEn": "Liquidation"
+    "nameEn": "Liquidation",
+    "typeKey": "water"
   },
   "prismatic-laser": {
     "nameZh": "稜鏡鐳射",
-    "nameEn": "Prismatic Laser"
+    "nameEn": "Prismatic Laser",
+    "typeKey": "psychic"
   },
   "spectral-thief": {
     "nameZh": "暗影偷盜",
-    "nameEn": "Spectral Thief"
+    "nameEn": "Spectral Thief",
+    "typeKey": "ghost"
   },
   "sunsteel-strike": {
     "nameZh": "流星閃衝",
-    "nameEn": "Sunsteel Strike"
+    "nameEn": "Sunsteel Strike",
+    "typeKey": "steel"
   },
   "moongeist-beam": {
     "nameZh": "暗影之光",
-    "nameEn": "Moongeist Beam"
+    "nameEn": "Moongeist Beam",
+    "typeKey": "ghost"
   },
   "tearful-look": {
     "nameZh": "淚眼汪汪",
-    "nameEn": "Tearful Look"
+    "nameEn": "Tearful Look",
+    "typeKey": "normal"
   },
   "zing-zap": {
     "nameZh": "麻麻刺刺",
-    "nameEn": "Zing Zap"
+    "nameEn": "Zing Zap",
+    "typeKey": "electric"
   },
   "natures-madness": {
     "nameZh": "自然之怒",
-    "nameEn": "Nature's Madness"
+    "nameEn": "Nature's Madness",
+    "typeKey": "fairy"
   },
   "multi-attack": {
     "nameZh": "多屬性攻擊",
-    "nameEn": "Multi-Attack"
+    "nameEn": "Multi-Attack",
+    "typeKey": "normal"
   },
   "10-000-000-volt-thunderbolt": {
     "nameZh": "智皮卡Ｚ千萬伏特",
-    "nameEn": "10,000,000 Volt Thunderbolt"
+    "nameEn": "10,000,000 Volt Thunderbolt",
+    "typeKey": "electric"
   },
   "mind-blown": {
     "nameZh": "驚爆大頭",
-    "nameEn": "Mind Blown"
+    "nameEn": "Mind Blown",
+    "typeKey": "fire"
   },
   "plasma-fists": {
     "nameZh": "等離子閃電拳",
-    "nameEn": "Plasma Fists"
+    "nameEn": "Plasma Fists",
+    "typeKey": "electric"
   },
   "photon-geyser": {
     "nameZh": "光子噴湧",
-    "nameEn": "Photon Geyser"
+    "nameEn": "Photon Geyser",
+    "typeKey": "psychic"
   },
   "clangorous-soulblaze": {
     "nameZh": "杖尾鱗甲龍Ｚ熾魂熱舞烈音爆",
-    "nameEn": "Clangorous Soulblaze"
+    "nameEn": "Clangorous Soulblaze",
+    "typeKey": "dragon"
   },
   "splintered-stormshards": {
     "nameZh": "鬃岩狼人Ｚ狼嘯石牙颶風暴",
-    "nameEn": "Splintered Stormshards"
+    "nameEn": "Splintered Stormshards",
+    "typeKey": "rock"
   },
   "lets-snuggle-forever": {
     "nameZh": "謎擬ＱＺ親密無間大亂揍",
-    "nameEn": "Let's Snuggle Forever"
+    "nameEn": "Let's Snuggle Forever",
+    "typeKey": "fairy"
   },
   "searing-sunraze-smash": {
     "nameZh": "索爾迦雷歐Ｚ日光迴旋下蒼穹",
-    "nameEn": "Searing Sunraze Smash"
+    "nameEn": "Searing Sunraze Smash",
+    "typeKey": "steel"
   },
   "menacing-moonraze-maelstrom": {
     "nameZh": "露奈雅拉Ｚ月華飛濺落靈霄",
-    "nameEn": "Menacing Moonraze Maelstrom"
+    "nameEn": "Menacing Moonraze Maelstrom",
+    "typeKey": "ghost"
   },
   "light-that-burns-the-sky": {
     "nameZh": "究極奈克洛Ｚ焚天滅世熾光爆",
-    "nameEn": "Light That Burns the Sky"
+    "nameEn": "Light That Burns the Sky",
+    "typeKey": "psychic"
   },
   "zippy-zap": {
     "nameZh": "電電加速",
-    "nameEn": "Zippy Zap"
+    "nameEn": "Zippy Zap",
+    "typeKey": "electric"
   },
   "splishy-splash": {
     "nameZh": "滔滔衝浪",
-    "nameEn": "Splishy Splash"
+    "nameEn": "Splishy Splash",
+    "typeKey": "water"
   },
   "floaty-fall": {
     "nameZh": "飄飄墜落",
-    "nameEn": "Floaty Fall"
+    "nameEn": "Floaty Fall",
+    "typeKey": "flying"
   },
   "pika-papow": {
     "nameZh": "閃閃雷光",
-    "nameEn": "Pika Papow"
+    "nameEn": "Pika Papow",
+    "typeKey": "electric"
   },
   "bouncy-bubble": {
     "nameZh": "活活氣泡",
-    "nameEn": "Bouncy Bubble"
+    "nameEn": "Bouncy Bubble",
+    "typeKey": "water"
   },
   "buzzy-buzz": {
     "nameZh": "麻麻電擊",
-    "nameEn": "Buzzy Buzz"
+    "nameEn": "Buzzy Buzz",
+    "typeKey": "electric"
   },
   "sizzly-slide": {
     "nameZh": "熊熊火爆",
-    "nameEn": "Sizzly Slide"
+    "nameEn": "Sizzly Slide",
+    "typeKey": "fire"
   },
   "glitzy-glow": {
     "nameZh": "嘩嘩氣場",
-    "nameEn": "Glitzy Glow"
+    "nameEn": "Glitzy Glow",
+    "typeKey": "psychic"
   },
   "baddy-bad": {
     "nameZh": "壞壞領域",
-    "nameEn": "Baddy Bad"
+    "nameEn": "Baddy Bad",
+    "typeKey": "dark"
   },
   "sappy-seed": {
     "nameZh": "茁茁轟炸",
-    "nameEn": "Sappy Seed"
+    "nameEn": "Sappy Seed",
+    "typeKey": "grass"
   },
   "freezy-frost": {
     "nameZh": "冰冰霜凍",
-    "nameEn": "Freezy Frost"
+    "nameEn": "Freezy Frost",
+    "typeKey": "ice"
   },
   "sparkly-swirl": {
     "nameZh": "亮亮風暴",
-    "nameEn": "Sparkly Swirl"
+    "nameEn": "Sparkly Swirl",
+    "typeKey": "fairy"
   },
   "veevee-volley": {
     "nameZh": "砰砰擊破",
-    "nameEn": "Veevee Volley"
+    "nameEn": "Veevee Volley",
+    "typeKey": "normal"
   },
   "double-iron-bash": {
     "nameZh": "鋼拳雙擊",
-    "nameEn": "Double Iron Bash"
+    "nameEn": "Double Iron Bash",
+    "typeKey": "steel"
   },
   "max-guard": {
     "nameZh": "極巨防壁",
-    "nameEn": "Max Guard"
+    "nameEn": "Max Guard",
+    "typeKey": "normal"
   },
   "dynamax-cannon": {
     "nameZh": "極巨炮",
-    "nameEn": "Dynamax Cannon"
+    "nameEn": "Dynamax Cannon",
+    "typeKey": "dragon"
   },
   "snipe-shot": {
     "nameZh": "狙擊",
-    "nameEn": "Snipe Shot"
+    "nameEn": "Snipe Shot",
+    "typeKey": "water"
   },
   "jaw-lock": {
     "nameZh": "緊咬不放",
-    "nameEn": "Jaw Lock"
+    "nameEn": "Jaw Lock",
+    "typeKey": "dark"
   },
   "stuff-cheeks": {
     "nameZh": "大快朵頤",
-    "nameEn": "Stuff Cheeks"
+    "nameEn": "Stuff Cheeks",
+    "typeKey": "normal"
   },
   "no-retreat": {
     "nameZh": "背水一戰",
-    "nameEn": "No Retreat"
+    "nameEn": "No Retreat",
+    "typeKey": "fighting"
   },
   "tar-shot": {
     "nameZh": "瀝青射擊",
-    "nameEn": "Tar Shot"
+    "nameEn": "Tar Shot",
+    "typeKey": "rock"
   },
   "magic-powder": {
     "nameZh": "魔法粉",
-    "nameEn": "Magic Powder"
+    "nameEn": "Magic Powder",
+    "typeKey": "psychic"
   },
   "dragon-darts": {
     "nameZh": "龍箭",
-    "nameEn": "Dragon Darts"
+    "nameEn": "Dragon Darts",
+    "typeKey": "dragon"
   },
   "teatime": {
     "nameZh": "茶會",
-    "nameEn": "Teatime"
+    "nameEn": "Teatime",
+    "typeKey": "normal"
   },
   "octolock": {
     "nameZh": "蛸固",
-    "nameEn": "Octolock"
+    "nameEn": "Octolock",
+    "typeKey": "fighting"
   },
   "bolt-beak": {
     "nameZh": "電喙",
-    "nameEn": "Bolt Beak"
+    "nameEn": "Bolt Beak",
+    "typeKey": "electric"
   },
   "fishious-rend": {
     "nameZh": "鰓咬",
-    "nameEn": "Fishious Rend"
+    "nameEn": "Fishious Rend",
+    "typeKey": "water"
   },
   "court-change": {
     "nameZh": "換場",
-    "nameEn": "Court Change"
+    "nameEn": "Court Change",
+    "typeKey": "normal"
   },
   "max-flare": {
     "nameZh": "極巨火爆",
-    "nameEn": "Max Flare"
+    "nameEn": "Max Flare",
+    "typeKey": "fire"
   },
   "max-flutterby": {
     "nameZh": "極巨蟲蠱",
-    "nameEn": "Max Flutterby"
+    "nameEn": "Max Flutterby",
+    "typeKey": "bug"
   },
   "max-lightning": {
     "nameZh": "極巨閃電",
-    "nameEn": "Max Lightning"
+    "nameEn": "Max Lightning",
+    "typeKey": "electric"
   },
   "max-strike": {
     "nameZh": "極巨攻擊",
-    "nameEn": "Max Strike"
+    "nameEn": "Max Strike",
+    "typeKey": "normal"
   },
   "max-knuckle": {
     "nameZh": "極巨拳鬥",
-    "nameEn": "Max Knuckle"
+    "nameEn": "Max Knuckle",
+    "typeKey": "fighting"
   },
   "max-phantasm": {
     "nameZh": "極巨幽魂",
-    "nameEn": "Max Phantasm"
+    "nameEn": "Max Phantasm",
+    "typeKey": "ghost"
   },
   "max-hailstorm": {
     "nameZh": "極巨寒冰",
-    "nameEn": "Max Hailstorm"
+    "nameEn": "Max Hailstorm",
+    "typeKey": "ice"
   },
   "max-ooze": {
     "nameZh": "極巨酸毒",
-    "nameEn": "Max Ooze"
+    "nameEn": "Max Ooze",
+    "typeKey": "poison"
   },
   "max-geyser": {
     "nameZh": "極巨水流",
-    "nameEn": "Max Geyser"
+    "nameEn": "Max Geyser",
+    "typeKey": "water"
   },
   "max-airstream": {
     "nameZh": "極巨飛衝",
-    "nameEn": "Max Airstream"
+    "nameEn": "Max Airstream",
+    "typeKey": "flying"
   },
   "max-starfall": {
     "nameZh": "極巨妖精",
-    "nameEn": "Max Starfall"
+    "nameEn": "Max Starfall",
+    "typeKey": "fairy"
   },
   "max-wyrmwind": {
     "nameZh": "極巨龍騎",
-    "nameEn": "Max Wyrmwind"
+    "nameEn": "Max Wyrmwind",
+    "typeKey": "dragon"
   },
   "max-mindstorm": {
     "nameZh": "極巨超能",
-    "nameEn": "Max Mindstorm"
+    "nameEn": "Max Mindstorm",
+    "typeKey": "psychic"
   },
   "max-rockfall": {
     "nameZh": "極巨岩石",
-    "nameEn": "Max Rockfall"
+    "nameEn": "Max Rockfall",
+    "typeKey": "rock"
   },
   "max-quake": {
     "nameZh": "極巨大地",
-    "nameEn": "Max Quake"
+    "nameEn": "Max Quake",
+    "typeKey": "ground"
   },
   "max-darkness": {
     "nameZh": "極巨惡霸",
-    "nameEn": "Max Darkness"
+    "nameEn": "Max Darkness",
+    "typeKey": "dark"
   },
   "max-overgrowth": {
     "nameZh": "極巨草原",
-    "nameEn": "Max Overgrowth"
+    "nameEn": "Max Overgrowth",
+    "typeKey": "grass"
   },
   "max-steelspike": {
     "nameZh": "極巨鋼鐵",
-    "nameEn": "Max Steelspike"
+    "nameEn": "Max Steelspike",
+    "typeKey": "steel"
   },
   "clangorous-soul": {
     "nameZh": "魂舞烈音爆",
-    "nameEn": "Clangorous Soul"
+    "nameEn": "Clangorous Soul",
+    "typeKey": "dragon"
   },
   "body-press": {
     "nameZh": "撲擊",
-    "nameEn": "Body Press"
+    "nameEn": "Body Press",
+    "typeKey": "fighting"
   },
   "decorate": {
     "nameZh": "裝飾",
-    "nameEn": "Decorate"
+    "nameEn": "Decorate",
+    "typeKey": "fairy"
   },
   "drum-beating": {
     "nameZh": "鼓擊",
-    "nameEn": "Drum Beating"
+    "nameEn": "Drum Beating",
+    "typeKey": "grass"
   },
   "snap-trap": {
     "nameZh": "捕獸夾",
-    "nameEn": "Snap Trap"
+    "nameEn": "Snap Trap",
+    "typeKey": "grass"
   },
   "pyro-ball": {
     "nameZh": "火焰球",
-    "nameEn": "Pyro Ball"
+    "nameEn": "Pyro Ball",
+    "typeKey": "fire"
   },
   "behemoth-blade": {
     "nameZh": "巨獸斬",
-    "nameEn": "Behemoth Blade"
+    "nameEn": "Behemoth Blade",
+    "typeKey": "steel"
   },
   "behemoth-bash": {
     "nameZh": "巨獸彈",
-    "nameEn": "Behemoth Bash"
+    "nameEn": "Behemoth Bash",
+    "typeKey": "steel"
   },
   "aura-wheel": {
     "nameZh": "氣場輪",
-    "nameEn": "Aura Wheel"
+    "nameEn": "Aura Wheel",
+    "typeKey": "electric"
   },
   "breaking-swipe": {
     "nameZh": "廣域破壞",
-    "nameEn": "Breaking Swipe"
+    "nameEn": "Breaking Swipe",
+    "typeKey": "dragon"
   },
   "branch-poke": {
     "nameZh": "木枝突刺",
-    "nameEn": "Branch Poke"
+    "nameEn": "Branch Poke",
+    "typeKey": "grass"
   },
   "overdrive": {
     "nameZh": "破音",
-    "nameEn": "Overdrive"
+    "nameEn": "Overdrive",
+    "typeKey": "electric"
   },
   "apple-acid": {
     "nameZh": "蘋果酸",
-    "nameEn": "Apple Acid"
+    "nameEn": "Apple Acid",
+    "typeKey": "grass"
   },
   "grav-apple": {
     "nameZh": "萬有引力",
-    "nameEn": "Grav Apple"
+    "nameEn": "Grav Apple",
+    "typeKey": "grass"
   },
   "spirit-break": {
     "nameZh": "靈魂衝擊",
-    "nameEn": "Spirit Break"
+    "nameEn": "Spirit Break",
+    "typeKey": "fairy"
   },
   "strange-steam": {
     "nameZh": "神奇蒸汽",
-    "nameEn": "Strange Steam"
+    "nameEn": "Strange Steam",
+    "typeKey": "fairy"
   },
   "life-dew": {
     "nameZh": "生命水滴",
-    "nameEn": "Life Dew"
+    "nameEn": "Life Dew",
+    "typeKey": "water"
   },
   "obstruct": {
     "nameZh": "攔堵",
-    "nameEn": "Obstruct"
+    "nameEn": "Obstruct",
+    "typeKey": "dark"
   },
   "false-surrender": {
     "nameZh": "假跪真撞",
-    "nameEn": "False Surrender"
+    "nameEn": "False Surrender",
+    "typeKey": "dark"
   },
   "meteor-assault": {
     "nameZh": "流星突擊",
-    "nameEn": "Meteor Assault"
+    "nameEn": "Meteor Assault",
+    "typeKey": "fighting"
   },
   "eternabeam": {
     "nameZh": "無極光束",
-    "nameEn": "Eternabeam"
+    "nameEn": "Eternabeam",
+    "typeKey": "dragon"
   },
   "steel-beam": {
     "nameZh": "鐵蹄光線",
-    "nameEn": "Steel Beam"
+    "nameEn": "Steel Beam",
+    "typeKey": "steel"
   },
   "expanding-force": {
     "nameZh": "廣域戰力",
-    "nameEn": "Expanding Force"
+    "nameEn": "Expanding Force",
+    "typeKey": "psychic"
   },
   "steel-roller": {
     "nameZh": "鐵滾輪",
-    "nameEn": "Steel Roller"
+    "nameEn": "Steel Roller",
+    "typeKey": "steel"
   },
   "scale-shot": {
     "nameZh": "鱗射",
-    "nameEn": "Scale Shot"
+    "nameEn": "Scale Shot",
+    "typeKey": "dragon"
   },
   "meteor-beam": {
     "nameZh": "流星光束",
-    "nameEn": "Meteor Beam"
+    "nameEn": "Meteor Beam",
+    "typeKey": "rock"
   },
   "shell-side-arm": {
     "nameZh": "臂貝武器",
-    "nameEn": "Shell Side Arm"
+    "nameEn": "Shell Side Arm",
+    "typeKey": "poison"
   },
   "misty-explosion": {
     "nameZh": "薄霧炸裂",
-    "nameEn": "Misty Explosion"
+    "nameEn": "Misty Explosion",
+    "typeKey": "fairy"
   },
   "grassy-glide": {
     "nameZh": "青草滑梯",
-    "nameEn": "Grassy Glide"
+    "nameEn": "Grassy Glide",
+    "typeKey": "grass"
   },
   "rising-voltage": {
     "nameZh": "電力上升",
-    "nameEn": "Rising Voltage"
+    "nameEn": "Rising Voltage",
+    "typeKey": "electric"
   },
   "terrain-pulse": {
     "nameZh": "大地波動",
-    "nameEn": "Terrain Pulse"
+    "nameEn": "Terrain Pulse",
+    "typeKey": "normal"
   },
   "skitter-smack": {
     "nameZh": "爬擊",
-    "nameEn": "Skitter Smack"
+    "nameEn": "Skitter Smack",
+    "typeKey": "bug"
   },
   "burning-jealousy": {
     "nameZh": "妒火",
-    "nameEn": "Burning Jealousy"
+    "nameEn": "Burning Jealousy",
+    "typeKey": "fire"
   },
   "lash-out": {
     "nameZh": "洩憤",
-    "nameEn": "Lash Out"
+    "nameEn": "Lash Out",
+    "typeKey": "dark"
   },
   "poltergeist": {
     "nameZh": "靈騷",
-    "nameEn": "Poltergeist"
+    "nameEn": "Poltergeist",
+    "typeKey": "ghost"
   },
   "corrosive-gas": {
     "nameZh": "腐蝕氣體",
-    "nameEn": "Corrosive Gas"
+    "nameEn": "Corrosive Gas",
+    "typeKey": "poison"
   },
   "coaching": {
     "nameZh": "指導",
-    "nameEn": "Coaching"
+    "nameEn": "Coaching",
+    "typeKey": "fighting"
   },
   "flip-turn": {
     "nameZh": "快速折返",
-    "nameEn": "Flip Turn"
+    "nameEn": "Flip Turn",
+    "typeKey": "water"
   },
   "triple-axel": {
     "nameZh": "三旋擊",
-    "nameEn": "Triple Axel"
+    "nameEn": "Triple Axel",
+    "typeKey": "ice"
   },
   "dual-wingbeat": {
     "nameZh": "雙翼",
-    "nameEn": "Dual Wingbeat"
+    "nameEn": "Dual Wingbeat",
+    "typeKey": "flying"
   },
   "scorching-sands": {
     "nameZh": "熱沙大地",
-    "nameEn": "Scorching Sands"
+    "nameEn": "Scorching Sands",
+    "typeKey": "ground"
   },
   "jungle-healing": {
     "nameZh": "叢林治療",
-    "nameEn": "Jungle Healing"
+    "nameEn": "Jungle Healing",
+    "typeKey": "grass"
   },
   "wicked-blow": {
     "nameZh": "暗冥強擊",
-    "nameEn": "Wicked Blow"
+    "nameEn": "Wicked Blow",
+    "typeKey": "dark"
   },
   "surging-strikes": {
     "nameZh": "水流連打",
-    "nameEn": "Surging Strikes"
+    "nameEn": "Surging Strikes",
+    "typeKey": "water"
   },
   "thunder-cage": {
     "nameZh": "雷電囚籠",
-    "nameEn": "Thunder Cage"
+    "nameEn": "Thunder Cage",
+    "typeKey": "electric"
   },
   "dragon-energy": {
     "nameZh": "巨龍威能",
-    "nameEn": "Dragon Energy"
+    "nameEn": "Dragon Energy",
+    "typeKey": "dragon"
   },
   "freezing-glare": {
     "nameZh": "冰冷視線",
-    "nameEn": "Freezing Glare"
+    "nameEn": "Freezing Glare",
+    "typeKey": "psychic"
   },
   "fiery-wrath": {
     "nameZh": "怒火中燒",
-    "nameEn": "Fiery Wrath"
+    "nameEn": "Fiery Wrath",
+    "typeKey": "dark"
   },
   "thunderous-kick": {
     "nameZh": "雷鳴蹴擊",
-    "nameEn": "Thunderous Kick"
+    "nameEn": "Thunderous Kick",
+    "typeKey": "fighting"
   },
   "glacial-lance": {
     "nameZh": "雪矛",
-    "nameEn": "Glacial Lance"
+    "nameEn": "Glacial Lance",
+    "typeKey": "ice"
   },
   "astral-barrage": {
     "nameZh": "星碎",
-    "nameEn": "Astral Barrage"
+    "nameEn": "Astral Barrage",
+    "typeKey": "ghost"
   },
   "eerie-spell": {
     "nameZh": "詭異咒語",
-    "nameEn": "Eerie Spell"
+    "nameEn": "Eerie Spell",
+    "typeKey": "psychic"
   },
   "dire-claw": {
     "nameZh": "剋命爪",
-    "nameEn": "Dire Claw"
+    "nameEn": "Dire Claw",
+    "typeKey": "poison"
   },
   "psyshield-bash": {
     "nameZh": "屏障猛攻",
-    "nameEn": "Psyshield Bash"
+    "nameEn": "Psyshield Bash",
+    "typeKey": "psychic"
   },
   "power-shift": {
     "nameZh": "力量轉換",
-    "nameEn": "Power Shift"
+    "nameEn": "Power Shift",
+    "typeKey": "normal"
   },
   "stone-axe": {
     "nameZh": "岩斧",
-    "nameEn": "Stone Axe"
+    "nameEn": "Stone Axe",
+    "typeKey": "rock"
   },
   "springtide-storm": {
     "nameZh": "陽春風暴",
-    "nameEn": "Springtide Storm"
+    "nameEn": "Springtide Storm",
+    "typeKey": "fairy"
   },
   "mystical-power": {
     "nameZh": "神秘之力",
-    "nameEn": "Mystical Power"
+    "nameEn": "Mystical Power",
+    "typeKey": "psychic"
   },
   "raging-fury": {
     "nameZh": "大憤慨",
-    "nameEn": "Raging Fury"
+    "nameEn": "Raging Fury",
+    "typeKey": "fire"
   },
   "wave-crash": {
     "nameZh": "波動衝",
-    "nameEn": "Wave Crash"
+    "nameEn": "Wave Crash",
+    "typeKey": "water"
   },
   "chloroblast": {
     "nameZh": "葉綠爆震",
-    "nameEn": "Chloroblast"
+    "nameEn": "Chloroblast",
+    "typeKey": "grass"
   },
   "mountain-gale": {
     "nameZh": "冰山風",
-    "nameEn": "Mountain Gale"
+    "nameEn": "Mountain Gale",
+    "typeKey": "ice"
   },
   "victory-dance": {
     "nameZh": "勝利之舞",
-    "nameEn": "Victory Dance"
+    "nameEn": "Victory Dance",
+    "typeKey": "fighting"
   },
   "headlong-rush": {
     "nameZh": "突飛猛撲",
-    "nameEn": "Headlong Rush"
+    "nameEn": "Headlong Rush",
+    "typeKey": "ground"
   },
   "barb-barrage": {
     "nameZh": "毒千針",
-    "nameEn": "Barb Barrage"
+    "nameEn": "Barb Barrage",
+    "typeKey": "poison"
   },
   "esper-wing": {
     "nameZh": "氣場之翼",
-    "nameEn": "Esper Wing"
+    "nameEn": "Esper Wing",
+    "typeKey": "psychic"
   },
   "bitter-malice": {
     "nameZh": "冤冤相報",
-    "nameEn": "Bitter Malice"
+    "nameEn": "Bitter Malice",
+    "typeKey": "ghost"
   },
   "shelter": {
     "nameZh": "閉關",
-    "nameEn": "Shelter"
+    "nameEn": "Shelter",
+    "typeKey": "steel"
   },
   "triple-arrows": {
     "nameZh": "三連箭",
-    "nameEn": "Triple Arrows"
+    "nameEn": "Triple Arrows",
+    "typeKey": "fighting"
   },
   "infernal-parade": {
     "nameZh": "群魔亂舞",
-    "nameEn": "Infernal Parade"
+    "nameEn": "Infernal Parade",
+    "typeKey": "ghost"
   },
   "ceaseless-edge": {
     "nameZh": "秘劍・千重濤",
-    "nameEn": "Ceaseless Edge"
+    "nameEn": "Ceaseless Edge",
+    "typeKey": "dark"
   },
   "bleakwind-storm": {
     "nameZh": "枯葉風暴",
-    "nameEn": "Bleakwind Storm"
+    "nameEn": "Bleakwind Storm",
+    "typeKey": "flying"
   },
   "wildbolt-storm": {
     "nameZh": "鳴雷風暴",
-    "nameEn": "Wildbolt Storm"
+    "nameEn": "Wildbolt Storm",
+    "typeKey": "electric"
   },
   "sandsear-storm": {
     "nameZh": "熱沙風暴",
-    "nameEn": "Sandsear Storm"
+    "nameEn": "Sandsear Storm",
+    "typeKey": "ground"
   },
   "lunar-blessing": {
     "nameZh": "新月祈禱",
-    "nameEn": "Lunar Blessing"
+    "nameEn": "Lunar Blessing",
+    "typeKey": "psychic"
   },
   "take-heart": {
     "nameZh": "勇氣填充",
-    "nameEn": "Take Heart"
+    "nameEn": "Take Heart",
+    "typeKey": "psychic"
   },
   "tera-blast": {
     "nameZh": "太晶爆發",
-    "nameEn": "Tera Blast"
+    "nameEn": "Tera Blast",
+    "typeKey": "normal"
   },
   "silk-trap": {
     "nameZh": "線阱",
-    "nameEn": "Silk Trap"
+    "nameEn": "Silk Trap",
+    "typeKey": "bug"
   },
   "axe-kick": {
     "nameZh": "下壓踢",
-    "nameEn": "Axe Kick"
+    "nameEn": "Axe Kick",
+    "typeKey": "fighting"
   },
   "last-respects": {
     "nameZh": "掃墓",
-    "nameEn": "Last Respects"
+    "nameEn": "Last Respects",
+    "typeKey": "ghost"
   },
   "lumina-crash": {
     "nameZh": "琉光衝激",
-    "nameEn": "Lumina Crash"
+    "nameEn": "Lumina Crash",
+    "typeKey": "psychic"
   },
   "order-up": {
     "nameZh": "上菜",
-    "nameEn": "Order Up"
+    "nameEn": "Order Up",
+    "typeKey": "dragon"
   },
   "jet-punch": {
     "nameZh": "噴射拳",
-    "nameEn": "Jet Punch"
+    "nameEn": "Jet Punch",
+    "typeKey": "water"
   },
   "spicy-extract": {
     "nameZh": "辣椒精華",
-    "nameEn": "Spicy Extract"
+    "nameEn": "Spicy Extract",
+    "typeKey": "grass"
   },
   "spin-out": {
     "nameZh": "疾速轉輪",
-    "nameEn": "Spin Out"
+    "nameEn": "Spin Out",
+    "typeKey": "steel"
   },
   "population-bomb": {
     "nameZh": "鼠數兒",
-    "nameEn": "Population Bomb"
+    "nameEn": "Population Bomb",
+    "typeKey": "normal"
   },
   "ice-spinner": {
     "nameZh": "冰旋",
-    "nameEn": "Ice Spinner"
+    "nameEn": "Ice Spinner",
+    "typeKey": "ice"
   },
   "glaive-rush": {
     "nameZh": "巨劍突擊",
-    "nameEn": "Glaive Rush"
+    "nameEn": "Glaive Rush",
+    "typeKey": "dragon"
   },
   "revival-blessing": {
     "nameZh": "復生祈禱",
-    "nameEn": "Revival Blessing"
+    "nameEn": "Revival Blessing",
+    "typeKey": "normal"
   },
   "salt-cure": {
     "nameZh": "鹽醃",
-    "nameEn": "Salt Cure"
+    "nameEn": "Salt Cure",
+    "typeKey": "rock"
   },
   "triple-dive": {
     "nameZh": "三連鑽",
-    "nameEn": "Triple Dive"
+    "nameEn": "Triple Dive",
+    "typeKey": "water"
   },
   "mortal-spin": {
     "nameZh": "晶光轉轉",
-    "nameEn": "Mortal Spin"
+    "nameEn": "Mortal Spin",
+    "typeKey": "poison"
   },
   "doodle": {
     "nameZh": "描繪",
-    "nameEn": "Doodle"
+    "nameEn": "Doodle",
+    "typeKey": "normal"
   },
   "fillet-away": {
     "nameZh": "甩肉",
-    "nameEn": "Fillet Away"
+    "nameEn": "Fillet Away",
+    "typeKey": "normal"
   },
   "kowtow-cleave": {
     "nameZh": "仆斬",
-    "nameEn": "Kowtow Cleave"
+    "nameEn": "Kowtow Cleave",
+    "typeKey": "dark"
   },
   "flower-trick": {
     "nameZh": "千變萬花",
-    "nameEn": "Flower Trick"
+    "nameEn": "Flower Trick",
+    "typeKey": "grass"
   },
   "torch-song": {
     "nameZh": "閃焰高歌",
-    "nameEn": "Torch Song"
+    "nameEn": "Torch Song",
+    "typeKey": "fire"
   },
   "aqua-step": {
     "nameZh": "流水旋舞",
-    "nameEn": "Aqua Step"
+    "nameEn": "Aqua Step",
+    "typeKey": "water"
   },
   "raging-bull": {
     "nameZh": "怒牛",
-    "nameEn": "Raging Bull"
+    "nameEn": "Raging Bull",
+    "typeKey": "normal"
   },
   "make-it-rain": {
     "nameZh": "淘金潮",
-    "nameEn": "Make It Rain"
+    "nameEn": "Make It Rain",
+    "typeKey": "steel"
   },
   "psyblade": {
     "nameZh": "精神劍",
-    "nameEn": "Psyblade"
+    "nameEn": "Psyblade",
+    "typeKey": "psychic"
   },
   "hydro-steam": {
     "nameZh": "水蒸氣",
-    "nameEn": "Hydro Steam"
+    "nameEn": "Hydro Steam",
+    "typeKey": "water"
   },
   "ruination": {
     "nameZh": "大災難",
-    "nameEn": "Ruination"
+    "nameEn": "Ruination",
+    "typeKey": "dark"
   },
   "collision-course": {
     "nameZh": "全開猛撞",
-    "nameEn": "Collision Course"
+    "nameEn": "Collision Course",
+    "typeKey": "fighting"
   },
   "electro-drift": {
     "nameZh": "閃電猛衝",
-    "nameEn": "Electro Drift"
+    "nameEn": "Electro Drift",
+    "typeKey": "electric"
   },
   "shed-tail": {
     "nameZh": "斷尾",
-    "nameEn": "Shed Tail"
+    "nameEn": "Shed Tail",
+    "typeKey": "normal"
   },
   "chilly-reception": {
     "nameZh": "冷笑話",
-    "nameEn": "Chilly Reception"
+    "nameEn": "Chilly Reception",
+    "typeKey": "ice"
   },
   "tidy-up": {
     "nameZh": "大掃除",
-    "nameEn": "Tidy Up"
+    "nameEn": "Tidy Up",
+    "typeKey": "normal"
   },
   "snowscape": {
     "nameZh": "雪景",
-    "nameEn": "Snowscape"
+    "nameEn": "Snowscape",
+    "typeKey": "ice"
   },
   "pounce": {
     "nameZh": "蟲撲",
-    "nameEn": "Pounce"
+    "nameEn": "Pounce",
+    "typeKey": "bug"
   },
   "trailblaze": {
     "nameZh": "起草",
-    "nameEn": "Trailblaze"
+    "nameEn": "Trailblaze",
+    "typeKey": "grass"
   },
   "chilling-water": {
     "nameZh": "潑冷水",
-    "nameEn": "Chilling Water"
+    "nameEn": "Chilling Water",
+    "typeKey": "water"
   },
   "hyper-drill": {
     "nameZh": "強力鑽",
-    "nameEn": "Hyper Drill"
+    "nameEn": "Hyper Drill",
+    "typeKey": "normal"
   },
   "twin-beam": {
     "nameZh": "雙光束",
-    "nameEn": "Twin Beam"
+    "nameEn": "Twin Beam",
+    "typeKey": "psychic"
   },
   "rage-fist": {
     "nameZh": "憤怒之拳",
-    "nameEn": "Rage Fist"
+    "nameEn": "Rage Fist",
+    "typeKey": "ghost"
   },
   "armor-cannon": {
     "nameZh": "鎧農炮",
-    "nameEn": "Armor Cannon"
+    "nameEn": "Armor Cannon",
+    "typeKey": "fire"
   },
   "bitter-blade": {
     "nameZh": "悔念劍",
-    "nameEn": "Bitter Blade"
+    "nameEn": "Bitter Blade",
+    "typeKey": "fire"
   },
   "double-shock": {
     "nameZh": "電光雙擊",
-    "nameEn": "Double Shock"
+    "nameEn": "Double Shock",
+    "typeKey": "electric"
   },
   "gigaton-hammer": {
     "nameZh": "巨力錘",
-    "nameEn": "Gigaton Hammer"
+    "nameEn": "Gigaton Hammer",
+    "typeKey": "steel"
   },
   "comeuppance": {
     "nameZh": "復仇",
-    "nameEn": "Comeuppance"
+    "nameEn": "Comeuppance",
+    "typeKey": "dark"
   },
   "aqua-cutter": {
     "nameZh": "水波刀",
-    "nameEn": "Aqua Cutter"
+    "nameEn": "Aqua Cutter",
+    "typeKey": "water"
   },
   "blazing-torque": {
     "nameZh": "灼熱暴衝",
-    "nameEn": "Blazing Torque"
+    "nameEn": "Blazing Torque",
+    "typeKey": "fire"
   },
   "wicked-torque": {
     "nameZh": "黑暗暴衝",
-    "nameEn": "Wicked Torque"
+    "nameEn": "Wicked Torque",
+    "typeKey": "dark"
   },
   "noxious-torque": {
     "nameZh": "劇毒暴衝",
-    "nameEn": "Noxious Torque"
+    "nameEn": "Noxious Torque",
+    "typeKey": "poison"
   },
   "combat-torque": {
     "nameZh": "格鬥暴衝",
-    "nameEn": "Combat Torque"
+    "nameEn": "Combat Torque",
+    "typeKey": "fighting"
   },
   "magical-torque": {
     "nameZh": "魔法暴衝",
-    "nameEn": "Magical Torque"
+    "nameEn": "Magical Torque",
+    "typeKey": "fairy"
   },
   "blood-moon": {
     "nameZh": "血月",
-    "nameEn": "Blood Moon"
+    "nameEn": "Blood Moon",
+    "typeKey": "normal"
   },
   "matcha-gotcha": {
     "nameZh": "刷刷茶炮",
-    "nameEn": "Matcha Gotcha"
+    "nameEn": "Matcha Gotcha",
+    "typeKey": "grass"
   },
   "syrup-bomb": {
     "nameZh": "糖漿炸彈",
-    "nameEn": "Syrup Bomb"
+    "nameEn": "Syrup Bomb",
+    "typeKey": "grass"
   },
   "ivy-cudgel": {
     "nameZh": "棘藤棒",
-    "nameEn": "Ivy Cudgel"
+    "nameEn": "Ivy Cudgel",
+    "typeKey": "grass"
   },
   "electro-shot": {
     "nameZh": "電光束",
-    "nameEn": "Electro Shot"
+    "nameEn": "Electro Shot",
+    "typeKey": "electric"
   },
   "tera-starstorm": {
     "nameZh": "晶光星群",
-    "nameEn": "Tera Starstorm"
+    "nameEn": "Tera Starstorm",
+    "typeKey": "normal"
   },
   "fickle-beam": {
     "nameZh": "隨機光",
-    "nameEn": "Fickle Beam"
+    "nameEn": "Fickle Beam",
+    "typeKey": "dragon"
   },
   "burning-bulwark": {
     "nameZh": "火焰守護",
-    "nameEn": "Burning Bulwark"
+    "nameEn": "Burning Bulwark",
+    "typeKey": "fire"
   },
   "thunderclap": {
     "nameZh": "迅雷",
-    "nameEn": "Thunderclap"
+    "nameEn": "Thunderclap",
+    "typeKey": "electric"
   },
   "mighty-cleave": {
     "nameZh": "強刃攻擊",
-    "nameEn": "Mighty Cleave"
+    "nameEn": "Mighty Cleave",
+    "typeKey": "rock"
   },
   "tachyon-cutter": {
     "nameZh": "迅子利刃",
-    "nameEn": "Tachyon Cutter"
+    "nameEn": "Tachyon Cutter",
+    "typeKey": "steel"
   },
   "hard-press": {
     "nameZh": "硬壓",
-    "nameEn": "Hard Press"
+    "nameEn": "Hard Press",
+    "typeKey": "steel"
   },
   "dragon-cheer": {
     "nameZh": "龍聲鼓舞",
-    "nameEn": "Dragon Cheer"
+    "nameEn": "Dragon Cheer",
+    "typeKey": "dragon"
   },
   "alluring-voice": {
     "nameZh": "魅誘之聲",
-    "nameEn": "Alluring Voice"
+    "nameEn": "Alluring Voice",
+    "typeKey": "fairy"
   },
   "temper-flare": {
     "nameZh": "豁出去",
-    "nameEn": "Temper Flare"
+    "nameEn": "Temper Flare",
+    "typeKey": "fire"
   },
   "supercell-slam": {
     "nameZh": "閃電強襲",
-    "nameEn": "Supercell Slam"
+    "nameEn": "Supercell Slam",
+    "typeKey": "electric"
   },
   "psychic-noise": {
     "nameZh": "精神噪音",
-    "nameEn": "Psychic Noise"
+    "nameEn": "Psychic Noise",
+    "typeKey": "psychic"
   },
   "upper-hand": {
     "nameZh": "快手還擊",
-    "nameEn": "Upper Hand"
+    "nameEn": "Upper Hand",
+    "typeKey": "fighting"
   },
   "malignant-chain": {
     "nameZh": "邪毒鎖鏈",
-    "nameEn": "Malignant Chain"
+    "nameEn": "Malignant Chain",
+    "typeKey": "poison"
   },
   "nihil-light": {
     "nameZh": "歸無之光",
-    "nameEn": "Nihil Light"
+    "nameEn": "Nihil Light",
+    "typeKey": "dragon"
   }
 }
