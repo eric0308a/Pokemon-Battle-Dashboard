@@ -1,4 +1,5 @@
 import pokemonNameTranslationsJson from './pokemonNameTranslations.json'
+import moveTranslationsJson from './moveTranslations.json'
 
 const DEFAULT_LOCALE = 'en-US'
 
@@ -21,6 +22,9 @@ const localeMessages = {
 		enNameLabel: '英文',
 		typeLabel: '屬性',
 		moveLabel: '招式',
+		moveOptionsLabel: '可選招式',
+		moveSelectLabel: '已選招式',
+		moveSlotLabel: '招式',
 		baseStatLabel: '種族值',
 		evLabel: '努力值',
 		totalLabel: '總值'
@@ -38,6 +42,9 @@ const localeMessages = {
 		enNameLabel: 'English',
 		typeLabel: 'Type',
 		moveLabel: 'Moves',
+		moveOptionsLabel: 'Available Moves',
+		moveSelectLabel: 'Selected Moves',
+		moveSlotLabel: 'Move',
 		baseStatLabel: 'Base',
 		evLabel: 'EV',
 		totalLabel: 'Total'
@@ -76,6 +83,10 @@ const typeLabels = {
 
 const pokemonNameTranslations = new Map(
 	Object.entries(pokemonNameTranslationsJson)
+)
+
+const moveTranslations = new Map(
+	Object.entries(moveTranslationsJson)
 )
 
 function normalizeLocale(inputLocale) {
@@ -170,6 +181,16 @@ export function getDisplayMoveName(locale, move) {
 		return move.nameZh || move.nameEn
 	}
 	return move.nameEn || move.nameZh
+}
+
+export function getMoveLocalizedNames(moveKey, fallbackNames = {}) {
+	const key = String(moveKey ?? '').toLowerCase()
+	const translated = moveTranslations.get(key) ?? {}
+
+	return {
+		nameZh: translated.nameZh || fallbackNames.nameZh || fallbackNames.nameEn || moveKey,
+		nameEn: translated.nameEn || fallbackNames.nameEn || fallbackNames.nameZh || moveKey
+	}
 }
 
 export function resolveLocale(locale) {

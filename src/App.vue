@@ -5,6 +5,7 @@ import allowedPokemonIds from './assets/allowedPokemonIds.json'
 import {
   detectBrowserLocale,
   getDisplayMoveName,
+  getMoveLocalizedNames,
   getDisplayPokemonName,
   getMessage,
   getPokemonLocalizedNames,
@@ -90,7 +91,7 @@ function normalizePokemon(pokemonData, speciesData) {
     types: pokemonData.types
       .sort((a, b) => a.slot - b.slot)
       .map((item) => item.type.name),
-    moves: pokemonData.moves.slice(0, 12).map((moveItem) => moveItem.move.name),
+    moves: Array.from(new Set(pokemonData.moves.map((moveItem) => moveItem.move.name))),
     baseStats
   }
 }
@@ -101,9 +102,14 @@ async function resolveMoveTranslation(moveName) {
     return cached
   }
 
-  const fallbackMove = {
+  const fallbackMove = getMoveLocalizedNames(moveName, {
     nameEn: moveName,
     nameZh: moveName
+  })
+
+  if (fallbackMove.nameZh !== moveName || fallbackMove.nameEn !== moveName) {
+    moveTranslationCache.set(moveName, fallbackMove)
+    return fallbackMove
   }
 
   try {
@@ -190,7 +196,10 @@ async function addToTeam(side, pokemon) {
     nameZh: pokemon.nameZh,
     nameEn: pokemon.nameEn,
     types: pokemon.types,
-    moves: translatedMoves,
+    availableMoves: translatedMoves,
+    selectedMoves: Array.from({ length: 4 }, (_, index) => {
+      return translatedMoves[index]?.nameEn ?? translatedMoves[0]?.nameEn ?? ''
+    }),
     stats: toStatBlock(pokemon.baseStats)
   }
 
@@ -199,6 +208,24 @@ async function addToTeam(side, pokemon) {
     return
   }
   enemyTeam.value = [...enemyTeam.value, member]
+}
+
+function updateSelectedMove(side, memberUid, slotIndex, value) {
+  const team = side === 'ally' ? allyTeam.value : enemyTeam.value
+  const target = team.find((member) => member.uid === memberUid)
+  if (!target) {
+    return
+  }
+
+  const nextSelectedMoves = [...target.selectedMoves]
+  nextSelectedMoves[slotIndex] = value
+  target.selectedMoves = nextSelectedMoves
+
+  if (side === 'ally') {
+    allyTeam.value = [...team]
+    return
+  }
+  enemyTeam.value = [...team]
 }
 
 function updateEv(side, memberUid, statKey, value) {
@@ -292,7 +319,32 @@ onMounted(() => {
             <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
             <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
-            <p class="meta-text">{{ t('moveLabel') }}: {{ member.moves.map(displayMove).join(moveJoiner()) }}</p>
+            <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
+            <div class="move-select-area">
+              <p class="meta-text">{{ t('moveSelectLabel') }}</p>
+              <div class="move-select-grid">
+                <label
+                  v-for="(selectedMove, moveIndex) in member.selectedMoves"
+                  :key="`${member.uid}-ally-move-${moveIndex}`"
+                  class="move-select-item"
+                >
+                  {{ t('moveSlotLabel') }} {{ moveIndex + 1 }}
+                  <select
+                    class="move-select"
+                    :value="selectedMove"
+                    @change="updateSelectedMove('ally', member.uid, moveIndex, $event.target.value)"
+                  >
+                    <option
+                      v-for="move in member.availableMoves"
+                      :key="`${member.uid}-ally-opt-${move.nameEn}`"
+                      :value="move.nameEn"
+                    >
+                      {{ displayMove(move) }}
+                    </option>
+                  </select>
+                </label>
+              </div>
+            </div>
             <div class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
                 <span class="stat-label">{{ statLabel(stat.key) }}</span>
@@ -343,7 +395,32 @@ onMounted(() => {
             <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
             <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
-            <p class="meta-text">{{ t('moveLabel') }}: {{ member.moves.map(displayMove).join(moveJoiner()) }}</p>
+            <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
+            <div class="move-select-area">
+              <p class="meta-text">{{ t('moveSelectLabel') }}</p>
+              <div class="move-select-grid">
+                <label
+                  v-for="(selectedMove, moveIndex) in member.selectedMoves"
+                  :key="`${member.uid}-enemy-move-${moveIndex}`"
+                  class="move-select-item"
+                >
+                  {{ t('moveSlotLabel') }} {{ moveIndex + 1 }}
+                  <select
+                    class="move-select"
+                    :value="selectedMove"
+                    @change="updateSelectedMove('enemy', member.uid, moveIndex, $event.target.value)"
+                  >
+                    <option
+                      v-for="move in member.availableMoves"
+                      :key="`${member.uid}-enemy-opt-${move.nameEn}`"
+                      :value="move.nameEn"
+                    >
+                      {{ displayMove(move) }}
+                    </option>
+                  </select>
+                </label>
+              </div>
+            </div>
             <div class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
                 <span class="stat-label">{{ statLabel(stat.key) }}</span>

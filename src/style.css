@@ -152,6 +152,39 @@ body {
   font-size: 0.85rem;
 }
 
+.move-select-area {
+  margin: 8px 0 10px;
+}
+
+.move-select-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.move-select-item {
+  display: grid;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+}
+
+.move-select {
+  width: 100%;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 7px 8px;
+  font-size: 0.88rem;
+  background: #fff;
+  color: var(--text);
+}
+
+.move-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+  outline: none;
+}
+
 .stats-grid {
   display: grid;
   gap: 8px;
@@ -203,5 +236,9 @@ body {
   .stat-row {
     grid-template-columns: 1fr;
     gap: 5px;
+  }
+
+  .move-select-grid {
+    grid-template-columns: 1fr;
   }
 }
