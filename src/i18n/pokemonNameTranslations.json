@@ -1,0 +1,750 @@
+{
+  "3": {
+    "nameZh": "妙蛙花",
+    "nameEn": "Venusaur"
+  },
+  "6": {
+    "nameZh": "噴火龍",
+    "nameEn": "Charizard"
+  },
+  "9": {
+    "nameZh": "水箭龜",
+    "nameEn": "Blastoise"
+  },
+  "15": {
+    "nameZh": "大針蜂",
+    "nameEn": "Beedrill"
+  },
+  "18": {
+    "nameZh": "大比鳥",
+    "nameEn": "Pidgeot"
+  },
+  "24": {
+    "nameZh": "阿柏怪",
+    "nameEn": "Arbok"
+  },
+  "25": {
+    "nameZh": "皮卡丘",
+    "nameEn": "Pikachu"
+  },
+  "26": {
+    "nameZh": "雷丘",
+    "nameEn": "Raichu"
+  },
+  "36": {
+    "nameZh": "皮可西",
+    "nameEn": "Clefable"
+  },
+  "38": {
+    "nameZh": "九尾",
+    "nameEn": "Ninetales"
+  },
+  "59": {
+    "nameZh": "風速狗",
+    "nameEn": "Arcanine"
+  },
+  "65": {
+    "nameZh": "胡地",
+    "nameEn": "Alakazam"
+  },
+  "68": {
+    "nameZh": "怪力",
+    "nameEn": "Machamp"
+  },
+  "71": {
+    "nameZh": "大食花",
+    "nameEn": "Victreebel"
+  },
+  "80": {
+    "nameZh": "呆殼獸",
+    "nameEn": "Slowbro"
+  },
+  "94": {
+    "nameZh": "耿鬼",
+    "nameEn": "Gengar"
+  },
+  "115": {
+    "nameZh": "袋獸",
+    "nameEn": "Kangaskhan"
+  },
+  "121": {
+    "nameZh": "寶石海星",
+    "nameEn": "Starmie"
+  },
+  "127": {
+    "nameZh": "凱羅斯",
+    "nameEn": "Pinsir"
+  },
+  "128": {
+    "nameZh": "肯泰羅",
+    "nameEn": "Tauros"
+  },
+  "130": {
+    "nameZh": "暴鯉龍",
+    "nameEn": "Gyarados"
+  },
+  "132": {
+    "nameZh": "百變怪",
+    "nameEn": "Ditto"
+  },
+  "134": {
+    "nameZh": "水伊布",
+    "nameEn": "Vaporeon"
+  },
+  "135": {
+    "nameZh": "雷伊布",
+    "nameEn": "Jolteon"
+  },
+  "136": {
+    "nameZh": "火伊布",
+    "nameEn": "Flareon"
+  },
+  "142": {
+    "nameZh": "化石翼龍",
+    "nameEn": "Aerodactyl"
+  },
+  "143": {
+    "nameZh": "卡比獸",
+    "nameEn": "Snorlax"
+  },
+  "149": {
+    "nameZh": "快龍",
+    "nameEn": "Dragonite"
+  },
+  "154": {
+    "nameZh": "大竺葵",
+    "nameEn": "Meganium"
+  },
+  "157": {
+    "nameZh": "火爆獸",
+    "nameEn": "Typhlosion"
+  },
+  "160": {
+    "nameZh": "大力鱷",
+    "nameEn": "Feraligatr"
+  },
+  "168": {
+    "nameZh": "阿利多斯",
+    "nameEn": "Ariados"
+  },
+  "181": {
+    "nameZh": "電龍",
+    "nameEn": "Ampharos"
+  },
+  "184": {
+    "nameZh": "瑪力露麗",
+    "nameEn": "Azumarill"
+  },
+  "186": {
+    "nameZh": "蚊香蛙皇",
+    "nameEn": "Politoed"
+  },
+  "196": {
+    "nameZh": "太陽伊布",
+    "nameEn": "Espeon"
+  },
+  "197": {
+    "nameZh": "月亮伊布",
+    "nameEn": "Umbreon"
+  },
+  "199": {
+    "nameZh": "呆呆王",
+    "nameEn": "Slowking"
+  },
+  "205": {
+    "nameZh": "佛烈托斯",
+    "nameEn": "Forretress"
+  },
+  "208": {
+    "nameZh": "大鋼蛇",
+    "nameEn": "Steelix"
+  },
+  "212": {
+    "nameZh": "巨鉗螳螂",
+    "nameEn": "Scizor"
+  },
+  "214": {
+    "nameZh": "赫拉克羅斯",
+    "nameEn": "Heracross"
+  },
+  "227": {
+    "nameZh": "盔甲鳥",
+    "nameEn": "Skarmory"
+  },
+  "229": {
+    "nameZh": "黑魯加",
+    "nameEn": "Houndoom"
+  },
+  "248": {
+    "nameZh": "班基拉斯",
+    "nameEn": "Tyranitar"
+  },
+  "279": {
+    "nameZh": "大嘴鷗",
+    "nameEn": "Pelipper"
+  },
+  "282": {
+    "nameZh": "沙奈朵",
+    "nameEn": "Gardevoir"
+  },
+  "302": {
+    "nameZh": "勾魂眼",
+    "nameEn": "Sableye"
+  },
+  "306": {
+    "nameZh": "波士可多拉",
+    "nameEn": "Aggron"
+  },
+  "308": {
+    "nameZh": "恰雷姆",
+    "nameEn": "Medicham"
+  },
+  "310": {
+    "nameZh": "雷電獸",
+    "nameEn": "Manectric"
+  },
+  "319": {
+    "nameZh": "巨牙鯊",
+    "nameEn": "Sharpedo"
+  },
+  "323": {
+    "nameZh": "噴火駝",
+    "nameEn": "Camerupt"
+  },
+  "324": {
+    "nameZh": "煤炭龜",
+    "nameEn": "Torkoal"
+  },
+  "334": {
+    "nameZh": "七夕青鳥",
+    "nameEn": "Altaria"
+  },
+  "350": {
+    "nameZh": "美納斯",
+    "nameEn": "Milotic"
+  },
+  "351": {
+    "nameZh": "飄浮泡泡",
+    "nameEn": "Castform"
+  },
+  "354": {
+    "nameZh": "詛咒娃娃",
+    "nameEn": "Banette"
+  },
+  "358": {
+    "nameZh": "風鈴鈴",
+    "nameEn": "Chimecho"
+  },
+  "359": {
+    "nameZh": "阿勃梭魯",
+    "nameEn": "Absol"
+  },
+  "362": {
+    "nameZh": "冰鬼護",
+    "nameEn": "Glalie"
+  },
+  "389": {
+    "nameZh": "土台龜",
+    "nameEn": "Torterra"
+  },
+  "392": {
+    "nameZh": "烈焰猴",
+    "nameEn": "Infernape"
+  },
+  "395": {
+    "nameZh": "帝王拿波",
+    "nameEn": "Empoleon"
+  },
+  "405": {
+    "nameZh": "倫琴貓",
+    "nameEn": "Luxray"
+  },
+  "407": {
+    "nameZh": "羅絲雷朵",
+    "nameEn": "Roserade"
+  },
+  "409": {
+    "nameZh": "戰槌龍",
+    "nameEn": "Rampardos"
+  },
+  "411": {
+    "nameZh": "護城龍",
+    "nameEn": "Bastiodon"
+  },
+  "428": {
+    "nameZh": "長耳兔",
+    "nameEn": "Lopunny"
+  },
+  "442": {
+    "nameZh": "花岩怪",
+    "nameEn": "Spiritomb"
+  },
+  "445": {
+    "nameZh": "烈咬陸鯊",
+    "nameEn": "Garchomp"
+  },
+  "448": {
+    "nameZh": "路卡利歐",
+    "nameEn": "Lucario"
+  },
+  "450": {
+    "nameZh": "河馬獸",
+    "nameEn": "Hippowdon"
+  },
+  "454": {
+    "nameZh": "毒骷蛙",
+    "nameEn": "Toxicroak"
+  },
+  "460": {
+    "nameZh": "暴雪王",
+    "nameEn": "Abomasnow"
+  },
+  "461": {
+    "nameZh": "瑪狃拉",
+    "nameEn": "Weavile"
+  },
+  "464": {
+    "nameZh": "超甲狂犀",
+    "nameEn": "Rhyperior"
+  },
+  "470": {
+    "nameZh": "葉伊布",
+    "nameEn": "Leafeon"
+  },
+  "471": {
+    "nameZh": "冰伊布",
+    "nameEn": "Glaceon"
+  },
+  "472": {
+    "nameZh": "天蠍王",
+    "nameEn": "Gliscor"
+  },
+  "473": {
+    "nameZh": "象牙豬",
+    "nameEn": "Mamoswine"
+  },
+  "475": {
+    "nameZh": "艾路雷朵",
+    "nameEn": "Gallade"
+  },
+  "478": {
+    "nameZh": "雪妖女",
+    "nameEn": "Froslass"
+  },
+  "479": {
+    "nameZh": "洛托姆",
+    "nameEn": "Rotom"
+  },
+  "497": {
+    "nameZh": "君主蛇",
+    "nameEn": "Serperior"
+  },
+  "500": {
+    "nameZh": "炎武王",
+    "nameEn": "Emboar"
+  },
+  "503": {
+    "nameZh": "大劍鬼",
+    "nameEn": "Samurott"
+  },
+  "505": {
+    "nameZh": "步哨鼠",
+    "nameEn": "Watchog"
+  },
+  "510": {
+    "nameZh": "酷豹",
+    "nameEn": "Liepard"
+  },
+  "512": {
+    "nameZh": "花椰猿",
+    "nameEn": "Simisage"
+  },
+  "514": {
+    "nameZh": "爆香猿",
+    "nameEn": "Simisear"
+  },
+  "516": {
+    "nameZh": "冷水猿",
+    "nameEn": "Simipour"
+  },
+  "530": {
+    "nameZh": "龍頭地鼠",
+    "nameEn": "Excadrill"
+  },
+  "531": {
+    "nameZh": "差不多娃娃",
+    "nameEn": "Audino"
+  },
+  "534": {
+    "nameZh": "修建老匠",
+    "nameEn": "Conkeldurr"
+  },
+  "547": {
+    "nameZh": "風妖精",
+    "nameEn": "Whimsicott"
+  },
+  "553": {
+    "nameZh": "流氓鱷",
+    "nameEn": "Krookodile"
+  },
+  "563": {
+    "nameZh": "死神棺",
+    "nameEn": "Cofagrigus"
+  },
+  "569": {
+    "nameZh": "灰塵山",
+    "nameEn": "Garbodor"
+  },
+  "571": {
+    "nameZh": "索羅亞克",
+    "nameEn": "Zoroark"
+  },
+  "579": {
+    "nameZh": "人造細胞卵",
+    "nameEn": "Reuniclus"
+  },
+  "584": {
+    "nameZh": "雙倍多多冰",
+    "nameEn": "Vanilluxe"
+  },
+  "587": {
+    "nameZh": "電飛鼠",
+    "nameEn": "Emolga"
+  },
+  "609": {
+    "nameZh": "水晶燈火靈",
+    "nameEn": "Chandelure"
+  },
+  "614": {
+    "nameZh": "凍原熊",
+    "nameEn": "Beartic"
+  },
+  "618": {
+    "nameZh": "泥巴魚",
+    "nameEn": "Stunfisk"
+  },
+  "623": {
+    "nameZh": "泥偶巨人",
+    "nameEn": "Golurk"
+  },
+  "635": {
+    "nameZh": "三首惡龍",
+    "nameEn": "Hydreigon"
+  },
+  "637": {
+    "nameZh": "火神蛾",
+    "nameEn": "Volcarona"
+  },
+  "652": {
+    "nameZh": "布里卡隆",
+    "nameEn": "Chesnaught"
+  },
+  "655": {
+    "nameZh": "妖火紅狐",
+    "nameEn": "Delphox"
+  },
+  "658": {
+    "nameZh": "甲賀忍蛙",
+    "nameEn": "Greninja"
+  },
+  "660": {
+    "nameZh": "掘地兔",
+    "nameEn": "Diggersby"
+  },
+  "663": {
+    "nameZh": "烈箭鷹",
+    "nameEn": "Talonflame"
+  },
+  "666": {
+    "nameZh": "彩粉蝶",
+    "nameEn": "Vivillon"
+  },
+  "670": {
+    "nameZh": "花葉蒂",
+    "nameEn": "Floette"
+  },
+  "671": {
+    "nameZh": "花潔夫人",
+    "nameEn": "Florges"
+  },
+  "675": {
+    "nameZh": "流氓熊貓",
+    "nameEn": "Pangoro"
+  },
+  "676": {
+    "nameZh": "多麗米亞",
+    "nameEn": "Furfrou"
+  },
+  "678": {
+    "nameZh": "超能妙喵",
+    "nameEn": "Meowstic"
+  },
+  "681": {
+    "nameZh": "堅盾劍怪",
+    "nameEn": "Aegislash"
+  },
+  "683": {
+    "nameZh": "芳香精",
+    "nameEn": "Aromatisse"
+  },
+  "685": {
+    "nameZh": "胖甜妮",
+    "nameEn": "Slurpuff"
+  },
+  "693": {
+    "nameZh": "鋼炮臂蝦",
+    "nameEn": "Clawitzer"
+  },
+  "695": {
+    "nameZh": "光電傘蜥",
+    "nameEn": "Heliolisk"
+  },
+  "697": {
+    "nameZh": "怪顎龍",
+    "nameEn": "Tyrantrum"
+  },
+  "699": {
+    "nameZh": "冰雪巨龍",
+    "nameEn": "Aurorus"
+  },
+  "700": {
+    "nameZh": "仙子伊布",
+    "nameEn": "Sylveon"
+  },
+  "701": {
+    "nameZh": "摔角鷹人",
+    "nameEn": "Hawlucha"
+  },
+  "702": {
+    "nameZh": "咚咚鼠",
+    "nameEn": "Dedenne"
+  },
+  "706": {
+    "nameZh": "黏美龍",
+    "nameEn": "Goodra"
+  },
+  "707": {
+    "nameZh": "鑰圈兒",
+    "nameEn": "Klefki"
+  },
+  "709": {
+    "nameZh": "朽木妖",
+    "nameEn": "Trevenant"
+  },
+  "711": {
+    "nameZh": "南瓜怪人",
+    "nameEn": "Gourgeist"
+  },
+  "713": {
+    "nameZh": "冰岩怪",
+    "nameEn": "Avalugg"
+  },
+  "715": {
+    "nameZh": "音波龍",
+    "nameEn": "Noivern"
+  },
+  "724": {
+    "nameZh": "狙射樹梟",
+    "nameEn": "Decidueye"
+  },
+  "727": {
+    "nameZh": "熾焰咆哮虎",
+    "nameEn": "Incineroar"
+  },
+  "730": {
+    "nameZh": "西獅海壬",
+    "nameEn": "Primarina"
+  },
+  "733": {
+    "nameZh": "銃嘴大鳥",
+    "nameEn": "Toucannon"
+  },
+  "740": {
+    "nameZh": "好勝毛蟹",
+    "nameEn": "Crabominable"
+  },
+  "745": {
+    "nameZh": "鬃岩狼人",
+    "nameEn": "Lycanroc"
+  },
+  "748": {
+    "nameZh": "超壞星",
+    "nameEn": "Toxapex"
+  },
+  "750": {
+    "nameZh": "重泥挽馬",
+    "nameEn": "Mudsdale"
+  },
+  "752": {
+    "nameZh": "滴蛛霸",
+    "nameEn": "Araquanid"
+  },
+  "758": {
+    "nameZh": "焰后蜥",
+    "nameEn": "Salazzle"
+  },
+  "763": {
+    "nameZh": "甜冷美后",
+    "nameEn": "Tsareena"
+  },
+  "765": {
+    "nameZh": "智揮猩",
+    "nameEn": "Oranguru"
+  },
+  "766": {
+    "nameZh": "投擲猴",
+    "nameEn": "Passimian"
+  },
+  "778": {
+    "nameZh": "謎擬Ｑ",
+    "nameEn": "Mimikyu"
+  },
+  "780": {
+    "nameZh": "老翁龍",
+    "nameEn": "Drampa"
+  },
+  "784": {
+    "nameZh": "杖尾鱗甲龍",
+    "nameEn": "Kommo-o"
+  },
+  "823": {
+    "nameZh": "鋼鎧鴉",
+    "nameEn": "Corviknight"
+  },
+  "841": {
+    "nameZh": "蘋裹龍",
+    "nameEn": "Flapple"
+  },
+  "842": {
+    "nameZh": "豐蜜龍",
+    "nameEn": "Appletun"
+  },
+  "844": {
+    "nameZh": "沙螺蟒",
+    "nameEn": "Sandaconda"
+  },
+  "855": {
+    "nameZh": "怖思壺",
+    "nameEn": "Polteageist"
+  },
+  "858": {
+    "nameZh": "布莉姆溫",
+    "nameEn": "Hatterene"
+  },
+  "866": {
+    "nameZh": "踏冰人偶",
+    "nameEn": "Mr. Rime"
+  },
+  "867": {
+    "nameZh": "死神板",
+    "nameEn": "Runerigus"
+  },
+  "869": {
+    "nameZh": "霜奶仙",
+    "nameEn": "Alcremie"
+  },
+  "877": {
+    "nameZh": "莫魯貝可",
+    "nameEn": "Morpeko"
+  },
+  "887": {
+    "nameZh": "多龍巴魯托",
+    "nameEn": "Dragapult"
+  },
+  "899": {
+    "nameZh": "詭角鹿",
+    "nameEn": "Wyrdeer"
+  },
+  "900": {
+    "nameZh": "劈斧螳螂",
+    "nameEn": "Kleavor"
+  },
+  "902": {
+    "nameZh": "幽尾玄魚",
+    "nameEn": "Basculegion"
+  },
+  "903": {
+    "nameZh": "大狃拉",
+    "nameEn": "Sneasler"
+  },
+  "908": {
+    "nameZh": "魔幻假面喵",
+    "nameEn": "Meowscarada"
+  },
+  "911": {
+    "nameZh": "骨紋巨聲鱷",
+    "nameEn": "Skeledirge"
+  },
+  "914": {
+    "nameZh": "狂歡浪舞鴨",
+    "nameEn": "Quaquaval"
+  },
+  "923": {
+    "nameZh": "巴布土撥",
+    "nameEn": "Pawmot"
+  },
+  "925": {
+    "nameZh": "一家鼠",
+    "nameEn": "Maushold"
+  },
+  "934": {
+    "nameZh": "鹽石巨靈",
+    "nameEn": "Garganacl"
+  },
+  "936": {
+    "nameZh": "紅蓮鎧騎",
+    "nameEn": "Armarouge"
+  },
+  "937": {
+    "nameZh": "蒼炎刃鬼",
+    "nameEn": "Ceruledge"
+  },
+  "939": {
+    "nameZh": "電肚蛙",
+    "nameEn": "Bellibolt"
+  },
+  "952": {
+    "nameZh": "狠辣椒",
+    "nameEn": "Scovillain"
+  },
+  "956": {
+    "nameZh": "超能豔鴕",
+    "nameEn": "Espathra"
+  },
+  "959": {
+    "nameZh": "巨鍛匠",
+    "nameEn": "Tinkaton"
+  },
+  "964": {
+    "nameZh": "海豚俠",
+    "nameEn": "Palafin"
+  },
+  "968": {
+    "nameZh": "拖拖蚓",
+    "nameEn": "Orthworm"
+  },
+  "970": {
+    "nameZh": "晶光花",
+    "nameEn": "Glimmora"
+  },
+  "981": {
+    "nameZh": "奇麒麟",
+    "nameEn": "Farigiraf"
+  },
+  "983": {
+    "nameZh": "仆斬將軍",
+    "nameEn": "Kingambit"
+  },
+  "1013": {
+    "nameZh": "來悲粗茶",
+    "nameEn": "Sinistcha"
+  },
+  "1018": {
+    "nameZh": "鋁鋼橋龍",
+    "nameEn": "Archaludon"
+  },
+  "1019": {
+    "nameZh": "蜜集大蛇",
+    "nameEn": "Hydrapple"
+  }
+}

@@ -2,18 +2,32 @@
 import { computed, onMounted, shallowRef } from 'vue'
 import * as PokeApiWrapper from 'pokeapi-js-wrapper'
 import allowedPokemonIds from './assets/allowedPokemonIds.json'
+import {
+  detectBrowserLocale,
+  getDisplayMoveName,
+  getDisplayPokemonName,
+  getMessage,
+  getPokemonLocalizedNames,
+  getStatLabel,
+  getTypeLabel,
+  pickLocalizedName,
+  registerPokemonNameTranslation,
+  resolveLocale
+} from './i18n/translations'
 
 const stats = [
-  { key: 'hp', label: 'HP', api: 'hp' },
-  { key: 'atk', label: '攻擊', api: 'attack' },
-  { key: 'spa', label: '特攻', api: 'special-attack' },
-  { key: 'def', label: '防禦', api: 'defense' },
-  { key: 'spd', label: '特防', api: 'special-defense' },
-  { key: 'spe', label: '速度', api: 'speed' }
+  { key: 'hp', api: 'hp' },
+  { key: 'atk', api: 'attack' },
+  { key: 'spa', api: 'special-attack' },
+  { key: 'def', api: 'defense' },
+  { key: 'spd', api: 'special-defense' },
+  { key: 'spe', api: 'speed' }
 ]
 
 const pokedex = new PokeApiWrapper.Pokedex({ cache: true, timeout: 20_000 })
+const moveTranslationCache = new Map()
 
+const locale = shallowRef(detectBrowserLocale())
 const allySearch = shallowRef('')
 const enemySearch = shallowRef('')
 const allyTeam = shallowRef([])
@@ -47,10 +61,17 @@ function toStatBlock(baseStats) {
 }
 
 function normalizePokemon(pokemonData, speciesData) {
-  const chineseName = speciesData.names.find((entry) => entry.language.name === 'zh-Hant')?.name
-    ?? speciesData.names.find((entry) => entry.language.name === 'zh-Hans')?.name
-    ?? speciesData.names.find((entry) => entry.language.name === 'ja-Hrkt')?.name
-    ?? pokemonData.name
+  const apiChineseName = pickLocalizedName(speciesData.names, 'zh-TW', pokemonData.name)
+  const apiEnglishName = pickLocalizedName(speciesData.names, 'en-US', pokemonData.name)
+  const localizedNames = getPokemonLocalizedNames(pokemonData.id, {
+    nameZh: apiChineseName,
+    nameEn: apiEnglishName
+  })
+
+  registerPokemonNameTranslation(pokemonData.id, {
+    nameZh: localizedNames.nameZh,
+    nameEn: localizedNames.nameEn
+  })
 
   const baseStats = pokemonData.stats.reduce((accumulator, item) => {
     const statName = item.stat.name
@@ -64,13 +85,38 @@ function normalizePokemon(pokemonData, speciesData) {
 
   return {
     id: pokemonData.id,
-    nameEn: pokemonData.name,
-    nameZh: chineseName,
+    nameEn: localizedNames.nameEn,
+    nameZh: localizedNames.nameZh,
     types: pokemonData.types
       .sort((a, b) => a.slot - b.slot)
       .map((item) => item.type.name),
     moves: pokemonData.moves.slice(0, 12).map((moveItem) => moveItem.move.name),
     baseStats
+  }
+}
+
+async function resolveMoveTranslation(moveName) {
+  const cached = moveTranslationCache.get(moveName)
+  if (cached) {
+    return cached
+  }
+
+  const fallbackMove = {
+    nameEn: moveName,
+    nameZh: moveName
+  }
+
+  try {
+    const moveData = await pokedex.getMoveByName(moveName)
+    const translated = {
+      nameEn: pickLocalizedName(moveData.names, 'en-US', moveName),
+      nameZh: pickLocalizedName(moveData.names, 'zh-TW', moveName)
+    }
+    moveTranslationCache.set(moveName, translated)
+    return translated
+  } catch (_error) {
+    moveTranslationCache.set(moveName, fallbackMove)
+    return fallbackMove
   }
 }
 
@@ -95,7 +141,7 @@ async function fetchAllowedPokemonPool() {
 
     pokemonPool.value = allEntries.sort((a, b) => a.id - b.id)
   } catch (error) {
-    loadingError.value = `資料載入失敗：${error?.message ?? '未知錯誤'}`
+    loadingError.value = error?.message ?? 'Unknown error'
   } finally {
     isLoadingPool.value = false
   }
@@ -107,8 +153,12 @@ const filteredAllyPool = computed(() => {
     return pokemonPool.value
   }
   return pokemonPool.value.filter((pokemon) => {
-    return pokemon.nameZh.includes(keyword)
-      || pokemon.nameEn.includes(keyword)
+    const names = getPokemonLocalizedNames(pokemon.id, {
+      nameZh: pokemon.nameZh,
+      nameEn: pokemon.nameEn
+    })
+    return names.nameZh.toLowerCase().includes(keyword)
+      || names.nameEn.toLowerCase().includes(keyword)
       || String(pokemon.id).includes(keyword)
   })
 })
@@ -119,20 +169,28 @@ const filteredEnemyPool = computed(() => {
     return pokemonPool.value
   }
   return pokemonPool.value.filter((pokemon) => {
-    return pokemon.nameZh.includes(keyword)
-      || pokemon.nameEn.includes(keyword)
+    const names = getPokemonLocalizedNames(pokemon.id, {
+      nameZh: pokemon.nameZh,
+      nameEn: pokemon.nameEn
+    })
+    return names.nameZh.toLowerCase().includes(keyword)
+      || names.nameEn.toLowerCase().includes(keyword)
       || String(pokemon.id).includes(keyword)
   })
 })
 
-function addToTeam(side, pokemon) {
+async function addToTeam(side, pokemon) {
+  const translatedMoves = await Promise.all(
+    pokemon.moves.map((moveName) => resolveMoveTranslation(moveName))
+  )
+
   const member = {
     uid: `${pokemon.id}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     id: pokemon.id,
     nameZh: pokemon.nameZh,
     nameEn: pokemon.nameEn,
     types: pokemon.types,
-    moves: pokemon.moves,
+    moves: translatedMoves,
     stats: toStatBlock(pokemon.baseStats)
   }
 
@@ -162,7 +220,37 @@ function getTotalStat(member, statKey) {
   return stat.base + stat.ev
 }
 
+function t(key) {
+  return getMessage(locale.value, key)
+}
+
+function displayPokemonName(pokemon) {
+  return getDisplayPokemonName(locale.value, {
+    id: pokemon.id,
+    nameZh: pokemon.nameZh,
+    nameEn: pokemon.nameEn
+  })
+}
+
+function displayType(typeName) {
+  return getTypeLabel(locale.value, typeName)
+}
+
+function displayMove(move) {
+  return getDisplayMoveName(locale.value, move)
+}
+
+function moveJoiner() {
+  return locale.value === 'zh-TW' ? '、' : ', '
+}
+
+function statLabel(statKey) {
+  return getStatLabel(locale.value, statKey)
+}
+
 onMounted(() => {
+  locale.value = resolveLocale(detectBrowserLocale())
+  document.documentElement.lang = locale.value
   fetchAllowedPokemonPool()
 })
 </script>
@@ -170,22 +258,22 @@ onMounted(() => {
 <template>
   <main class="battle-page">
     <header class="page-header">
-      <h1 class="title">寶可夢對戰速查面板</h1>
-      <p class="subtitle">左邊我方、右邊敵方，可先用中文搜尋並加入隊伍，種族值先保留位置、努力值可直接輸入。</p>
+      <h1 class="title">{{ t('title') }}</h1>
+      <p class="subtitle">{{ t('subtitle') }}</p>
     </header>
 
     <section class="columns">
       <article class="team-panel">
-        <h2 class="panel-title">我方</h2>
+        <h2 class="panel-title">{{ t('allyPanel') }}</h2>
         <input
           v-model="allySearch"
           class="search-input"
           type="text"
-          placeholder="輸入中文/英文/編號搜尋（例如：皮卡丘、pikachu、25）"
+          :placeholder="t('searchPlaceholderAlly')"
         />
 
-        <p v-if="isLoadingPool" class="status-text">正在從 API 載入允許名單...</p>
-        <p v-if="loadingError" class="status-text error">{{ loadingError }}</p>
+        <p v-if="isLoadingPool" class="status-text">{{ t('loadingPool') }}</p>
+        <p v-if="loadingError" class="status-text error">{{ t('loadingFailed') }}: {{ loadingError }}</p>
 
         <div class="search-results">
           <button
@@ -195,22 +283,22 @@ onMounted(() => {
             type="button"
             @click="addToTeam('ally', pokemon)"
           >
-            #{{ pokemon.id }} {{ pokemon.nameZh }}
+            {{ t('addPrefix') }} #{{ pokemon.id }} {{ displayPokemonName(pokemon) }}
           </button>
         </div>
 
         <div class="team-list">
           <section v-for="member in allyTeam" :key="member.uid" class="member-card">
-            <h3 class="member-name">{{ member.nameZh }}</h3>
-            <p class="meta-text">EN：{{ member.nameEn }}</p>
-            <p class="meta-text">屬性：{{ member.types.join(' / ') }}</p>
-            <p class="meta-text">招式：{{ member.moves.join('、') }}</p>
+            <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+            <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
+            <p class="meta-text">{{ t('moveLabel') }}: {{ member.moves.map(displayMove).join(moveJoiner()) }}</p>
             <div class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
-                <span class="stat-label">{{ stat.label }}</span>
-                <span class="base-value">種族值：{{ member.stats[stat.key].base }}</span>
+                <span class="stat-label">{{ statLabel(stat.key) }}</span>
+                <span class="base-value">{{ t('baseStatLabel') }}: {{ member.stats[stat.key].base }}</span>
                 <label class="ev-input-wrap">
-                  努力值
+                  {{ t('evLabel') }}
                   <input
                     class="ev-input"
                     type="number"
@@ -219,7 +307,7 @@ onMounted(() => {
                     @input="updateEv('ally', member.uid, stat.key, Number($event.target.value))"
                   />
                 </label>
-                <span class="total-value">總值：{{ getTotalStat(member, stat.key) }}</span>
+                <span class="total-value">{{ t('totalLabel') }}: {{ getTotalStat(member, stat.key) }}</span>
               </div>
             </div>
           </section>
@@ -227,16 +315,16 @@ onMounted(() => {
       </article>
 
       <article class="team-panel">
-        <h2 class="panel-title">敵方</h2>
+        <h2 class="panel-title">{{ t('enemyPanel') }}</h2>
         <input
           v-model="enemySearch"
           class="search-input"
           type="text"
-          placeholder="輸入中文/英文/編號搜尋（例如：烈咬陸鯊、garchomp、445）"
+          :placeholder="t('searchPlaceholderEnemy')"
         />
 
-        <p v-if="isLoadingPool" class="status-text">正在從 API 載入允許名單...</p>
-        <p v-if="loadingError" class="status-text error">{{ loadingError }}</p>
+        <p v-if="isLoadingPool" class="status-text">{{ t('loadingPool') }}</p>
+        <p v-if="loadingError" class="status-text error">{{ t('loadingFailed') }}: {{ loadingError }}</p>
 
         <div class="search-results">
           <button
@@ -246,22 +334,22 @@ onMounted(() => {
             type="button"
             @click="addToTeam('enemy', pokemon)"
           >
-            #{{ pokemon.id }} {{ pokemon.nameZh }}
+            {{ t('addPrefix') }} #{{ pokemon.id }} {{ displayPokemonName(pokemon) }}
           </button>
         </div>
 
         <div class="team-list">
           <section v-for="member in enemyTeam" :key="member.uid" class="member-card">
-            <h3 class="member-name">{{ member.nameZh }}</h3>
-            <p class="meta-text">EN：{{ member.nameEn }}</p>
-            <p class="meta-text">屬性：{{ member.types.join(' / ') }}</p>
-            <p class="meta-text">招式：{{ member.moves.join('、') }}</p>
+            <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+            <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
+            <p class="meta-text">{{ t('moveLabel') }}: {{ member.moves.map(displayMove).join(moveJoiner()) }}</p>
             <div class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
-                <span class="stat-label">{{ stat.label }}</span>
-                <span class="base-value">種族值：{{ member.stats[stat.key].base }}</span>
+                <span class="stat-label">{{ statLabel(stat.key) }}</span>
+                <span class="base-value">{{ t('baseStatLabel') }}: {{ member.stats[stat.key].base }}</span>
                 <label class="ev-input-wrap">
-                  努力值
+                  {{ t('evLabel') }}
                   <input
                     class="ev-input"
                     type="number"
@@ -270,7 +358,7 @@ onMounted(() => {
                     @input="updateEv('enemy', member.uid, stat.key, Number($event.target.value))"
                   />
                 </label>
-                <span class="total-value">總值：{{ getTotalStat(member, stat.key) }}</span>
+                <span class="total-value">{{ t('totalLabel') }}: {{ getTotalStat(member, stat.key) }}</span>
               </div>
             </div>
           </section>
