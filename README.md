@@ -4,10 +4,21 @@
 
 - 開發：`npm install` 後執行 `npm run dev`
 - 建置：`npm run build`
-- 手動部署到 GitHub Pages（gh-pages 分支）：`npm run deploy`
-- 自動部署：已提供 `.github/workflows/deploy.yml`，推送到 `main` 會自動部署到 GitHub Pages
+- GitHub Pages 部署：使用 `.github/workflows/deploy.yml`，`main` 有新提交時自動建置並發布
 
-> Vite `base` 會依 `GITHUB_REPOSITORY` 自動設定，部署到任何 repo 名稱都可正確產生路徑。
+> Vite `base` 已設定為 `./`，可正確支援 GitHub Pages 的 repo 子路徑。
+
+## 分支策略（建議）
+
+- `main`：正式可部署分支（建議啟用 branch protection）
+- `feature/*`：日常開發分支，功能完成後發 PR 合併到 `main`
+- GitHub Pages：建議在 GitHub 設定中選擇 `Source = GitHub Actions`
+
+### GitHub 保護規則建議
+
+- Require a pull request before merging
+- Require status checks to pass before merging（至少包含 Pages deploy workflow）
+- Restrict who can push to matching branches（限制直接推送 `main`）
 
 ## 📋 專案開發計畫書：寶可夢對戰即時輔助工具
 
