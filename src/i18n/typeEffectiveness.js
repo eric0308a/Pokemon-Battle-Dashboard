@@ -40,6 +40,74 @@ const attackChart = {
   fairy: { x2: ['fighting', 'dragon', 'dark'], x05: ['fire', 'poison', 'steel'], x0: [] }
 }
 
+const typeColorMap = {
+  normal: '#f4f1ea',
+  fire: '#d94b2b',
+  water: '#3f8dde',
+  electric: '#f2c94c',
+  grass: '#7cc96c',
+  ice: '#73d2f3',
+  fighting: '#f08a24',
+  poison: '#9b59b6',
+  ground: '#8b5a2b',
+  flying: '#8ec5ff',
+  psychic: '#e83e8c',
+  bug: '#4e8c32',
+  rock: '#c6a46a',
+  ghost: '#5b3a9e',
+  dragon: '#3957d8',
+  dark: '#111111',
+  steel: '#bfc7d3',
+  fairy: '#ea8ccf'
+}
+
+function normalizeColorKey(typeKey) {
+  return normalizeTypeKey(typeKey)
+}
+
+function hexToRgba(hex, alpha) {
+  const normalizedHex = String(hex ?? '').replace('#', '')
+  if (normalizedHex.length !== 6) {
+    return `rgba(255, 255, 255, ${alpha})`
+  }
+
+  const red = Number.parseInt(normalizedHex.slice(0, 2), 16)
+  const green = Number.parseInt(normalizedHex.slice(2, 4), 16)
+  const blue = Number.parseInt(normalizedHex.slice(4, 6), 16)
+  return `rgba(${red}, ${green}, ${blue}, ${alpha})`
+}
+
+export function getTypeColor(typeKey) {
+  const key = normalizeColorKey(typeKey)
+  return typeColorMap[key] ?? '#c5d2e3'
+}
+
+export function getTypeTheme(typeKeys = []) {
+  const normalizedKeys = typeKeys
+    .map(normalizeColorKey)
+    .filter(Boolean)
+
+  const primaryKey = normalizedKeys[0] ?? 'normal'
+  const secondaryKey = normalizedKeys[1] ?? primaryKey
+  const primaryColor = getTypeColor(primaryKey)
+  const secondaryColor = getTypeColor(secondaryKey)
+  const tertiaryColor = getTypeColor(normalizedKeys[2] ?? secondaryKey)
+
+  return {
+    primaryColor,
+    secondaryColor,
+    tertiaryColor,
+    primarySoft: hexToRgba(primaryColor, 0.18),
+    secondarySoft: hexToRgba(secondaryColor, 0.18),
+    tertiarySoft: hexToRgba(tertiaryColor, 0.12),
+    borderColor: hexToRgba(primaryColor, 0.42),
+    textColor: primaryKey === 'normal' ? '#314257' : '#142137',
+    gradient: normalizedKeys.length > 1
+      ? `linear-gradient(135deg, ${hexToRgba(primaryColor, 0.24)} 0 49.5%, ${hexToRgba(secondaryColor, 0.24)} 49.5% 100%)`
+      : `linear-gradient(135deg, ${hexToRgba(primaryColor, 0.22)} 0 100%)`
+  }
+}
+
 function normalizeTypeKey(typeKey) {
   return String(typeKey ?? '').toLowerCase()
 }

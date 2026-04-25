@@ -38,10 +38,7 @@ Pokemon-Battle-Dashboard/
 │  ├─ App.vue
 │  ├─ style.css
 │  ├─ assets/
-│  │  ├─ allowedPokemonIds.json
-│  │  ├─ hero.png
-│  │  ├─ vite.svg
-│  │  └─ vue.svg
+│  │  └─ allowedPokemonIds.json
 │  ├─ components/
 │  │  └─ HelloWorld.vue
 │  └─ i18n/

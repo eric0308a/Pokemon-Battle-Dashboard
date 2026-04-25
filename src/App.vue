@@ -18,7 +18,8 @@ import {
 import {
   getAttackRelations,
   getDefenseRelations,
-  getEffectivenessMultiplier
+  getEffectivenessMultiplier,
+  getTypeTheme
 } from './i18n/typeEffectiveness'
 
 const stats = [
@@ -827,6 +828,40 @@ function sideLabel(side) {
   return side === 'ally' ? t('allyPanel') : t('enemyPanel')
 }
 
+function getPokemonThemeStyle(typeKeys) {
+  const theme = getTypeTheme(typeKeys)
+  return {
+    '--theme-gradient': theme.gradient,
+    '--theme-background': theme.gradient,
+    '--theme-border': theme.borderColor,
+    '--theme-primary-soft': theme.primarySoft,
+    '--theme-secondary-soft': theme.secondarySoft,
+    '--theme-tertiary-soft': theme.tertiarySoft,
+    '--theme-text': theme.textColor
+  }
+}
+
+function getTypeChipStyle(typeKey) {
+  const theme = getTypeTheme([typeKey])
+  return {
+    '--chip-gradient': theme.gradient,
+    '--chip-border': theme.borderColor,
+    '--chip-soft': theme.primarySoft,
+    '--chip-text': theme.textColor
+  }
+}
+
+function getMoveThemeStyle(move) {
+  const typeKey = move?.typeKey || 'normal'
+  const theme = getTypeTheme([typeKey])
+  return {
+    '--move-gradient': theme.gradient,
+    '--move-border': theme.borderColor,
+    '--move-soft': theme.primarySoft,
+    '--move-text': theme.textColor
+  }
+}
+
 onMounted(() => {
   locale.value = resolveLocale(detectBrowserLocale())
   document.documentElement.lang = locale.value
@@ -841,103 +876,114 @@ onMounted(() => {
       <p class="subtitle">{{ t('subtitle') }}</p>
     </header>
 
-    <section class="detail-menu">
-      <button
-        class="detail-menu-btn"
-        type="button"
-        :aria-expanded="isDetailMenuOpen"
-        @click="isDetailMenuOpen = !isDetailMenuOpen"
-      >
-        <span>{{ t('detailMenuTitle') }}</span>
-        <span class="detail-menu-state">{{ isDetailMenuOpen ? t('detailMenuHide') : t('detailMenuShow') }}</span>
-      </button>
-
-      <div v-if="isDetailMenuOpen" class="detail-grid">
-        <label class="detail-item">
-          <input v-model="viewSettings.compactMode" type="checkbox" />
-          <span>{{ t('settingCompactMode') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showWeatherPanel" type="checkbox" />
-          <span>{{ t('settingWeatherPanel') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showEnglishName" type="checkbox" />
-          <span>{{ t('settingEnglishName') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showNatureHint" type="checkbox" />
-          <span>{{ t('settingNatureHint') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showDefenseSummary" type="checkbox" />
-          <span>{{ t('settingDefenseSummary') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showMoveCatalog" type="checkbox" />
-          <span>{{ t('settingMoveCatalog') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showMoveHints" type="checkbox" />
-          <span>{{ t('settingMoveHints') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showStatsPanel" type="checkbox" />
-          <span>{{ t('settingStatsPanel') }}</span>
-        </label>
-        <label class="detail-item">
-          <input v-model="viewSettings.showAnalysisPanel" type="checkbox" />
-          <span>{{ t('settingAnalysisPanel') }}</span>
-        </label>
-      </div>
-    </section>
-
-    <section v-if="viewSettings.showWeatherPanel" class="weather-panel">
-      <p class="weather-title">{{ t('weatherLabel') }}</p>
-      <div class="weather-options">
-        <label
-          v-for="weather in ['none', 'sun', 'rain', 'sand', 'snow']"
-          :key="`weather-${weather}`"
-          class="weather-option"
+    <section class="control-strip">
+      <section class="detail-menu">
+        <button
+          class="detail-menu-btn"
+          type="button"
+          :aria-expanded="isDetailMenuOpen"
+          @click="isDetailMenuOpen = !isDetailMenuOpen"
         >
-          <input
-            v-model="currentWeather"
-            type="radio"
-            name="weather"
-            :value="weather"
-          />
-          <span>{{ weatherLabel(weather) }}</span>
-        </label>
-      </div>
+          <span>{{ t('detailMenuTitle') }}</span>
+          <span class="detail-menu-state">{{ isDetailMenuOpen ? t('detailMenuHide') : t('detailMenuShow') }}</span>
+        </button>
+
+        <div v-if="isDetailMenuOpen" class="detail-grid">
+          <label class="detail-item">
+            <input v-model="viewSettings.compactMode" type="checkbox" />
+            <span>{{ t('settingCompactMode') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showWeatherPanel" type="checkbox" />
+            <span>{{ t('settingWeatherPanel') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showEnglishName" type="checkbox" />
+            <span>{{ t('settingEnglishName') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showNatureHint" type="checkbox" />
+            <span>{{ t('settingNatureHint') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showDefenseSummary" type="checkbox" />
+            <span>{{ t('settingDefenseSummary') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showMoveCatalog" type="checkbox" />
+            <span>{{ t('settingMoveCatalog') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showMoveHints" type="checkbox" />
+            <span>{{ t('settingMoveHints') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showStatsPanel" type="checkbox" />
+            <span>{{ t('settingStatsPanel') }}</span>
+          </label>
+          <label class="detail-item">
+            <input v-model="viewSettings.showAnalysisPanel" type="checkbox" />
+            <span>{{ t('settingAnalysisPanel') }}</span>
+          </label>
+        </div>
+      </section>
+
+      <section v-if="viewSettings.showWeatherPanel" class="weather-panel">
+        <p class="weather-title">{{ t('weatherLabel') }}</p>
+        <div class="weather-options">
+          <label
+            v-for="weather in ['none', 'sun', 'rain', 'sand', 'snow']"
+            :key="`weather-${weather}`"
+            class="weather-option"
+          >
+            <input
+              v-model="currentWeather"
+              type="radio"
+              name="weather"
+              :value="weather"
+            />
+            <span>{{ weatherLabel(weather) }}</span>
+          </label>
+        </div>
+      </section>
     </section>
 
     <section class="columns">
       <article class="team-panel">
-        <h2 class="panel-title">{{ t('allyPanel') }}</h2>
-        <input
-          v-model="allySearch"
-          class="search-input"
-          type="text"
-          :placeholder="t('searchPlaceholderAlly')"
-        />
-
-        <p v-if="isLoadingPool" class="status-text">{{ t('loadingPool') }}</p>
-        <p v-if="loadingError" class="status-text error">{{ t('loadingFailed') }}: {{ loadingError }}</p>
-
-        <div class="search-results">
-          <button
-            v-for="pokemon in filteredAllyPool"
-            :key="`ally-${pokemon.id}`"
-            class="result-item"
-            type="button"
-            @click="addToTeam('ally', pokemon)"
-          >
-            {{ t('addPrefix') }} #{{ pokemon.id }} {{ displayPokemonName(pokemon) }}
-          </button>
+        <div class="panel-headline">
+          <h2 class="panel-title">{{ t('allyPanel') }}</h2>
+          <span class="member-count">{{ allyTeam.length }}</span>
         </div>
 
-        <div class="team-list">
-          <section v-for="member in allyTeam" :key="member.uid" class="member-card">
+        <section class="picker-zone">
+          <p class="zone-title">搜尋並加入</p>
+          <input
+            v-model="allySearch"
+            class="search-input"
+            type="text"
+            :placeholder="t('searchPlaceholderAlly')"
+          />
+
+          <p v-if="isLoadingPool" class="status-text">{{ t('loadingPool') }}</p>
+          <p v-if="loadingError" class="status-text error">{{ t('loadingFailed') }}: {{ loadingError }}</p>
+
+          <div class="search-results">
+            <button
+              v-for="pokemon in filteredAllyPool"
+              :key="`ally-${pokemon.id}`"
+              class="result-item"
+              type="button"
+              @click="addToTeam('ally', pokemon)"
+            >
+              {{ t('addPrefix') }} #{{ pokemon.id }} {{ displayPokemonName(pokemon) }}
+            </button>
+          </div>
+        </section>
+
+        <section class="selected-zone">
+          <p class="zone-title">已加入隊伍</p>
+          <div class="team-list">
+          <section v-for="member in allyTeam" :key="member.uid" class="member-card" :style="getPokemonThemeStyle(member.types)">
             <div class="member-head">
               <h3 class="member-name">{{ displayBattleMemberName(member) }}</h3>
               <button
@@ -949,6 +995,16 @@ onMounted(() => {
               </button>
             </div>
             <p v-if="viewSettings.showEnglishName" class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <div class="type-chips">
+              <span
+                v-for="type in member.types"
+                :key="`${member.uid}-ally-type-${type}`"
+                class="type-chip"
+                :style="getTypeChipStyle(type)"
+              >
+                {{ displayType(type) }}
+              </span>
+            </div>
             <div v-if="member.megaOptions.length > 0" class="mega-controls">
               <label class="speed-check">
                 <input
@@ -1055,6 +1111,7 @@ onMounted(() => {
                   v-for="(selectedMove, moveIndex) in member.selectedMoves"
                   :key="`${member.uid}-ally-move-${moveIndex}`"
                   class="move-select-item"
+                  :style="getMoveThemeStyle(getSelectedMove(member, selectedMove))"
                 >
                   {{ t('moveSlotLabel') }} {{ moveIndex + 1 }}
                   <select
@@ -1094,35 +1151,45 @@ onMounted(() => {
               </div>
             </div>
           </section>
-        </div>
+          </div>
+        </section>
       </article>
 
       <article class="team-panel">
-        <h2 class="panel-title">{{ t('enemyPanel') }}</h2>
-        <input
-          v-model="enemySearch"
-          class="search-input"
-          type="text"
-          :placeholder="t('searchPlaceholderEnemy')"
-        />
-
-        <p v-if="isLoadingPool" class="status-text">{{ t('loadingPool') }}</p>
-        <p v-if="loadingError" class="status-text error">{{ t('loadingFailed') }}: {{ loadingError }}</p>
-
-        <div class="search-results">
-          <button
-            v-for="pokemon in filteredEnemyPool"
-            :key="`enemy-${pokemon.id}`"
-            class="result-item"
-            type="button"
-            @click="addToTeam('enemy', pokemon)"
-          >
-            {{ t('addPrefix') }} #{{ pokemon.id }} {{ displayPokemonName(pokemon) }}
-          </button>
+        <div class="panel-headline">
+          <h2 class="panel-title">{{ t('enemyPanel') }}</h2>
+          <span class="member-count">{{ enemyTeam.length }}</span>
         </div>
 
-        <div class="team-list">
-          <section v-for="member in enemyTeam" :key="member.uid" class="member-card">
+        <section class="picker-zone">
+          <p class="zone-title">搜尋並加入</p>
+          <input
+            v-model="enemySearch"
+            class="search-input"
+            type="text"
+            :placeholder="t('searchPlaceholderEnemy')"
+          />
+
+          <p v-if="isLoadingPool" class="status-text">{{ t('loadingPool') }}</p>
+          <p v-if="loadingError" class="status-text error">{{ t('loadingFailed') }}: {{ loadingError }}</p>
+
+          <div class="search-results">
+            <button
+              v-for="pokemon in filteredEnemyPool"
+              :key="`enemy-${pokemon.id}`"
+              class="result-item"
+              type="button"
+              @click="addToTeam('enemy', pokemon)"
+            >
+              {{ t('addPrefix') }} #{{ pokemon.id }} {{ displayPokemonName(pokemon) }}
+            </button>
+          </div>
+        </section>
+
+        <section class="selected-zone">
+          <p class="zone-title">已加入隊伍</p>
+          <div class="team-list">
+          <section v-for="member in enemyTeam" :key="member.uid" class="member-card" :style="getPokemonThemeStyle(member.types)">
             <div class="member-head">
               <h3 class="member-name">{{ displayBattleMemberName(member) }}</h3>
               <button
@@ -1134,6 +1201,16 @@ onMounted(() => {
               </button>
             </div>
             <p v-if="viewSettings.showEnglishName" class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <div class="type-chips">
+              <span
+                v-for="type in member.types"
+                :key="`${member.uid}-enemy-type-${type}`"
+                class="type-chip"
+                :style="getTypeChipStyle(type)"
+              >
+                {{ displayType(type) }}
+              </span>
+            </div>
             <div v-if="member.megaOptions.length > 0" class="mega-controls">
               <label class="speed-check">
                 <input
@@ -1240,6 +1317,7 @@ onMounted(() => {
                   v-for="(selectedMove, moveIndex) in member.selectedMoves"
                   :key="`${member.uid}-enemy-move-${moveIndex}`"
                   class="move-select-item"
+                  :style="getMoveThemeStyle(getSelectedMove(member, selectedMove))"
                 >
                   {{ t('moveSlotLabel') }} {{ moveIndex + 1 }}
                   <select
@@ -1279,7 +1357,8 @@ onMounted(() => {
               </div>
             </div>
           </section>
-        </div>
+          </div>
+        </section>
       </article>
     </section>
 
