@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, shallowRef } from 'vue'
+import { computed, onMounted, reactive, shallowRef } from 'vue'
 import * as PokeApiWrapper from 'pokeapi-js-wrapper'
 import allowedPokemonIds from './assets/allowedPokemonIds.json'
 import {
@@ -17,7 +17,8 @@ import {
 } from './i18n/translations'
 import {
   getAttackRelations,
-  getDefenseRelations
+  getDefenseRelations,
+  getEffectivenessMultiplier
 } from './i18n/typeEffectiveness'
 
 const stats = [
@@ -70,6 +71,8 @@ const pokedex = new PokeApiWrapper.Pokedex({ cache: true, timeout: 20_000 })
 const moveTranslationCache = new Map()
 
 const locale = shallowRef(detectBrowserLocale())
+const currentWeather = shallowRef('none')
+const isDetailMenuOpen = shallowRef(false)
 const allySearch = shallowRef('')
 const enemySearch = shallowRef('')
 const allyTeam = shallowRef([])
@@ -77,6 +80,18 @@ const enemyTeam = shallowRef([])
 const pokemonPool = shallowRef([])
 const isLoadingPool = shallowRef(true)
 const loadingError = shallowRef('')
+
+const viewSettings = reactive({
+  compactMode: true,
+  showWeatherPanel: true,
+  showEnglishName: false,
+  showNatureHint: true,
+  showDefenseSummary: true,
+  showMoveCatalog: false,
+  showMoveHints: false,
+  showStatsPanel: false,
+  showAnalysisPanel: true
+})
 
 function chunkArray(list, size) {
   const chunks = []
@@ -426,6 +441,81 @@ function moveTypeLabel(move) {
   return move?.typeKey ? displayType(move.typeKey) : t('typeNoneLabel')
 }
 
+function weatherLabel(weatherKey) {
+  return t(`weather${weatherKey.charAt(0).toUpperCase()}${weatherKey.slice(1)}`)
+}
+
+function getWeatherNotes(member) {
+  const notes = []
+  if (currentWeather.value === 'sun') {
+    notes.push(t('weatherSunRule'))
+    if (member.types.includes('water')) {
+      notes.push(t('weatherSunWaterHint'))
+    }
+  }
+
+  if (currentWeather.value === 'rain') {
+    notes.push(t('weatherRainRule'))
+    if (member.types.includes('fire')) {
+      notes.push(t('weatherRainFireHint'))
+    }
+  }
+
+  if (currentWeather.value === 'sand' && member.types.includes('rock')) {
+    notes.push(t('weatherSandRockHint'))
+  }
+
+  if (currentWeather.value === 'snow' && member.types.includes('ice')) {
+    notes.push(t('weatherSnowIceHint'))
+  }
+
+  return notes
+}
+
+const allyWeaknessReport = computed(() => {
+  if (allyTeam.value.length === 0) {
+    return []
+  }
+
+  const weaknessMap = new Map()
+
+  allyTeam.value.forEach((member) => {
+    const relations = getDefenseRelations(member.types)
+    const weakTypes = [...relations[2], ...relations[4]]
+
+    weakTypes.forEach((typeKey) => {
+      const existing = weaknessMap.get(typeKey) ?? []
+      existing.push(displayPokemonName(member))
+      weaknessMap.set(typeKey, existing)
+    })
+  })
+
+  return Array.from(weaknessMap.entries())
+    .filter(([, members]) => members.length >= 2)
+    .sort((a, b) => b[1].length - a[1].length)
+})
+
+const topWeaknessType = computed(() => {
+  return allyWeaknessReport.value[0]?.[0] ?? ''
+})
+
+const defensiveRecommendations = computed(() => {
+  if (!topWeaknessType.value) {
+    return []
+  }
+
+  const selectedIds = new Set(allyTeam.value.map((member) => member.id))
+  return pokemonPool.value
+    .filter((pokemon) => {
+      if (selectedIds.has(pokemon.id)) {
+        return false
+      }
+      const multiplier = getEffectivenessMultiplier(topWeaknessType.value, pokemon.types)
+      return multiplier <= 0.5
+    })
+    .slice(0, 12)
+})
+
 onMounted(() => {
   locale.value = resolveLocale(detectBrowserLocale())
   document.documentElement.lang = locale.value
@@ -434,11 +524,81 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="battle-page">
+  <main class="battle-page" :class="{ 'compact-mode': viewSettings.compactMode }">
     <header class="page-header">
       <h1 class="title">{{ t('title') }}</h1>
       <p class="subtitle">{{ t('subtitle') }}</p>
     </header>
+
+    <section class="detail-menu">
+      <button
+        class="detail-menu-btn"
+        type="button"
+        :aria-expanded="isDetailMenuOpen"
+        @click="isDetailMenuOpen = !isDetailMenuOpen"
+      >
+        <span>{{ t('detailMenuTitle') }}</span>
+        <span class="detail-menu-state">{{ isDetailMenuOpen ? t('detailMenuHide') : t('detailMenuShow') }}</span>
+      </button>
+
+      <div v-if="isDetailMenuOpen" class="detail-grid">
+        <label class="detail-item">
+          <input v-model="viewSettings.compactMode" type="checkbox" />
+          <span>{{ t('settingCompactMode') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showWeatherPanel" type="checkbox" />
+          <span>{{ t('settingWeatherPanel') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showEnglishName" type="checkbox" />
+          <span>{{ t('settingEnglishName') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showNatureHint" type="checkbox" />
+          <span>{{ t('settingNatureHint') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showDefenseSummary" type="checkbox" />
+          <span>{{ t('settingDefenseSummary') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showMoveCatalog" type="checkbox" />
+          <span>{{ t('settingMoveCatalog') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showMoveHints" type="checkbox" />
+          <span>{{ t('settingMoveHints') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showStatsPanel" type="checkbox" />
+          <span>{{ t('settingStatsPanel') }}</span>
+        </label>
+        <label class="detail-item">
+          <input v-model="viewSettings.showAnalysisPanel" type="checkbox" />
+          <span>{{ t('settingAnalysisPanel') }}</span>
+        </label>
+      </div>
+    </section>
+
+    <section v-if="viewSettings.showWeatherPanel" class="weather-panel">
+      <p class="weather-title">{{ t('weatherLabel') }}</p>
+      <div class="weather-options">
+        <label
+          v-for="weather in ['none', 'sun', 'rain', 'sand', 'snow']"
+          :key="`weather-${weather}`"
+          class="weather-option"
+        >
+          <input
+            v-model="currentWeather"
+            type="radio"
+            name="weather"
+            :value="weather"
+          />
+          <span>{{ weatherLabel(weather) }}</span>
+        </label>
+      </div>
+    </section>
 
     <section class="columns">
       <article class="team-panel">
@@ -477,7 +637,7 @@ onMounted(() => {
                 {{ t('removeMemberLabel') }}
               </button>
             </div>
-            <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <p v-if="viewSettings.showEnglishName" class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
             <label class="move-select-item nature-select-item">
               {{ t('natureLabel') }}
               <select
@@ -494,10 +654,18 @@ onMounted(() => {
                 </option>
               </select>
             </label>
-            <p class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
+            <p v-if="viewSettings.showNatureHint" class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
-            <p class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
-            <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
+            <p v-if="viewSettings.showDefenseSummary" class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
+            <p v-if="viewSettings.showWeatherPanel && currentWeather !== 'none'" class="meta-text weather-active">{{ t('weatherActiveLabel') }}: {{ weatherLabel(currentWeather) }}</p>
+            <p
+              v-for="note in viewSettings.showWeatherPanel ? getWeatherNotes(member) : []"
+              :key="`${member.uid}-ally-weather-${note}`"
+              class="meta-text weather-note"
+            >
+              {{ note }}
+            </p>
+            <p v-if="viewSettings.showMoveCatalog" class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
             <div class="move-select-area">
               <p class="meta-text">{{ t('moveSelectLabel') }}</p>
               <div class="move-select-grid">
@@ -520,12 +688,12 @@ onMounted(() => {
                       {{ displayMove(move) }}
                     </option>
                   </select>
-                  <span class="matchup-help">{{ t('typeLabel') }}: {{ moveTypeLabel(getSelectedMove(member, selectedMove)) }}</span>
-                  <span class="matchup-help">{{ t('typeAttackLabel') }}: {{ formatAttackSummary(getSelectedMove(member, selectedMove)?.typeKey ?? '') }}</span>
+                  <span v-if="viewSettings.showMoveHints" class="matchup-help">{{ t('typeLabel') }}: {{ moveTypeLabel(getSelectedMove(member, selectedMove)) }}</span>
+                  <span v-if="viewSettings.showMoveHints" class="matchup-help">{{ t('typeAttackLabel') }}: {{ formatAttackSummary(getSelectedMove(member, selectedMove)?.typeKey ?? '') }}</span>
                 </label>
               </div>
             </div>
-            <div class="stats-grid">
+            <div v-if="viewSettings.showStatsPanel" class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
                 <span class="stat-label">{{ statLabel(stat.key) }}</span>
                 <span class="base-value">{{ t('baseStatLabel') }}: {{ member.stats[stat.key].base }}</span>
@@ -583,7 +751,7 @@ onMounted(() => {
                 {{ t('removeMemberLabel') }}
               </button>
             </div>
-            <p class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <p v-if="viewSettings.showEnglishName" class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
             <label class="move-select-item nature-select-item">
               {{ t('natureLabel') }}
               <select
@@ -600,10 +768,18 @@ onMounted(() => {
                 </option>
               </select>
             </label>
-            <p class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
+            <p v-if="viewSettings.showNatureHint" class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
-            <p class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
-            <p class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
+            <p v-if="viewSettings.showDefenseSummary" class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
+            <p v-if="viewSettings.showWeatherPanel && currentWeather !== 'none'" class="meta-text weather-active">{{ t('weatherActiveLabel') }}: {{ weatherLabel(currentWeather) }}</p>
+            <p
+              v-for="note in viewSettings.showWeatherPanel ? getWeatherNotes(member) : []"
+              :key="`${member.uid}-enemy-weather-${note}`"
+              class="meta-text weather-note"
+            >
+              {{ note }}
+            </p>
+            <p v-if="viewSettings.showMoveCatalog" class="meta-text">{{ t('moveOptionsLabel') }}: {{ member.availableMoves.map(displayMove).join(moveJoiner()) }}</p>
             <div class="move-select-area">
               <p class="meta-text">{{ t('moveSelectLabel') }}</p>
               <div class="move-select-grid">
@@ -626,12 +802,12 @@ onMounted(() => {
                       {{ displayMove(move) }}
                     </option>
                   </select>
-                  <span class="matchup-help">{{ t('typeLabel') }}: {{ moveTypeLabel(getSelectedMove(member, selectedMove)) }}</span>
-                  <span class="matchup-help">{{ t('typeAttackLabel') }}: {{ formatAttackSummary(getSelectedMove(member, selectedMove)?.typeKey ?? '') }}</span>
+                  <span v-if="viewSettings.showMoveHints" class="matchup-help">{{ t('typeLabel') }}: {{ moveTypeLabel(getSelectedMove(member, selectedMove)) }}</span>
+                  <span v-if="viewSettings.showMoveHints" class="matchup-help">{{ t('typeAttackLabel') }}: {{ formatAttackSummary(getSelectedMove(member, selectedMove)?.typeKey ?? '') }}</span>
                 </label>
               </div>
             </div>
-            <div class="stats-grid">
+            <div v-if="viewSettings.showStatsPanel" class="stats-grid">
               <div v-for="stat in stats" :key="`${member.uid}-${stat.key}`" class="stat-row">
                 <span class="stat-label">{{ statLabel(stat.key) }}</span>
                 <span class="base-value">{{ t('baseStatLabel') }}: {{ member.stats[stat.key].base }}</span>
@@ -652,6 +828,43 @@ onMounted(() => {
           </section>
         </div>
       </article>
+    </section>
+
+    <section v-if="viewSettings.showAnalysisPanel" class="analysis-panel">
+      <h2 class="panel-title">{{ t('analysisTitle') }}</h2>
+
+      <p v-if="allyTeam.length < 2" class="status-text">{{ t('analysisNeedMembers') }}</p>
+
+      <template v-else>
+        <p v-if="allyWeaknessReport.length === 0" class="analysis-success">
+          {{ t('analysisNoBlindSpot') }}
+        </p>
+
+        <div
+          v-for="[typeKey, members] in allyWeaknessReport"
+          :key="`weak-${typeKey}`"
+          class="analysis-danger"
+        >
+          {{ t('analysisBlindSpotPrefix') }} {{ members.join('、') }} {{ t('analysisBlindSpotSuffix') }}
+          <strong>{{ displayType(typeKey) }}</strong>
+        </div>
+
+        <div v-if="topWeaknessType" class="recommendation-box">
+          <p class="recommendation-title">
+            {{ t('recommendationTitle') }} {{ displayType(topWeaknessType) }}
+          </p>
+          <div v-if="defensiveRecommendations.length > 0" class="recommendation-list">
+            <span
+              v-for="candidate in defensiveRecommendations"
+              :key="`rec-${candidate.id}`"
+              class="recommendation-tag"
+            >
+              #{{ candidate.id }} {{ displayPokemonName(candidate) }}
+            </span>
+          </div>
+          <p v-else class="status-text">{{ t('recommendationEmpty') }}</p>
+        </div>
+      </template>
     </section>
   </main>
 </template>
