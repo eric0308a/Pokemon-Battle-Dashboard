@@ -95,4 +95,11 @@ Pokemon-Battle-Dashboard/
 - 目前透過 GitHub Actions 自動部署到 GitHub Pages。
 - 推送到 `main` 後會觸發 `.github/workflows/deploy.yml` 進行建置與發布。
 
+## 版權與授權
+
+本專案採用 GNU General Public License v3.0 授權發佈。
+本專案使用 PokeAPI 提供的公開資料。
+Pokémon 及相關名稱、圖像與商標權利均屬其原始權利人所有。
+本專案為非官方粉絲作品，與 The Pokémon Company、Nintendo、Game Freak 及 PokeAPI 無任何隸屬或背書關係。
+
 ---
