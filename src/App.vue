@@ -30,6 +30,17 @@ const stats = [
   { key: 'spe', api: 'speed' }
 ]
 
+const speedStageOptions = Array.from({ length: 13 }, (_, index) => {
+  const value = index - 6
+  return { value, label: value > 0 ? `+${value}` : `${value}` }
+})
+
+const speedAbilityOptions = [
+  { value: 1, key: 'speedAbilityNone' },
+  { value: 1.5, key: 'speedAbilityBoost15' },
+  { value: 2, key: 'speedAbilityBoost20' }
+]
+
 const natureOptions = [
   // 增加 攻擊 (up: 'atk')
   { key: 'serious', nameZh: '認真', nameEn: 'Serious', up: 'atk', down: 'atk' },
@@ -88,9 +99,15 @@ const viewSettings = reactive({
   showNatureHint: true,
   showDefenseSummary: true,
   showMoveCatalog: false,
-  showMoveHints: false,
-  showStatsPanel: false,
+  showMoveHints: true,
+  showStatsPanel: true,
   showAnalysisPanel: true
+})
+
+const speedFieldSettings = reactive({
+  allyTailwind: false,
+  enemyTailwind: false,
+  trickRoom: false
 })
 
 function chunkArray(list, size) {
@@ -259,6 +276,9 @@ async function addToTeam(side, pokemon) {
       return translatedMoves[index]?.nameEn ?? translatedMoves[0]?.nameEn ?? ''
     }),
     natureKey: 'serious',
+    speedStage: 0,
+    speedAbilityMultiplier: 1,
+    speedParalyzed: false,
     stats: toStatBlock(pokemon.baseStats)
   }
 
@@ -320,6 +340,56 @@ function updateEv(side, memberUid, statKey, value) {
     ? Math.min(32, Math.max(0, Math.trunc(value)))
     : 0
   target.stats[statKey].ev = normalized
+  if (side === 'ally') {
+    allyTeam.value = [...team]
+    return
+  }
+  enemyTeam.value = [...team]
+}
+
+function updateSpeedStage(side, memberUid, value) {
+  const team = side === 'ally' ? allyTeam.value : enemyTeam.value
+  const target = team.find((member) => member.uid === memberUid)
+  if (!target) {
+    return
+  }
+
+  const stage = Number.parseInt(value, 10)
+  target.speedStage = Number.isNaN(stage) ? 0 : Math.min(6, Math.max(-6, stage))
+
+  if (side === 'ally') {
+    allyTeam.value = [...team]
+    return
+  }
+  enemyTeam.value = [...team]
+}
+
+function updateSpeedAbilityMultiplier(side, memberUid, value) {
+  const team = side === 'ally' ? allyTeam.value : enemyTeam.value
+  const target = team.find((member) => member.uid === memberUid)
+  if (!target) {
+    return
+  }
+
+  const multiplier = Number.parseFloat(value)
+  target.speedAbilityMultiplier = Number.isNaN(multiplier) ? 1 : multiplier
+
+  if (side === 'ally') {
+    allyTeam.value = [...team]
+    return
+  }
+  enemyTeam.value = [...team]
+}
+
+function updateSpeedParalyzed(side, memberUid, checked) {
+  const team = side === 'ally' ? allyTeam.value : enemyTeam.value
+  const target = team.find((member) => member.uid === memberUid)
+  if (!target) {
+    return
+  }
+
+  target.speedParalyzed = checked
+
   if (side === 'ally') {
     allyTeam.value = [...team]
     return
@@ -445,6 +515,41 @@ function weatherLabel(weatherKey) {
   return t(`weather${weatherKey.charAt(0).toUpperCase()}${weatherKey.slice(1)}`)
 }
 
+function speedStageMultiplier(stage) {
+  if (stage > 0) {
+    return (2 + stage) / 2
+  }
+  if (stage < 0) {
+    return 2 / (2 - stage)
+  }
+  return 1
+}
+
+function getBattleSpeed(member, side) {
+  const rawStage = Number.isFinite(member.speedStage) ? member.speedStage : 0
+  const stage = Math.min(6, Math.max(-6, rawStage))
+  const stageMultiplier = speedStageMultiplier(stage)
+  const abilityMultiplier = Number.isFinite(member.speedAbilityMultiplier)
+    ? member.speedAbilityMultiplier
+    : 1
+  const tailwindEnabled = side === 'ally'
+    ? speedFieldSettings.allyTailwind
+    : speedFieldSettings.enemyTailwind
+
+  let finalSpeed = Math.floor(getTotalStat(member, 'spe') * stageMultiplier)
+  finalSpeed = Math.floor(finalSpeed * abilityMultiplier)
+
+  if (tailwindEnabled) {
+    finalSpeed = Math.floor(finalSpeed * 2)
+  }
+
+  if (member.speedParalyzed) {
+    finalSpeed = Math.floor(finalSpeed * 0.5)
+  }
+
+  return Math.max(1, finalSpeed)
+}
+
 function getWeatherNotes(member) {
   const notes = []
   if (currentWeather.value === 'sun') {
@@ -515,6 +620,52 @@ const defensiveRecommendations = computed(() => {
     })
     .slice(0, 12)
 })
+
+const speedLineRows = computed(() => {
+  const rows = [
+    ...allyTeam.value.map((member) => ({
+      uid: member.uid,
+      side: 'ally',
+      displayName: displayPokemonName(member),
+      speed: getBattleSpeed(member, 'ally'),
+      tieRoll: Math.random()
+    })),
+    ...enemyTeam.value.map((member) => ({
+      uid: member.uid,
+      side: 'enemy',
+      displayName: displayPokemonName(member),
+      speed: getBattleSpeed(member, 'enemy'),
+      tieRoll: Math.random()
+    }))
+  ]
+
+  const speedCountMap = rows.reduce((map, item) => {
+    map.set(item.speed, (map.get(item.speed) ?? 0) + 1)
+    return map
+  }, new Map())
+
+  const sortedRows = [...rows].sort((a, b) => {
+    if (a.speed === b.speed) {
+      return b.tieRoll - a.tieRoll
+    }
+
+    if (speedFieldSettings.trickRoom) {
+      return a.speed - b.speed
+    }
+
+    return b.speed - a.speed
+  })
+
+  return sortedRows.map((item, index) => ({
+    ...item,
+    isTie: (speedCountMap.get(item.speed) ?? 0) > 1,
+    rank: index + 1
+  }))
+})
+
+function sideLabel(side) {
+  return side === 'ally' ? t('allyPanel') : t('enemyPanel')
+}
 
 onMounted(() => {
   locale.value = resolveLocale(detectBrowserLocale())
@@ -655,6 +806,48 @@ onMounted(() => {
               </select>
             </label>
             <p v-if="viewSettings.showNatureHint" class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
+            <div class="speed-modifiers">
+              <label class="move-select-item">
+                {{ t('speedStageLabel') }}
+                <select
+                  class="move-select"
+                  :value="member.speedStage"
+                  @change="updateSpeedStage('ally', member.uid, $event.target.value)"
+                >
+                  <option
+                    v-for="item in speedStageOptions"
+                    :key="`${member.uid}-ally-stage-${item.value}`"
+                    :value="item.value"
+                  >
+                    {{ item.label }}
+                  </option>
+                </select>
+              </label>
+              <label class="move-select-item">
+                {{ t('speedAbilityLabel') }}
+                <select
+                  class="move-select"
+                  :value="member.speedAbilityMultiplier"
+                  @change="updateSpeedAbilityMultiplier('ally', member.uid, $event.target.value)"
+                >
+                  <option
+                    v-for="item in speedAbilityOptions"
+                    :key="`${member.uid}-ally-ability-${item.value}`"
+                    :value="item.value"
+                  >
+                    {{ t(item.key) }}
+                  </option>
+                </select>
+              </label>
+              <label class="speed-check">
+                <input
+                  type="checkbox"
+                  :checked="member.speedParalyzed"
+                  @change="updateSpeedParalyzed('ally', member.uid, $event.target.checked)"
+                />
+                <span>{{ t('speedParalyzedLabel') }}</span>
+              </label>
+            </div>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
             <p v-if="viewSettings.showDefenseSummary" class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
             <p v-if="viewSettings.showWeatherPanel && currentWeather !== 'none'" class="meta-text weather-active">{{ t('weatherActiveLabel') }}: {{ weatherLabel(currentWeather) }}</p>
@@ -769,6 +962,48 @@ onMounted(() => {
               </select>
             </label>
             <p v-if="viewSettings.showNatureHint" class="meta-text nature-hint">{{ t('natureEffectLabel') }}: {{ getNatureHintText(member.natureKey) }}</p>
+            <div class="speed-modifiers">
+              <label class="move-select-item">
+                {{ t('speedStageLabel') }}
+                <select
+                  class="move-select"
+                  :value="member.speedStage"
+                  @change="updateSpeedStage('enemy', member.uid, $event.target.value)"
+                >
+                  <option
+                    v-for="item in speedStageOptions"
+                    :key="`${member.uid}-enemy-stage-${item.value}`"
+                    :value="item.value"
+                  >
+                    {{ item.label }}
+                  </option>
+                </select>
+              </label>
+              <label class="move-select-item">
+                {{ t('speedAbilityLabel') }}
+                <select
+                  class="move-select"
+                  :value="member.speedAbilityMultiplier"
+                  @change="updateSpeedAbilityMultiplier('enemy', member.uid, $event.target.value)"
+                >
+                  <option
+                    v-for="item in speedAbilityOptions"
+                    :key="`${member.uid}-enemy-ability-${item.value}`"
+                    :value="item.value"
+                  >
+                    {{ t(item.key) }}
+                  </option>
+                </select>
+              </label>
+              <label class="speed-check">
+                <input
+                  type="checkbox"
+                  :checked="member.speedParalyzed"
+                  @change="updateSpeedParalyzed('enemy', member.uid, $event.target.checked)"
+                />
+                <span>{{ t('speedParalyzedLabel') }}</span>
+              </label>
+            </div>
             <p class="meta-text">{{ t('typeLabel') }}: {{ member.types.map(displayType).join(' / ') }}</p>
             <p v-if="viewSettings.showDefenseSummary" class="meta-text matchup-line">{{ t('typeDefenseLabel') }}: {{ formatDefenseSummary(member.types) }}</p>
             <p v-if="viewSettings.showWeatherPanel && currentWeather !== 'none'" class="meta-text weather-active">{{ t('weatherActiveLabel') }}: {{ weatherLabel(currentWeather) }}</p>
@@ -828,6 +1063,42 @@ onMounted(() => {
           </section>
         </div>
       </article>
+    </section>
+
+    <section class="speedline-panel">
+      <h2 class="panel-title">{{ t('speedLineTitle') }}</h2>
+      <div class="speedline-controls">
+        <label class="speed-check">
+          <input v-model="speedFieldSettings.allyTailwind" type="checkbox" />
+          <span>{{ t('speedTailwindAlly') }}</span>
+        </label>
+        <label class="speed-check">
+          <input v-model="speedFieldSettings.enemyTailwind" type="checkbox" />
+          <span>{{ t('speedTailwindEnemy') }}</span>
+        </label>
+        <label class="speed-check">
+          <input v-model="speedFieldSettings.trickRoom" type="checkbox" />
+          <span>{{ t('speedTrickRoom') }}</span>
+        </label>
+      </div>
+      <p class="speedline-hint">{{ t('speedTieHint') }}</p>
+
+      <p v-if="speedLineRows.length === 0" class="status-text">{{ t('speedLineNeedMembers') }}</p>
+
+      <div v-else class="speedline-list">
+        <div
+          v-for="row in speedLineRows"
+          :key="`speed-${row.uid}`"
+          class="speedline-row"
+          :class="{ 'speedline-first': row.rank === 1 }"
+        >
+          <span class="speedline-rank">#{{ row.rank }}</span>
+          <span class="speedline-side" :class="`side-${row.side}`">{{ sideLabel(row.side) }}</span>
+          <span class="speedline-name">{{ row.displayName }}</span>
+          <span class="speedline-value">{{ t('speedLineValue') }} {{ row.speed }}</span>
+          <span v-if="row.isTie" class="speedline-tie">{{ t('speedTieTag') }}</span>
+        </div>
+      </div>
     </section>
 
     <section v-if="viewSettings.showAnalysisPanel" class="analysis-panel">

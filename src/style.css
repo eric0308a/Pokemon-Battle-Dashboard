@@ -315,6 +315,25 @@ body {
   color: #35526d;
 }
 
+.speed-modifiers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.speed-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+}
+
+.speed-check input {
+  accent-color: var(--accent);
+}
+
 .weather-active {
   color: #8f441d;
 }
@@ -398,6 +417,93 @@ body {
   font-size: 0.9rem;
 }
 
+.speedline-panel {
+  margin-top: 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  background: var(--panel-bg);
+  padding: 14px;
+}
+
+.speedline-list {
+  display: grid;
+  gap: 8px;
+}
+
+.speedline-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.speedline-hint {
+  margin: 0 0 8px;
+  color: #35526d;
+  font-size: 0.82rem;
+}
+
+.speedline-row {
+  border: 1px solid #dce8f4;
+  border-radius: 10px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 42px 56px 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+}
+
+.speedline-first {
+  border-color: #f2b98a;
+  box-shadow: 0 0 0 3px rgba(228, 94, 47, 0.12);
+}
+
+.speedline-rank {
+  color: #35526d;
+  font-weight: 700;
+}
+
+.speedline-side {
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 2px 0;
+  border: 1px solid transparent;
+}
+
+.speedline-side.side-ally {
+  color: #165088;
+  background: #e9f4ff;
+  border-color: #b7d7f5;
+}
+
+.speedline-side.side-enemy {
+  color: #8f231d;
+  background: #fff1f0;
+  border-color: #f3c2bf;
+}
+
+.speedline-name {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.speedline-value {
+  color: #264158;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.speedline-tie {
+  border: 1px solid #dcb86c;
+  background: #fff7e5;
+  color: #8a5a00;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  padding: 2px 7px;
+}
+
 .analysis-success {
   border: 1px solid #b8ebcf;
   border-left: 5px solid #1b8f58;
@@ -468,7 +574,12 @@ body {
   font-size: 0.84rem;
 }
 
+.compact-mode .speedline-hint {
+  font-size: 0.78rem;
+}
+
 .compact-mode .analysis-panel,
+.compact-mode .speedline-panel,
 .compact-mode .weather-panel,
 .compact-mode .detail-menu {
   padding: 10px;
@@ -490,5 +601,23 @@ body {
 
   .move-select-grid {
     grid-template-columns: 1fr;
+  }
+
+  .speed-modifiers {
+    grid-template-columns: 1fr;
+  }
+
+  .speedline-row {
+    grid-template-columns: 42px 52px 1fr;
+  }
+
+  .speedline-value {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .speedline-tie {
+    grid-column: 3;
+    justify-self: start;
   }
 }
