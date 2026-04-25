@@ -80,6 +80,7 @@ const natureOptions = [
 
 const pokedex = new PokeApiWrapper.Pokedex({ cache: true, timeout: 20_000 })
 const moveTranslationCache = new Map()
+const pokemonFormCache = new Map()
 
 const locale = shallowRef(detectBrowserLocale())
 const currentWeather = shallowRef('none')
@@ -134,6 +135,41 @@ function toStatBlock(baseStats) {
   return block
 }
 
+function getMegaFormLabel(megaSlug) {
+  if (megaSlug.endsWith('-mega-x')) {
+    return 'X'
+  }
+  if (megaSlug.endsWith('-mega-y')) {
+    return 'Y'
+  }
+  return 'Mega'
+}
+
+function extractMegaOptions(speciesData) {
+  const megaSlugs = speciesData.varieties
+    .map((item) => item.pokemon?.name ?? '')
+    .filter((name) => name.includes('-mega'))
+
+  return megaSlugs
+    .sort((a, b) => {
+      const rank = (slug) => {
+        if (slug.endsWith('-mega-y')) return 0
+        if (slug.endsWith('-mega-x')) return 1
+        return 2
+      }
+      return rank(a) - rank(b)
+    })
+    .map((slug) => ({
+      slug,
+      formLabel: getMegaFormLabel(slug)
+    }))
+}
+
+function chooseDefaultMegaSlug(megaOptions) {
+  const preferredY = megaOptions.find((item) => item.slug.endsWith('-mega-y'))
+  return preferredY?.slug ?? megaOptions[0]?.slug ?? ''
+}
+
 function normalizePokemon(pokemonData, speciesData) {
   const apiChineseName = pickLocalizedName(speciesData.names, 'zh-TW', pokemonData.name)
   const apiEnglishName = pickLocalizedName(speciesData.names, 'en-US', pokemonData.name)
@@ -159,14 +195,29 @@ function normalizePokemon(pokemonData, speciesData) {
 
   return {
     id: pokemonData.id,
+    slug: pokemonData.name,
     nameEn: localizedNames.nameEn,
     nameZh: localizedNames.nameZh,
+    megaOptions: extractMegaOptions(speciesData),
     types: pokemonData.types
       .sort((a, b) => a.slot - b.slot)
       .map((item) => item.type.name),
     moves: Array.from(new Set(pokemonData.moves.map((moveItem) => moveItem.move.name))),
     baseStats
   }
+}
+
+async function fetchPokemonFormData(slug) {
+  const cached = pokemonFormCache.get(slug)
+  if (cached) {
+    return cached
+  }
+
+  const pokemonData = await pokedex.getPokemonByName(slug)
+  const speciesData = await pokedex.getPokemonSpeciesByName(pokemonData.species.name)
+  const normalized = normalizePokemon(pokemonData, speciesData)
+  pokemonFormCache.set(slug, normalized)
+  return normalized
 }
 
 async function resolveMoveTranslation(moveName) {
@@ -270,7 +321,17 @@ async function addToTeam(side, pokemon) {
     id: pokemon.id,
     nameZh: pokemon.nameZh,
     nameEn: pokemon.nameEn,
+    baseSlug: pokemon.slug,
+    megaOptions: pokemon.megaOptions ?? [],
+    isMega: false,
+    megaSlug: '',
+    megaFormLabel: '',
+    megaError: '',
     types: pokemon.types,
+    baseForm: {
+      types: [...pokemon.types],
+      baseStats: { ...pokemon.baseStats }
+    },
     availableMoves: translatedMoves,
     selectedMoves: Array.from({ length: 4 }, (_, index) => {
       return translatedMoves[index]?.nameEn ?? translatedMoves[0]?.nameEn ?? ''
@@ -287,6 +348,93 @@ async function addToTeam(side, pokemon) {
     return
   }
   enemyTeam.value = [...enemyTeam.value, member]
+}
+
+function applyBaseStatsToMember(member, baseStats) {
+  stats.forEach((item) => {
+    member.stats[item.key].base = baseStats[item.key] ?? 0
+  })
+}
+
+async function applyMegaState(member, isMegaEnabled) {
+  if (!isMegaEnabled) {
+    member.isMega = false
+    member.megaSlug = ''
+    member.megaFormLabel = ''
+    member.megaError = ''
+    member.types = [...member.baseForm.types]
+    applyBaseStatsToMember(member, member.baseForm.baseStats)
+    return
+  }
+
+  if (member.megaOptions.length === 0) {
+    member.megaError = t('megaNotAvailable')
+    return
+  }
+
+  const targetSlug = member.megaSlug || chooseDefaultMegaSlug(member.megaOptions)
+
+  try {
+    const megaFormData = await fetchPokemonFormData(targetSlug)
+    member.isMega = true
+    member.megaSlug = targetSlug
+    member.megaFormLabel = getMegaFormLabel(targetSlug)
+    member.megaError = ''
+    member.types = [...megaFormData.types]
+    applyBaseStatsToMember(member, megaFormData.baseStats)
+  } catch (_error) {
+    member.isMega = false
+    member.megaSlug = ''
+    member.megaFormLabel = ''
+    member.megaError = t('megaLoadFailed')
+    member.types = [...member.baseForm.types]
+    applyBaseStatsToMember(member, member.baseForm.baseStats)
+  }
+}
+
+async function toggleMega(side, memberUid, checked) {
+  const team = side === 'ally' ? allyTeam.value : enemyTeam.value
+  const target = team.find((member) => member.uid === memberUid)
+  if (!target) {
+    return
+  }
+
+  let hadExistingMega = false
+  if (checked) {
+    const existingMega = team.find((member) => member.uid !== memberUid && member.isMega)
+    if (existingMega) {
+      hadExistingMega = true
+      await applyMegaState(existingMega, false)
+    }
+  }
+
+  await applyMegaState(target, checked)
+  if (checked && hadExistingMega) {
+    target.megaError = t('megaOneLimitHint')
+  }
+
+  if (side === 'ally') {
+    allyTeam.value = [...team]
+    return
+  }
+  enemyTeam.value = [...team]
+}
+
+async function changeMegaForm(side, memberUid, megaSlug) {
+  const team = side === 'ally' ? allyTeam.value : enemyTeam.value
+  const target = team.find((member) => member.uid === memberUid)
+  if (!target) {
+    return
+  }
+
+  target.megaSlug = megaSlug
+  await applyMegaState(target, true)
+
+  if (side === 'ally') {
+    allyTeam.value = [...team]
+    return
+  }
+  enemyTeam.value = [...team]
 }
 
 function updateNature(side, memberUid, natureKey) {
@@ -441,6 +589,18 @@ function displayPokemonName(pokemon) {
     nameZh: pokemon.nameZh,
     nameEn: pokemon.nameEn
   })
+}
+
+function displayBattleMemberName(member) {
+  const baseName = displayPokemonName(member)
+  if (!member.isMega) {
+    return baseName
+  }
+
+  const megaSuffix = member.megaFormLabel && member.megaFormLabel !== 'Mega'
+    ? `${t('megaTag')}-${member.megaFormLabel}`
+    : t('megaTag')
+  return `${baseName} (${megaSuffix})`
 }
 
 function displayType(typeName) {
@@ -626,14 +786,14 @@ const speedLineRows = computed(() => {
     ...allyTeam.value.map((member) => ({
       uid: member.uid,
       side: 'ally',
-      displayName: displayPokemonName(member),
+      displayName: displayBattleMemberName(member),
       speed: getBattleSpeed(member, 'ally'),
       tieRoll: Math.random()
     })),
     ...enemyTeam.value.map((member) => ({
       uid: member.uid,
       side: 'enemy',
-      displayName: displayPokemonName(member),
+      displayName: displayBattleMemberName(member),
       speed: getBattleSpeed(member, 'enemy'),
       tieRoll: Math.random()
     }))
@@ -779,7 +939,7 @@ onMounted(() => {
         <div class="team-list">
           <section v-for="member in allyTeam" :key="member.uid" class="member-card">
             <div class="member-head">
-              <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+              <h3 class="member-name">{{ displayBattleMemberName(member) }}</h3>
               <button
                 class="remove-btn"
                 type="button"
@@ -789,6 +949,35 @@ onMounted(() => {
               </button>
             </div>
             <p v-if="viewSettings.showEnglishName" class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <div v-if="member.megaOptions.length > 0" class="mega-controls">
+              <label class="speed-check">
+                <input
+                  type="checkbox"
+                  :checked="member.isMega"
+                  @change="toggleMega('ally', member.uid, $event.target.checked)"
+                />
+                <span>{{ t('megaToggleLabel') }}</span>
+              </label>
+
+              <label v-if="member.isMega && member.megaOptions.length > 1" class="move-select-item mega-form-select">
+                {{ t('megaFormLabel') }}
+                <select
+                  class="move-select"
+                  :value="member.megaSlug || member.megaOptions[0].slug"
+                  @change="changeMegaForm('ally', member.uid, $event.target.value)"
+                >
+                  <option
+                    v-for="option in member.megaOptions"
+                    :key="`${member.uid}-ally-mega-${option.slug}`"
+                    :value="option.slug"
+                  >
+                    {{ option.formLabel }}
+                  </option>
+                </select>
+              </label>
+
+              <p v-if="member.megaError" class="meta-text mega-note">{{ member.megaError }}</p>
+            </div>
             <label class="move-select-item nature-select-item">
               {{ t('natureLabel') }}
               <select
@@ -935,7 +1124,7 @@ onMounted(() => {
         <div class="team-list">
           <section v-for="member in enemyTeam" :key="member.uid" class="member-card">
             <div class="member-head">
-              <h3 class="member-name">{{ displayPokemonName(member) }}</h3>
+              <h3 class="member-name">{{ displayBattleMemberName(member) }}</h3>
               <button
                 class="remove-btn"
                 type="button"
@@ -945,6 +1134,35 @@ onMounted(() => {
               </button>
             </div>
             <p v-if="viewSettings.showEnglishName" class="meta-text">{{ t('enNameLabel') }}: {{ member.nameEn }}</p>
+            <div v-if="member.megaOptions.length > 0" class="mega-controls">
+              <label class="speed-check">
+                <input
+                  type="checkbox"
+                  :checked="member.isMega"
+                  @change="toggleMega('enemy', member.uid, $event.target.checked)"
+                />
+                <span>{{ t('megaToggleLabel') }}</span>
+              </label>
+
+              <label v-if="member.isMega && member.megaOptions.length > 1" class="move-select-item mega-form-select">
+                {{ t('megaFormLabel') }}
+                <select
+                  class="move-select"
+                  :value="member.megaSlug || member.megaOptions[0].slug"
+                  @change="changeMegaForm('enemy', member.uid, $event.target.value)"
+                >
+                  <option
+                    v-for="option in member.megaOptions"
+                    :key="`${member.uid}-enemy-mega-${option.slug}`"
+                    :value="option.slug"
+                  >
+                    {{ option.formLabel }}
+                  </option>
+                </select>
+              </label>
+
+              <p v-if="member.megaError" class="meta-text mega-note">{{ member.megaError }}</p>
+            </div>
             <label class="move-select-item nature-select-item">
               {{ t('natureLabel') }}
               <select
